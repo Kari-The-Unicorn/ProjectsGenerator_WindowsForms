@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProjectsKonstruktorModelStoreContainer" CdmEntityContainer="ProjectsKonstruktorEntities">
+    <EntitySetMapping Name="Issues">
+      <EntityTypeMapping TypeName="ProjectsKonstruktorModel.Issue">
+        <MappingFragment StoreEntitySet="Issues">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="IssueName" ColumnName="IssueName" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="ProjectsKonstruktorModel.Project">
+        <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectAddress" ColumnName="ProjectAddress" />
+          <ScalarProperty Name="ProjectCompany" ColumnName="ProjectCompany" />
+          <ScalarProperty Name="ProjectState" ColumnName="ProjectState" />
+          <ScalarProperty Name="ProjectDateIn" ColumnName="ProjectDateIn" />
+          <ScalarProperty Name="ProjectDateOut" ColumnName="ProjectDateOut" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

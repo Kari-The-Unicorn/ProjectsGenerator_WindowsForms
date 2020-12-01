@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectsKonstruktorModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Issues">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IssueName" Type="nchar" MaxLength="100" />
+    <Property Name="ProjectId" Type="int" />
+  </EntityType>
+  <EntityType Name="Projects">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectName" Type="nchar" MaxLength="100" />
+    <Property Name="ProjectAddress" Type="nchar" MaxLength="100" />
+    <Property Name="ProjectCompany" Type="nchar" MaxLength="100" />
+    <Property Name="ProjectState" Type="nchar" MaxLength="100" />
+    <Property Name="ProjectDateIn" Type="datetime" />
+    <Property Name="ProjectDateOut" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_Issues_Issues">
+    <End Role="Projects" Type="Self.Projects" Multiplicity="0..1" />
+    <End Role="Issues" Type="Self.Issues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Issues">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Projects_Projects">
+    <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+    <End Role="Projects1" Type="Self.Projects" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Projects1">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProjectsKonstruktorModelStoreContainer">
+    <EntitySet Name="Issues" EntityType="Self.Issues" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Issues_Issues" Association="Self.FK_Issues_Issues">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="Issues" EntitySet="Issues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Projects_Projects" Association="Self.FK_Projects_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="Projects1" EntitySet="Projects" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
