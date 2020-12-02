@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
-using WindowsFormsApp1.Properties;
+using ProjectsGenerator.Properties;
 
-namespace WindowsFormsApp1
+namespace ProjectsGenerator
 {
     partial class Form1
     {
@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.bProjects = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
@@ -59,7 +59,7 @@ namespace WindowsFormsApp1
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.iconButton2);
+            this.panel1.Controls.Add(this.bProjects);
             this.panel1.Controls.Add(this.iconButton1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 100);
@@ -67,21 +67,21 @@ namespace WindowsFormsApp1
             this.panel1.Size = new System.Drawing.Size(241, 466);
             this.panel1.TabIndex = 2;
             // 
-            // iconButton2
+            // bProjects
             // 
-            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Tasks;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 25;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 47);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(241, 47);
-            this.iconButton2.TabIndex = 3;
-            this.iconButton2.Text = "Projekty";
-            this.iconButton2.UseVisualStyleBackColor = true;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            this.bProjects.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bProjects.IconChar = FontAwesome.Sharp.IconChar.Tasks;
+            this.bProjects.IconColor = System.Drawing.Color.Black;
+            this.bProjects.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.bProjects.IconSize = 25;
+            this.bProjects.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bProjects.Location = new System.Drawing.Point(0, 47);
+            this.bProjects.Name = "bProjects";
+            this.bProjects.Size = new System.Drawing.Size(241, 47);
+            this.bProjects.TabIndex = 3;
+            this.bProjects.Text = "Projekty";
+            this.bProjects.UseVisualStyleBackColor = true;
+            this.bProjects.Click += new System.EventHandler(this.bProjects_Click);
             // 
             // iconButton1
             // 
@@ -143,7 +143,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton bProjects;
         private System.Windows.Forms.Panel panelChildForm;
     }
 }

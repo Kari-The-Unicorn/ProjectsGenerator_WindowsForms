@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 
-namespace WindowsFormsApp1
+namespace ProjectsGenerator
 {
     public partial class Form1 : Form
     {
@@ -51,23 +52,15 @@ namespace WindowsFormsApp1
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
             openChildForm(new AddProject());
-
-
-
-
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void bProjects_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new Projects());
         }
 
         private Form activeForm = null;

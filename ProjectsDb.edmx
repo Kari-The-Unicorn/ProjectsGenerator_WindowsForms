@@ -87,8 +87,6 @@
           <Property Name="ProjectDateIn" Type="DateTime" Precision="3" />
           <Property Name="ProjectDateOut" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Issues" Relationship="Self.FK_Issues_Issues" FromRole="Projects" ToRole="Issues" />
-          <NavigationProperty Name="Projects1" Relationship="Self.FK_Projects_Projects" FromRole="Projects" ToRole="Projects1" />
-          <NavigationProperty Name="Project1" Relationship="Self.FK_Projects_Projects" FromRole="Projects1" ToRole="Projects" />
         </EntityType>
         <Association Name="FK_Issues_Issues">
           <End Role="Projects" Type="Self.Project" Multiplicity="0..1" />

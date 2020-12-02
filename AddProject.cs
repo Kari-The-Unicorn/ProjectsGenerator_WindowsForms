@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace ProjectsGenerator
 {
     public partial class AddProject : Form
     {
+        //private readonly ProjectsKonstruktorEntities projectsKonstruktorEntities;
         public AddProject()
         {
             InitializeComponent();
+            //projectsKonstruktorEntities = new ProjectsKonstruktorEntities();
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -48,6 +50,11 @@ namespace WindowsFormsApp1
                     isValid = false;
                     MessageBox.Show("Data rozpoczęcia nie może być późniejsza niż data ukończenia.");
                 }
+
+                //if (isValid = true)
+                //{
+                //    //projectsKonstruktorEntities = new ProjectsKonstruktorEntities();
+                //}
             }
             catch (Exception ex)
             {

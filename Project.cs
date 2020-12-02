@@ -30,7 +30,5 @@ namespace WindowsFormsApp1
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Issue> Issues { get; set; }
-        public virtual Project Projects1 { get; set; }
-        public virtual Project Project1 { get; set; }
     }
 }
