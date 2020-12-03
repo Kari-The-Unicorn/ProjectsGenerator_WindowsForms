@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace ProjectsGenerator_WindowsForms
 {
     public partial class Projects : Form
     {

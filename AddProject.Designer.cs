@@ -1,4 +1,4 @@
-﻿namespace ProjectsGenerator
+﻿namespace ProjectsGenerator_WindowsForms
 {
     partial class AddProject
     {

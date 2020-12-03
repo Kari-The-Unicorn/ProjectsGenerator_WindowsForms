@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace ProjectsGenerator_WindowsForms
 {
     partial class Projects
     {

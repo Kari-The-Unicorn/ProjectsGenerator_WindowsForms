@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsApp1
+namespace ProjectsGenerator_WindowsForms
 {
     using System;
     using System.Data.Entity;

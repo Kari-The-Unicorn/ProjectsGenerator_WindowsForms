@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjectsGenerator.Properties {
+namespace ProjectsGenerator_WindowsForms.Properties {
     using System;
     
     

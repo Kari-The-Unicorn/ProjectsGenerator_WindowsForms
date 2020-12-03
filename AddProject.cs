@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace ProjectsGenerator
+namespace ProjectsGenerator_WindowsForms
 {
     public partial class AddProject : Form
     {
@@ -38,23 +38,38 @@ namespace ProjectsGenerator
                 var projectDateIn = dtpProjectCollectionDate.Value;
                 var projectDateOut = dtpProjectCompleteDate.Value;
                 var isValid = true;
+                var errorMessage = string.Empty;
 
                 if (string.IsNullOrWhiteSpace(projectName))
                 {
                     isValid = false;
-                    MessageBox.Show("Proszę wpisać nazwę projektu.");
+                    errorMessage = "Proszę wpisać nazwę projektu.";
                 }
 
                 if (projectDateIn > projectDateOut)
                 {
                     isValid = false;
-                    MessageBox.Show("Data rozpoczęcia nie może być późniejsza niż data ukończenia.");
+                    errorMessage = "Data rozpoczęcia nie może być późniejsza niż data ukończenia.";
                 }
 
-                //if (isValid = true)
-                //{
-                //    //projectsKonstruktorEntities = new ProjectsKonstruktorEntities();
-                //}
+                if (isValid)
+                {
+                    var projectsKonstruktorEntities = new ProjectsKonstruktorEntities();
+                    var project = new Project();
+                    project.ProjectName = projectName;
+                    project.ProjectAddress = projectAddress;
+                    project.ProjectCompany = projectCompany;
+                    project.ProjectState = projectState;
+                    project.ProjectDateIn = projectDateIn;
+                    project.ProjectDateOut = projectDateOut;
+                    projectsKonstruktorEntities.Projects.Add(project);
+                    projectsKonstruktorEntities.SaveChanges();
+                    MessageBox.Show("Projekt dodano pomyślnie.");
+                }
+                else
+                {
+                    MessageBox.Show(errorMessage);
+                }
             }
             catch (Exception ex)
             {
