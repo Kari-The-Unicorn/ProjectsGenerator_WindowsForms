@@ -52,7 +52,7 @@ namespace ProjectsGenerator_WindowsForms
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(243, 661);
+            this.panelSideMenu.Size = new System.Drawing.Size(163, 661);
             this.panelSideMenu.TabIndex = 2;
             this.panelSideMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -64,7 +64,7 @@ namespace ProjectsGenerator_WindowsForms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 100);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(241, 466);
+            this.panel1.Size = new System.Drawing.Size(161, 95);
             this.panel1.TabIndex = 2;
             // 
             // bProjects
@@ -77,7 +77,7 @@ namespace ProjectsGenerator_WindowsForms
             this.bProjects.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bProjects.Location = new System.Drawing.Point(0, 47);
             this.bProjects.Name = "bProjects";
-            this.bProjects.Size = new System.Drawing.Size(241, 47);
+            this.bProjects.Size = new System.Drawing.Size(161, 48);
             this.bProjects.TabIndex = 3;
             this.bProjects.Text = "Projekty";
             this.bProjects.UseVisualStyleBackColor = true;
@@ -93,7 +93,7 @@ namespace ProjectsGenerator_WindowsForms
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton1.Location = new System.Drawing.Point(0, 0);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(241, 47);
+            this.iconButton1.Size = new System.Drawing.Size(161, 47);
             this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = "Nowy projekt";
             this.iconButton1.UseVisualStyleBackColor = true;
@@ -108,7 +108,7 @@ namespace ProjectsGenerator_WindowsForms
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(241, 100);
+            this.panelLogo.Size = new System.Drawing.Size(161, 100);
             this.panelLogo.TabIndex = 0;
             this.panelLogo.Click += new System.EventHandler(this.panelLogo_Click);
             // 
@@ -116,9 +116,9 @@ namespace ProjectsGenerator_WindowsForms
             // 
             this.panelChildForm.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(243, 0);
+            this.panelChildForm.Location = new System.Drawing.Point(163, 0);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(969, 661);
+            this.panelChildForm.Size = new System.Drawing.Size(1049, 661);
             this.panelChildForm.TabIndex = 3;
             // 
             // MainWindow
@@ -130,9 +130,10 @@ namespace ProjectsGenerator_WindowsForms
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panelSideMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.IsMdiContainer = true;
+            this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Konstruktor i juz";
+            this.Text = "Konstruktor";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelSideMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

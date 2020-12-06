@@ -65,6 +65,7 @@ namespace ProjectsGenerator_WindowsForms
                     projectsKonstruktorEntities.Projects.Add(project);
                     projectsKonstruktorEntities.SaveChanges();
                     MessageBox.Show("Projekt dodano pomyślnie.");
+                    this.Close();
                 }
                 else
                 {
@@ -74,7 +75,6 @@ namespace ProjectsGenerator_WindowsForms
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                //throw;
             }
         }
     }

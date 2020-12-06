@@ -13,7 +13,8 @@ C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\ProjectsGenerator.csproj.
 C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\ProjectsGenerator.csproj.CopyComplete
 C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
-C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\ProjectsGenerator.csprojAssemblyReference.cache
 C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\ProjectsGenerator_WindowsForms.MainWindow.resources
 C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\ProjectsGenerator_WindowsForms.AddProject.resources
 C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\ProjectsGenerator_WindowsForms.Projects.resources
+C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\ProjectsGenerator.csprojAssemblyReference.cache
+C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.EditProject.resources

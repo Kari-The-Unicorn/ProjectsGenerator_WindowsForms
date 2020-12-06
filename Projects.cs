@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 
 namespace ProjectsGenerator_WindowsForms
 {
     public partial class Projects : Form
     {
         private readonly ProjectsKonstruktorEntities projectsKonstruktorEntities;
+        private bool isEditMode;
         public Projects()
         {
             InitializeComponent();
@@ -17,6 +19,11 @@ namespace ProjectsGenerator_WindowsForms
         {
             //// select * from projects table
             var projects = projectsKonstruktorEntities.Projects.ToList();
+            //var projects = projectsKonstruktorEntities.Projects.Select(q => new
+            //{
+            //    //Id = q.id, 
+            //    Name = q.ProjectName
+            //}).ToList();
             dgvProjects.DataSource = projects;
             dgvProjects.Columns["id"].Visible = false;
             dgvProjects.Columns["Issues"].Visible = false;
@@ -26,36 +33,6 @@ namespace ProjectsGenerator_WindowsForms
             this.dgvProjects.Columns["ProjectState"].HeaderText = "Stan";
             this.dgvProjects.Columns["ProjectDateIn"].HeaderText = "Od dnia";
             this.dgvProjects.Columns["ProjectDateOut"].HeaderText = "Do dnia";
-
-            DataGridViewButtonColumn bOpenProject = new DataGridViewButtonColumn();
-            {
-                //bOpenProject.Name = "button";
-                //bOpenProject.HeaderText = "Otwórz";
-                bOpenProject.Text = "Otwórz";
-                bOpenProject.UseColumnTextForButtonValue = true;
-                this.dgvProjects.Columns.Add(bOpenProject);
-            }
-
-
-            DataGridViewButtonColumn bEditProject = new DataGridViewButtonColumn();
-            {
-                //bEditProject.Name = "button";
-                //bEditProject.HeaderText = "Edytuj";
-                bEditProject.Text = "Edytuj";
-                bEditProject.UseColumnTextForButtonValue = true;
-                this.dgvProjects.Columns.Add(bEditProject);
-            }
-
-            DataGridViewButtonColumn bDeleteProject = new DataGridViewButtonColumn();
-            {
-                //bDeleteProject.Name = "button";
-                //bDeleteProject.HeaderText = "Usuń";
-                bDeleteProject.Text = "Usuń";
-                bDeleteProject.UseColumnTextForButtonValue = true;
-                this.dgvProjects.Columns.Add(bDeleteProject);
-            }
-            //dgvProjects.Columns["Projects1"].Visible = false;
-            //dgvProjects.Columns["Project1"].Visible = false;
         }
 
         private void dgvProjects_Click(object sender, EventArgs e)
@@ -63,25 +40,54 @@ namespace ProjectsGenerator_WindowsForms
 
         }
 
-        //Show Image On Button
-        //private void dgvProjects_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        //{
-        //    if (e.RowIndex < 0)
-        //        return;
+        private void dgvProjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-        //    if (e.ColumnIndex == 0)
-        //    {
-        //        e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+        }
 
-        //        var w = ProjectsGenerator.Properties.Resources.logo.Width;
-        //        var h = ProjectsGenerator.Properties.Resources.logo.Height;
-        //        var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-        //        var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+        protected void MDIChildEditProject(object sender, System.EventArgs e)
+        {
+            EditProject newMdiChild = new EditProject();
+            try
+            {
+                var name = (string) dgvProjects.SelectedRows[0].Cells["ProjectName"].Value;
+                var project = projectsKonstruktorEntities.Projects.FirstOrDefault(q => q.ProjectName == name);
+                
+                if (project != null)
+                {
+                    ((EditProject)newMdiChild).tbProjectName.Text = project.ProjectName;
+                    ((EditProject)newMdiChild).tbProjectAddress.Text = project.ProjectAddress;
+                    ((EditProject)newMdiChild).tbProjectCompany.Text = project.ProjectCompany;
+                    ((EditProject)newMdiChild).tbProjectState.Text = project.ProjectState;
+                    ((EditProject)newMdiChild).dtpProjectCollectionDate.Value = project.ProjectDateIn.Value;
+                    ((EditProject)newMdiChild).dtpProjectCompleteDate.Value = project.ProjectDateOut.Value;
+                    newMdiChild.Show();
+                }
+            }
+            catch
+            {
+                this.Close();
+            }
+            //Projects fL = new Projects();
+            //fL.Show();
+        }
+        private void bEditProject_Click(object sender, EventArgs e)//Project projectToEdit)
+        {
+            isEditMode = true;
+            MDIChildEditProject(sender, e);
+        }
 
-        //        e.Graphics.DrawImage(ProjectsGenerator.Properties.Resources.logo,
-        //            new Rectangle(x, y, w, h));
-        //        e.Handled = true;
-        //    }
-        //}
+        private void bDeleteProject_Click_1(object sender, EventArgs e)
+        {
+            var name = (string)dgvProjects.SelectedRows[0].Cells["ProjectName"].Value;
+            var project = projectsKonstruktorEntities.Projects.FirstOrDefault(q => q.ProjectName == name);
+            if (project != null)
+            {
+                projectsKonstruktorEntities.Projects.Remove(project);
+                projectsKonstruktorEntities.SaveChanges();
+                dgvProjects.Refresh();
+                Projects_Load(sender, e);
+            }
+        }
     }
 }
