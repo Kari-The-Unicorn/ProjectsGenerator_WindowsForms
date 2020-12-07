@@ -24,7 +24,7 @@ namespace ProjectsGenerator_WindowsForms
 
         private void cancelAddingProjectButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void bAddProject_Click(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace ProjectsGenerator_WindowsForms
                     projectsKonstruktorEntities.Projects.Add(project);
                     projectsKonstruktorEntities.SaveChanges();
                     MessageBox.Show("Projekt dodano pomyślnie.");
-                    this.Close();
+                    Close();
                 }
                 else
                 {

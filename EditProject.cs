@@ -1,5 +1,6 @@
 ﻿using ProjectsGenerator_WindowsForms;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -13,41 +14,58 @@ namespace WindowsFormsApp1
             InitializeComponent();
             isEditMode = false;
             projectsKonstruktorEntities = new ProjectsKonstruktorEntities();
-            //tbProjectName.Text = 
-            //var name = (string)dgvProjects.SelectedRows[0].Cells["ProjectName"].Value;
-            //var project = projectsKonstruktorEntities.Projects.FirstOrDefault(q => q.ProjectName == name);
-            //if (project != null)
-            //{
-            //    projectsKonstruktorEntities.Projects.Remove(project);
-            //    projectsKonstruktorEntities.SaveChanges();
-            //    dgvProjects.Refresh();
-            //    Projects_Load(sender, e);
-            //}
-            //projects = new ProjectsKonstruktorEntities();
-            //tbProjectName.Text = projects.projectName;
-            //string projectAddress = tbProjectAddress.Text;
-            //string projectCompany = tbProjectCompany.Text;
-            //string projectState = tbProjectState.Text;
-            //var projectDateIn = dtpProjectCollectionDate.Value;
-            //var projectDateOut = dtpProjectCompleteDate.Value;
-        }
-
-        public EditProject(Project projectToEdit)
-        {
-            InitializeComponent();
-            isEditMode = true;
-            projectsKonstruktorEntities = new ProjectsKonstruktorEntities();
-            //PopulateFields(projectToEdit);
         }
 
         private void bEditProject_Click(object sender, EventArgs e)
         {
+            //projectsKonstruktorEntities.SaveChanges();
+            //((Projects)Owner).dgvProjects.Refresh();
+            //Projects_Load(sender, e);
+            try
+            {
+                var idBase = int.Parse(lblId.Text);
+                Project project = projectsKonstruktorEntities.Projects
+                    .FirstOrDefault(q => q.id == idBase);
+                //if (System.Windows.Forms.Application.OpenForms["EditProject"] != null)
+                //{
+                //    project = (System.Windows.Forms.Application.OpenForms["EditProject"] as Projects)
+                //        .GetSelectedProject();
+                //}
 
+                //if (Application.OpenForms["EditProject"] != null)
+                //{
+                //    project = (Application.OpenForms["EditProject"] as Projects)
+                //        .GetSelectedProject();
+                //}
+
+                if (project != null)
+                {
+                    project.ProjectName = tbProjectName.Text;
+                    project.ProjectAddress = tbProjectAddress.Text;
+                    project.ProjectCompany = tbProjectCompany.Text; 
+                    project.ProjectState = tbProjectState.Text;
+                    project.ProjectDateIn = dtpProjectCollectionDate.Value;
+                    project.ProjectDateOut = dtpProjectCompleteDate.Value;
+                    projectsKonstruktorEntities.SaveChanges();
+
+                    //dgvProjects.Refresh();
+                    //Projects_Load(sender, e);
+                }
+            }
+            catch
+            {
+                Close();
+            }
         }
 
         private void bCancelEditingProject_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
+        }
+
+        private void EditProject_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

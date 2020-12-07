@@ -102,10 +102,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvProjects;
         private System.Windows.Forms.Button bOpenProject;
         private System.Windows.Forms.Button bDeleteProject;
         private System.Windows.Forms.Button bEditProject;
+        public System.Windows.Forms.DataGridView dgvProjects;
     }
 }

@@ -43,6 +43,7 @@
             this.dtpProjectCompleteDate = new System.Windows.Forms.DateTimePicker();
             this.bEditProject = new System.Windows.Forms.Button();
             this.bCancelEditingProject = new System.Windows.Forms.Button();
+            this.lblId = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +75,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(951, 527);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
@@ -202,20 +204,31 @@
             this.bCancelEditingProject.UseVisualStyleBackColor = true;
             this.bCancelEditingProject.Click += new System.EventHandler(this.bCancelEditingProject_Click);
             // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(579, 561);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(0, 17);
+            this.lblId.TabIndex = 6;
+            // 
             // EditProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 614);
+            this.Controls.Add(this.lblId);
             this.Controls.Add(this.bCancelEditingProject);
             this.Controls.Add(this.bEditProject);
             this.Controls.Add(this.tableLayoutPanel1);
             this.HelpButton = true;
             this.Name = "EditProject";
             this.Text = "Edytuj projekt";
+            this.Load += new System.EventHandler(this.EditProject_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -236,5 +249,6 @@
         public System.Windows.Forms.TextBox tbProjectAddress;
         public System.Windows.Forms.DateTimePicker dtpProjectCompleteDate;
         public System.Windows.Forms.DateTimePicker dtpProjectCollectionDate;
+        public System.Windows.Forms.Label lblId;
     }
 }

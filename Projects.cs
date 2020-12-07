@@ -25,7 +25,7 @@ namespace ProjectsGenerator_WindowsForms
             //    Name = q.ProjectName
             //}).ToList();
             dgvProjects.DataSource = projects;
-            dgvProjects.Columns["id"].Visible = false;
+            dgvProjects.Columns["id"].Visible = true;
             dgvProjects.Columns["Issues"].Visible = false;
             this.dgvProjects.Columns["ProjectName"].HeaderText = "Nazwa";
             this.dgvProjects.Columns["ProjectAddress"].HeaderText = "Adres";
@@ -50,11 +50,11 @@ namespace ProjectsGenerator_WindowsForms
             EditProject newMdiChild = new EditProject();
             try
             {
-                var name = (string) dgvProjects.SelectedRows[0].Cells["ProjectName"].Value;
-                var project = projectsKonstruktorEntities.Projects.FirstOrDefault(q => q.ProjectName == name);
-                
+                var project = GetSelectedProject();
+
                 if (project != null)
                 {
+                    ((EditProject)newMdiChild).lblId.Text = project.id.ToString();
                     ((EditProject)newMdiChild).tbProjectName.Text = project.ProjectName;
                     ((EditProject)newMdiChild).tbProjectAddress.Text = project.ProjectAddress;
                     ((EditProject)newMdiChild).tbProjectCompany.Text = project.ProjectCompany;
@@ -71,6 +71,14 @@ namespace ProjectsGenerator_WindowsForms
             //Projects fL = new Projects();
             //fL.Show();
         }
+
+        public Project GetSelectedProject()
+        {
+            var Id = int.Parse(dgvProjects.SelectedRows[0].Cells["id"].Value.ToString());
+            var project = projectsKonstruktorEntities.Projects.FirstOrDefault(q => q.id == Id);
+            return project;
+        }
+
         private void bEditProject_Click(object sender, EventArgs e)//Project projectToEdit)
         {
             isEditMode = true;
