@@ -8,7 +8,7 @@ namespace ProjectsGenerator_WindowsForms
     public partial class Projects : Form
     {
         private readonly ProjectsKonstruktorEntities projectsKonstruktorEntities;
-        private bool isEditMode;
+        //private bool isEditMode;
         public Projects()
         {
             InitializeComponent();
@@ -81,7 +81,7 @@ namespace ProjectsGenerator_WindowsForms
 
         private void bEditProject_Click(object sender, EventArgs e)//Project projectToEdit)
         {
-            isEditMode = true;
+            //isEditMode = true;
             MDIChildEditProject(sender, e);
         }
 
@@ -96,6 +96,38 @@ namespace ProjectsGenerator_WindowsForms
                 dgvProjects.Refresh();
                 Projects_Load(sender, e);
             }
+        }
+
+        protected void MDIChildOpenProject(object sender, System.EventArgs e)
+        {
+            OpenProject newMdiChild = new OpenProject();
+            try
+            {
+                var project = GetSelectedProject();
+
+                if (project != null)
+                {
+                    //((OpenProject)newMdiChild).lblId.Text = project.id.ToString();
+                    //((EditProject)newMdiChild).tbProjectName.Text = project.ProjectName;
+                    //((EditProject)newMdiChild).tbProjectAddress.Text = project.ProjectAddress;
+                    //((EditProject)newMdiChild).tbProjectCompany.Text = project.ProjectCompany;
+                    //((EditProject)newMdiChild).tbProjectState.Text = project.ProjectState;
+                    //((EditProject)newMdiChild).dtpProjectCollectionDate.Value = project.ProjectDateIn.Value;
+                    //((EditProject)newMdiChild).dtpProjectCompleteDate.Value = project.ProjectDateOut.Value;
+                    newMdiChild.Show();
+                }
+            }
+            catch
+            {
+                this.Close();
+            }
+            //Projects fL = new Projects();
+            //fL.Show();
+        }
+
+        private void bOpenProject_Click(object sender, EventArgs e)
+        {
+            MDIChildOpenProject(sender, e);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
         public EditProject()
         {
             InitializeComponent();
-            isEditMode = false;
+            //isEditMode = false;
             projectsKonstruktorEntities = new ProjectsKonstruktorEntities();
         }
 

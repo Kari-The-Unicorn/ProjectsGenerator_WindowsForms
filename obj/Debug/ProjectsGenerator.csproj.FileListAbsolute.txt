@@ -18,3 +18,4 @@ C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\ProjectsGenerator_Windows
 C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\ProjectsGenerator_WindowsForms.Projects.resources
 C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\ProjectsGenerator.csprojAssemblyReference.cache
 C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.EditProject.resources
+C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.OpenProject.resources

@@ -59,6 +59,7 @@
             this.bOpenProject.TabIndex = 1;
             this.bOpenProject.Text = "Otwórz";
             this.bOpenProject.UseVisualStyleBackColor = true;
+            this.bOpenProject.Click += new System.EventHandler(this.bOpenProject_Click);
             // 
             // bDeleteProject
             // 
@@ -84,7 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1664, 1113);
+            this.ClientSize = new System.Drawing.Size(1664, 1055);
             this.Controls.Add(this.bEditProject);
             this.Controls.Add(this.bDeleteProject);
             this.Controls.Add(this.bOpenProject);
