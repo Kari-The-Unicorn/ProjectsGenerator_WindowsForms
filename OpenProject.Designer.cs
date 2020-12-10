@@ -42,6 +42,7 @@ namespace ProjectsGenerator_WindowsForms
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dgvIssues = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.bLoadIssues = new System.Windows.Forms.Button();
             this.pProjectInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIssues)).BeginInit();
             this.SuspendLayout();
@@ -138,13 +139,16 @@ namespace ProjectsGenerator_WindowsForms
             // 
             // dgvIssues
             // 
+            this.dgvIssues.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvIssues.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIssues.Location = new System.Drawing.Point(3, 98);
             this.dgvIssues.Name = "dgvIssues";
             this.dgvIssues.RowHeadersWidth = 51;
             this.dgvIssues.RowTemplate.Height = 24;
-            this.dgvIssues.Size = new System.Drawing.Size(1221, 312);
+            this.dgvIssues.Size = new System.Drawing.Size(1368, 312);
             this.dgvIssues.TabIndex = 1;
+            this.dgvIssues.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvIssues_DataBindingComplete);
             // 
             // label1
             // 
@@ -157,11 +161,22 @@ namespace ProjectsGenerator_WindowsForms
             this.label1.Text = "Lista poprawek:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // bLoadIssues
+            // 
+            this.bLoadIssues.Location = new System.Drawing.Point(297, 65);
+            this.bLoadIssues.Name = "bLoadIssues";
+            this.bLoadIssues.Size = new System.Drawing.Size(161, 29);
+            this.bLoadIssues.TabIndex = 3;
+            this.bLoadIssues.Text = "Załaduj listę";
+            this.bLoadIssues.UseVisualStyleBackColor = true;
+            this.bLoadIssues.Click += new System.EventHandler(this.bLoadIssues_Click);
+            // 
             // OpenProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1383, 450);
+            this.Controls.Add(this.bLoadIssues);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvIssues);
             this.Controls.Add(this.pProjectInfo);
@@ -169,6 +184,7 @@ namespace ProjectsGenerator_WindowsForms
             this.Name = "OpenProject";
             this.Text = "Mój projekt";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.OpenProject_Load);
             this.pProjectInfo.ResumeLayout(false);
             this.pProjectInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIssues)).EndInit();
@@ -190,5 +206,6 @@ namespace ProjectsGenerator_WindowsForms
         public TextBox tbProjectInfoGeneral;
         private Label label1;
         public DataGridView dgvIssues;
+        private Button bLoadIssues;
     }
 }
