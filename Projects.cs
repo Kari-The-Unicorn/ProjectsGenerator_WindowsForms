@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using WindowsFormsApp1;
+using ProjectsGenerator_WindowsForms;
 
 namespace ProjectsGenerator_WindowsForms
 {
@@ -47,26 +47,26 @@ namespace ProjectsGenerator_WindowsForms
 
         protected void MDIChildEditProject(object sender, System.EventArgs e)
         {
-            EditProject newMdiChild = new EditProject();
+            EditProject newMdiChildEdit = new EditProject();
             try
             {
                 var project = GetSelectedProject();
 
                 if (project != null)
                 {
-                    ((EditProject)newMdiChild).lblId.Text = project.id.ToString();
-                    ((EditProject)newMdiChild).tbProjectName.Text = project.ProjectName;
-                    ((EditProject)newMdiChild).tbProjectAddress.Text = project.ProjectAddress;
-                    ((EditProject)newMdiChild).tbProjectCompany.Text = project.ProjectCompany;
-                    ((EditProject)newMdiChild).tbProjectState.Text = project.ProjectState;
-                    ((EditProject)newMdiChild).dtpProjectCollectionDate.Value = project.ProjectDateIn.Value;
-                    ((EditProject)newMdiChild).dtpProjectCompleteDate.Value = project.ProjectDateOut.Value;
-                    newMdiChild.Show();
+                    ((EditProject)newMdiChildEdit).lblId.Text = project.id.ToString();
+                    ((EditProject)newMdiChildEdit).tbProjectName.Text = project.ProjectName;
+                    ((EditProject)newMdiChildEdit).tbProjectAddress.Text = project.ProjectAddress.ToString();
+                    ((EditProject)newMdiChildEdit).tbProjectCompany.Text = project.ProjectCompany.ToString();
+                    ((EditProject)newMdiChildEdit).tbProjectState.Text = project.ProjectState.ToString();
+                    ((EditProject)newMdiChildEdit).dtpProjectCollectionDate.Value = project.ProjectDateIn.Value;
+                    ((EditProject)newMdiChildEdit).dtpProjectCompleteDate.Value = project.ProjectDateOut.Value;
+                    newMdiChildEdit.Show();
                 }
             }
             catch
             {
-                this.Close();
+                Close();
             }
             //Projects fL = new Projects();
             //fL.Show();
@@ -100,26 +100,26 @@ namespace ProjectsGenerator_WindowsForms
 
         protected void MDIChildOpenProject(object sender, System.EventArgs e)
         {
-            OpenProject newMdiChild = new OpenProject();
+            OpenProject newMdiChildOpen = new OpenProject();
             try
             {
                 var project = GetSelectedProject();
 
                 if (project != null)
                 {
-                    //((OpenProject)newMdiChild).lblId.Text = project.id.ToString();
-                    //((EditProject)newMdiChild).tbProjectName.Text = project.ProjectName;
-                    //((EditProject)newMdiChild).tbProjectAddress.Text = project.ProjectAddress;
-                    //((EditProject)newMdiChild).tbProjectCompany.Text = project.ProjectCompany;
-                    //((EditProject)newMdiChild).tbProjectState.Text = project.ProjectState;
-                    //((EditProject)newMdiChild).dtpProjectCollectionDate.Value = project.ProjectDateIn.Value;
-                    //((EditProject)newMdiChild).dtpProjectCompleteDate.Value = project.ProjectDateOut.Value;
-                    newMdiChild.Show();
+                    ((OpenProject)newMdiChildOpen).tbProjectInfoGeneral.Text = project.id.ToString()+"; ";
+                    ((OpenProject)newMdiChildOpen).tbProjectInfoGeneral.Text += project.ProjectName.ToString().Trim() + "; ";
+                    ((OpenProject)newMdiChildOpen).tbProjectInfoGeneral.Text += project.ProjectAddress.ToString().Trim() + "; ";
+                    ((OpenProject)newMdiChildOpen).tbProjectInfoGeneral.Text += project.ProjectCompany.ToString().Trim();
+                    ((OpenProject)newMdiChildOpen).tbProjectInfoGeneral.Text += " ( " + project.ProjectState.ToString().Trim() + " )";
+                    ((OpenProject)newMdiChildOpen).tbProjectInfoDateIn.Text += project.ProjectDateIn.ToString();
+                    ((OpenProject)newMdiChildOpen).tbProjectInfoDateOut.Text += project.ProjectDateOut.ToString();
+                    newMdiChildOpen.Show();
                 }
             }
             catch
             {
-                this.Close();
+                Close();
             }
             //Projects fL = new Projects();
             //fL.Show();
