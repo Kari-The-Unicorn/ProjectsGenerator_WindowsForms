@@ -237,6 +237,7 @@
             this.bUploadImage.TabIndex = 12;
             this.bUploadImage.Text = "Pobierz plik (PDF)";
             this.bUploadImage.UseVisualStyleBackColor = true;
+            this.bUploadImage.Click += new System.EventHandler(this.bUploadImage_Click);
             // 
             // AddIssue
             // 

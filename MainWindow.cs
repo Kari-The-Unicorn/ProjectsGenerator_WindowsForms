@@ -28,16 +28,7 @@ namespace ProjectsGenerator_WindowsForms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Title = "Upload file";
-            openFile.Filter = "PDF|*.pdf";
-
-            if (openFile.ShowDialog() == DialogResult.OK)
-            {
-                //textBox1.Text = openFile.FileName;
-                //textBox1.Text = openFile.SafeFileName;
-                MessageBox.Show("Click OK to confirm: " + openFile.SafeFileName);
-            }
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

@@ -44,6 +44,9 @@
             this.dtpProjectCompleteDate = new System.Windows.Forms.DateTimePicker();
             this.bAddProject = new System.Windows.Forms.Button();
             this.bCancelAddingProject = new System.Windows.Forms.Button();
+            this.lUploadImage = new System.Windows.Forms.Label();
+            this.bUploadImage = new System.Windows.Forms.Button();
+            this.lLoadedImageInfo = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +55,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.82019F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.17981F));
+            this.tableLayoutPanel1.Controls.Add(this.lUploadImage, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.tbProjectState, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.tbProjectCompany, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.projectStateLabel, 0, 3);
@@ -64,17 +68,21 @@
             this.tableLayoutPanel1.Controls.Add(this.tbProjectName, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.dtpProjectCollectionDate, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.dtpProjectCompleteDate, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.bUploadImage, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.lLoadedImageInfo, 1, 7);
             this.tableLayoutPanel1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.4916F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.49159F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.49159F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.49159F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.49159F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.28774F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.98789F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.266402F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(951, 527);
             this.tableLayoutPanel1.TabIndex = 2;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
@@ -82,7 +90,7 @@
             // tbProjectState
             // 
             this.tbProjectState.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbProjectState.Location = new System.Drawing.Point(201, 264);
+            this.tbProjectState.Location = new System.Drawing.Point(201, 198);
             this.tbProjectState.Name = "tbProjectState";
             this.tbProjectState.Size = new System.Drawing.Size(739, 45);
             this.tbProjectState.TabIndex = 12;
@@ -90,34 +98,34 @@
             // tbProjectCompany
             // 
             this.tbProjectCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbProjectCompany.Location = new System.Drawing.Point(201, 177);
+            this.tbProjectCompany.Location = new System.Drawing.Point(201, 133);
             this.tbProjectCompany.Name = "tbProjectCompany";
             this.tbProjectCompany.Size = new System.Drawing.Size(739, 45);
             this.tbProjectCompany.TabIndex = 11;
             // 
             // projectStateLabel
             // 
-            this.projectStateLabel.Location = new System.Drawing.Point(3, 261);
+            this.projectStateLabel.Location = new System.Drawing.Point(3, 195);
             this.projectStateLabel.Name = "projectStateLabel";
-            this.projectStateLabel.Size = new System.Drawing.Size(191, 87);
+            this.projectStateLabel.Size = new System.Drawing.Size(191, 65);
             this.projectStateLabel.TabIndex = 6;
             this.projectStateLabel.Text = "Status";
             this.projectStateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // projectCompanyLabel
             // 
-            this.projectCompanyLabel.Location = new System.Drawing.Point(3, 174);
+            this.projectCompanyLabel.Location = new System.Drawing.Point(3, 130);
             this.projectCompanyLabel.Name = "projectCompanyLabel";
-            this.projectCompanyLabel.Size = new System.Drawing.Size(191, 87);
+            this.projectCompanyLabel.Size = new System.Drawing.Size(191, 65);
             this.projectCompanyLabel.TabIndex = 4;
             this.projectCompanyLabel.Text = "Firma";
             this.projectCompanyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // projectAddressLabel
             // 
-            this.projectAddressLabel.Location = new System.Drawing.Point(3, 87);
+            this.projectAddressLabel.Location = new System.Drawing.Point(3, 65);
             this.projectAddressLabel.Name = "projectAddressLabel";
-            this.projectAddressLabel.Size = new System.Drawing.Size(191, 87);
+            this.projectAddressLabel.Size = new System.Drawing.Size(191, 65);
             this.projectAddressLabel.TabIndex = 2;
             this.projectAddressLabel.Text = "Adres";
             this.projectAddressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -126,25 +134,25 @@
             // 
             this.projectNameLabel.Location = new System.Drawing.Point(3, 0);
             this.projectNameLabel.Name = "projectNameLabel";
-            this.projectNameLabel.Size = new System.Drawing.Size(191, 87);
+            this.projectNameLabel.Size = new System.Drawing.Size(191, 65);
             this.projectNameLabel.TabIndex = 0;
             this.projectNameLabel.Text = "Nazwa projektu";
             this.projectNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // projectCollectionDateLabel
             // 
-            this.projectCollectionDateLabel.Location = new System.Drawing.Point(3, 348);
+            this.projectCollectionDateLabel.Location = new System.Drawing.Point(3, 260);
             this.projectCollectionDateLabel.Name = "projectCollectionDateLabel";
-            this.projectCollectionDateLabel.Size = new System.Drawing.Size(191, 87);
+            this.projectCollectionDateLabel.Size = new System.Drawing.Size(191, 65);
             this.projectCollectionDateLabel.TabIndex = 7;
             this.projectCollectionDateLabel.Text = "Data oddania";
             this.projectCollectionDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // projectCompleteDateLabel
             // 
-            this.projectCompleteDateLabel.Location = new System.Drawing.Point(3, 435);
+            this.projectCompleteDateLabel.Location = new System.Drawing.Point(3, 325);
             this.projectCompleteDateLabel.Name = "projectCompleteDateLabel";
-            this.projectCompleteDateLabel.Size = new System.Drawing.Size(191, 87);
+            this.projectCompleteDateLabel.Size = new System.Drawing.Size(191, 64);
             this.projectCompleteDateLabel.TabIndex = 8;
             this.projectCompleteDateLabel.Text = "Data ukończenia";
             this.projectCompleteDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -153,7 +161,7 @@
             // tbProjectAddress
             // 
             this.tbProjectAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbProjectAddress.Location = new System.Drawing.Point(201, 90);
+            this.tbProjectAddress.Location = new System.Drawing.Point(201, 68);
             this.tbProjectAddress.Name = "tbProjectAddress";
             this.tbProjectAddress.Size = new System.Drawing.Size(739, 45);
             this.tbProjectAddress.TabIndex = 10;
@@ -169,7 +177,7 @@
             // dtpProjectCollectionDate
             // 
             this.dtpProjectCollectionDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpProjectCollectionDate.Location = new System.Drawing.Point(201, 351);
+            this.dtpProjectCollectionDate.Location = new System.Drawing.Point(201, 263);
             this.dtpProjectCollectionDate.Name = "dtpProjectCollectionDate";
             this.dtpProjectCollectionDate.Size = new System.Drawing.Size(273, 38);
             this.dtpProjectCollectionDate.TabIndex = 15;
@@ -178,7 +186,7 @@
             // dtpProjectCompleteDate
             // 
             this.dtpProjectCompleteDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpProjectCompleteDate.Location = new System.Drawing.Point(201, 438);
+            this.dtpProjectCompleteDate.Location = new System.Drawing.Point(201, 328);
             this.dtpProjectCompleteDate.Name = "dtpProjectCompleteDate";
             this.dtpProjectCompleteDate.Size = new System.Drawing.Size(273, 38);
             this.dtpProjectCompleteDate.TabIndex = 16;
@@ -205,6 +213,35 @@
             this.bCancelAddingProject.UseVisualStyleBackColor = true;
             this.bCancelAddingProject.Click += new System.EventHandler(this.cancelAddingProjectButton_Click);
             // 
+            // lUploadImage
+            // 
+            this.lUploadImage.Location = new System.Drawing.Point(3, 389);
+            this.lUploadImage.Name = "lUploadImage";
+            this.lUploadImage.Size = new System.Drawing.Size(191, 65);
+            this.lUploadImage.TabIndex = 17;
+            this.lUploadImage.Text = "Załaduj plik";
+            this.lUploadImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bUploadImage
+            // 
+            this.bUploadImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bUploadImage.Location = new System.Drawing.Point(201, 392);
+            this.bUploadImage.Name = "bUploadImage";
+            this.bUploadImage.Size = new System.Drawing.Size(191, 42);
+            this.bUploadImage.TabIndex = 18;
+            this.bUploadImage.Text = "Załaduj PDF";
+            this.bUploadImage.UseVisualStyleBackColor = true;
+            this.bUploadImage.Click += new System.EventHandler(this.bUploadImage_Click_1);
+            // 
+            // lLoadedImageInfo
+            // 
+            this.lLoadedImageInfo.Location = new System.Drawing.Point(201, 483);
+            this.lLoadedImageInfo.Name = "lLoadedImageInfo";
+            this.lLoadedImageInfo.Size = new System.Drawing.Size(507, 44);
+            this.lLoadedImageInfo.TabIndex = 19;
+            this.lLoadedImageInfo.Text = "Wybierz plik";
+            this.lLoadedImageInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // AddProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -224,8 +261,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button bAddProject;
         private System.Windows.Forms.Button bCancelAddingProject;
         private System.Windows.Forms.Label projectStateLabel;
@@ -240,5 +275,9 @@
         private System.Windows.Forms.TextBox tbProjectAddress;
         private System.Windows.Forms.DateTimePicker dtpProjectCompleteDate;
         private System.Windows.Forms.DateTimePicker dtpProjectCollectionDate;
+        private System.Windows.Forms.Label lUploadImage;
+        private System.Windows.Forms.Button bUploadImage;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label lLoadedImageInfo;
     }
 }

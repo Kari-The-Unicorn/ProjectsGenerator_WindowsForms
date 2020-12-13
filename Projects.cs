@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Windows.Forms;
 using WindowsFormsApp1;
-using ProjectsGenerator_WindowsForms;
 
 namespace ProjectsGenerator_WindowsForms
 {
@@ -108,7 +107,7 @@ namespace ProjectsGenerator_WindowsForms
 
                 if (project != null)
                 {
-                    ((OpenProject)newMdiChildOpen).tbProjectInfoGeneral.Text = project.id.ToString()+"; ";
+                    ((OpenProject)newMdiChildOpen).tbProjectInfoGeneral.Text = project.id.ToString() + "; ";
                     ((OpenProject)newMdiChildOpen).tbProjectInfoGeneral.Text += project.ProjectName.ToString().Trim() + "; ";
                     ((OpenProject)newMdiChildOpen).tbProjectInfoGeneral.Text += project.ProjectAddress.ToString().Trim() + "; ";
                     ((OpenProject)newMdiChildOpen).tbProjectInfoGeneral.Text += project.ProjectCompany.ToString().Trim();
