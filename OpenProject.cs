@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 
 namespace ProjectsGenerator_WindowsForms
 {
@@ -49,8 +50,47 @@ namespace ProjectsGenerator_WindowsForms
             var issues = projectsKonstruktorEntities.Issues.ToList();
             dgvIssues.DataSource = issues;
             dgvIssues.Columns["id"].HeaderText = "Numer";
-            dgvIssues.Columns["IssueName"].HeaderText = "Opis";
-            dgvIssues.Columns["ProjectId"].HeaderText = "Nr projektu";
+            dgvIssues.Columns["IssueName"].HeaderText = "Nazwa poprawki";
+            dgvIssues.Columns["IssueDescription"].HeaderText = "Opis";
+            dgvIssues.Columns["IssuePlace"].HeaderText = "Lokalizacja";
+            dgvIssues.Columns["ProjectId"].Visible = false;
+            dgvIssues.Columns["ImageId"].Visible = false;
+            dgvIssues.Columns["IssueCoordinateX"].Visible = false;
+            dgvIssues.Columns["IssueCoordinateY"].Visible = false;
+            dgvIssues.Columns["Project"].Visible = false;
+            //dgvIssues.Columns["ProjectId"].HeaderText = "Nr projektu";
+        }
+
+        private void bAddIssue_Click(object sender, EventArgs e)
+        {
+            AddIssue newMdiChildEdit = new AddIssue();
+            newMdiChildEdit.Show();
+            //try
+            //{
+            //var project = GetSelectedProject();
+
+            //if (project != null)
+            //{
+            //    ((EditProject)newMdiChildEdit).lblId.Text = project.id.ToString();
+            //    ((EditProject)newMdiChildEdit).tbProjectName.Text = project.ProjectName;
+            //    ((EditProject)newMdiChildEdit).tbProjectAddress.Text = project.ProjectAddress.ToString();
+            //    ((EditProject)newMdiChildEdit).tbProjectCompany.Text = project.ProjectCompany.ToString();
+            //    ((EditProject)newMdiChildEdit).tbProjectState.Text = project.ProjectState.ToString();
+            //    ((EditProject)newMdiChildEdit).dtpProjectCollectionDate.Value = project.ProjectDateIn.Value;
+            //    ((EditProject)newMdiChildEdit).dtpProjectCompleteDate.Value = project.ProjectDateOut.Value;
+            //    newMdiChildEdit.Show();
+            //}
+            //}
+            //catch
+            //{
+            //    Close();
+            //}
+
+        }
+
+        private void dgvIssues_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

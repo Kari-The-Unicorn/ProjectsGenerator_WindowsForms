@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 using ProjectsGenerator_WindowsForms;
 
 namespace ProjectsGenerator_WindowsForms

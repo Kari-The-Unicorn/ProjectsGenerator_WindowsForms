@@ -19,3 +19,4 @@ C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\ProjectsGenerator_Windows
 C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\ProjectsGenerator_WindowsForms.csproj.CopyComplete
 C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AddIssue.resources

@@ -38,7 +38,7 @@ namespace ProjectsGenerator_WindowsForms
             this.lProjectInfoDateIn = new System.Windows.Forms.Label();
             this.tbProjectInfoGeneral = new System.Windows.Forms.TextBox();
             this.lProjectInfo = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bAddIssue = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dgvIssues = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -122,14 +122,15 @@ namespace ProjectsGenerator_WindowsForms
             this.lProjectInfo.TabIndex = 1;
             this.lProjectInfo.Text = "Projekt:";
             // 
-            // button1
+            // bAddIssue
             // 
-            this.button1.Location = new System.Drawing.Point(1221, 1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 42);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Utwórz poprawkę";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bAddIssue.Location = new System.Drawing.Point(1221, 1);
+            this.bAddIssue.Name = "bAddIssue";
+            this.bAddIssue.Size = new System.Drawing.Size(161, 42);
+            this.bAddIssue.TabIndex = 0;
+            this.bAddIssue.Text = "Utwórz poprawkę";
+            this.bAddIssue.UseVisualStyleBackColor = true;
+            this.bAddIssue.Click += new System.EventHandler(this.bAddIssue_Click);
             // 
             // imageList1
             // 
@@ -148,6 +149,7 @@ namespace ProjectsGenerator_WindowsForms
             this.dgvIssues.RowTemplate.Height = 24;
             this.dgvIssues.Size = new System.Drawing.Size(1368, 312);
             this.dgvIssues.TabIndex = 1;
+            this.dgvIssues.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIssues_CellContentClick);
             this.dgvIssues.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvIssues_DataBindingComplete);
             // 
             // label1
@@ -180,7 +182,7 @@ namespace ProjectsGenerator_WindowsForms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvIssues);
             this.Controls.Add(this.pProjectInfo);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bAddIssue);
             this.Name = "OpenProject";
             this.Text = "Mój projekt";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -196,7 +198,7 @@ namespace ProjectsGenerator_WindowsForms
         #endregion
 
         private System.Windows.Forms.Panel pProjectInfo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bAddIssue;
         private Label lProjectInfo;
         private ImageList imageList1;
         private Label lProjectInfoDateOut;

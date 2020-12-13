@@ -4,6 +4,11 @@
     <EntitySetMapping Name="Issues">
       <EntityTypeMapping TypeName="ProjectsKonstruktorModel.Issue">
         <MappingFragment StoreEntitySet="Issues">
+          <ScalarProperty Name="IssueCoordinateY" ColumnName="IssueCoordinateY" />
+          <ScalarProperty Name="IssueCoordinateX" ColumnName="IssueCoordinateX" />
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+          <ScalarProperty Name="IssuePlace" ColumnName="IssuePlace" />
+          <ScalarProperty Name="IssueDescription" ColumnName="IssueDescription" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="IssueName" ColumnName="IssueName" />
           <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />

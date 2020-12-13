@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ProjectsKonstruktorModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ProjectsKonstruktorModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Issues">
           <Key>
             <PropertyRef Name="id" />
@@ -12,6 +12,11 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IssueName" Type="nchar" MaxLength="100" />
           <Property Name="ProjectId" Type="int" />
+          <Property Name="IssueDescription" Type="nchar" MaxLength="300" />
+          <Property Name="IssuePlace" Type="nchar" MaxLength="50" />
+          <Property Name="ImageId" Type="int" />
+          <Property Name="IssueCoordinateX" Type="int" />
+          <Property Name="IssueCoordinateY" Type="int" />
         </EntityType>
         <EntityType Name="Projects">
           <Key>
@@ -61,8 +66,7 @@
             <End Role="Projects1" EntitySet="Projects" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ProjectsKonstruktorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -74,6 +78,11 @@
           <Property Name="IssueName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <Property Name="ProjectId" Type="Int32" />
           <NavigationProperty Name="Project" Relationship="Self.FK_Issues_Issues" FromRole="Issues" ToRole="Projects" />
+          <Property Name="IssueDescription" Type="String" MaxLength="300" FixedLength="true" Unicode="true" />
+          <Property Name="IssuePlace" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="ImageId" Type="Int32" />
+          <Property Name="IssueCoordinateX" Type="Int32" />
+          <Property Name="IssueCoordinateY" Type="Int32" />
         </EntityType>
         <EntityType Name="Project">
           <Key>
@@ -133,6 +142,11 @@
           <EntitySetMapping Name="Issues">
             <EntityTypeMapping TypeName="ProjectsKonstruktorModel.Issue">
               <MappingFragment StoreEntitySet="Issues">
+                <ScalarProperty Name="IssueCoordinateY" ColumnName="IssueCoordinateY" />
+                <ScalarProperty Name="IssueCoordinateX" ColumnName="IssueCoordinateX" />
+                <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+                <ScalarProperty Name="IssuePlace" ColumnName="IssuePlace" />
+                <ScalarProperty Name="IssueDescription" ColumnName="IssueDescription" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="IssueName" ColumnName="IssueName" />
                 <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />

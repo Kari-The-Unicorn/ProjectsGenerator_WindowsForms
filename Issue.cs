@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjectsGenerator_WindowsForms
+namespace WindowsFormsApp1
 {
     using System;
     using System.Collections.Generic;
@@ -17,6 +17,11 @@ namespace ProjectsGenerator_WindowsForms
         public int id { get; set; }
         public string IssueName { get; set; }
         public Nullable<int> ProjectId { get; set; }
+        public string IssueDescription { get; set; }
+        public string IssuePlace { get; set; }
+        public Nullable<int> ImageId { get; set; }
+        public Nullable<int> IssueCoordinateX { get; set; }
+        public Nullable<int> IssueCoordinateY { get; set; }
     
         public virtual Project Project { get; set; }
     }

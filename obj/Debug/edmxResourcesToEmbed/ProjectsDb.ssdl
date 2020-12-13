@@ -7,6 +7,11 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IssueName" Type="nchar" MaxLength="100" />
     <Property Name="ProjectId" Type="int" />
+    <Property Name="IssueDescription" Type="nchar" MaxLength="300" />
+    <Property Name="IssuePlace" Type="nchar" MaxLength="50" />
+    <Property Name="ImageId" Type="int" />
+    <Property Name="IssueCoordinateX" Type="int" />
+    <Property Name="IssueCoordinateY" Type="int" />
   </EntityType>
   <EntityType Name="Projects">
     <Key>

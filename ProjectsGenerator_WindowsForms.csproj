@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddIssue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddIssue.Designer.cs">
+      <DependentUpon>AddIssue.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
       <DependentUpon>ProjectsDb.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddIssue.resx">
+      <DependentUpon>AddIssue.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditProject.resx">
       <DependentUpon>EditProject.cs</DependentUpon>
     </EmbeddedResource>

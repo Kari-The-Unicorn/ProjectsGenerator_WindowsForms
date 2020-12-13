@@ -40,10 +40,10 @@
             this.projectCompleteDateLabel = new System.Windows.Forms.Label();
             this.tbProjectAddress = new System.Windows.Forms.TextBox();
             this.tbProjectName = new System.Windows.Forms.MaskedTextBox();
-            this.bAddProject = new System.Windows.Forms.Button();
-            this.bCancelAddingProject = new System.Windows.Forms.Button();
             this.dtpProjectCollectionDate = new System.Windows.Forms.DateTimePicker();
             this.dtpProjectCompleteDate = new System.Windows.Forms.DateTimePicker();
+            this.bAddProject = new System.Windows.Forms.Button();
+            this.bCancelAddingProject = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -166,6 +166,23 @@
             this.tbProjectName.Size = new System.Drawing.Size(739, 45);
             this.tbProjectName.TabIndex = 9;
             // 
+            // dtpProjectCollectionDate
+            // 
+            this.dtpProjectCollectionDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpProjectCollectionDate.Location = new System.Drawing.Point(201, 351);
+            this.dtpProjectCollectionDate.Name = "dtpProjectCollectionDate";
+            this.dtpProjectCollectionDate.Size = new System.Drawing.Size(273, 38);
+            this.dtpProjectCollectionDate.TabIndex = 15;
+            this.dtpProjectCollectionDate.Value = new System.DateTime(2020, 11, 29, 21, 23, 3, 0);
+            // 
+            // dtpProjectCompleteDate
+            // 
+            this.dtpProjectCompleteDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpProjectCompleteDate.Location = new System.Drawing.Point(201, 438);
+            this.dtpProjectCompleteDate.Name = "dtpProjectCompleteDate";
+            this.dtpProjectCompleteDate.Size = new System.Drawing.Size(273, 38);
+            this.dtpProjectCompleteDate.TabIndex = 16;
+            // 
             // bAddProject
             // 
             this.bAddProject.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -187,23 +204,6 @@
             this.bCancelAddingProject.Text = "Anuluj";
             this.bCancelAddingProject.UseVisualStyleBackColor = true;
             this.bCancelAddingProject.Click += new System.EventHandler(this.cancelAddingProjectButton_Click);
-            // 
-            // dtpProjectCollectionDate
-            // 
-            this.dtpProjectCollectionDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpProjectCollectionDate.Location = new System.Drawing.Point(201, 351);
-            this.dtpProjectCollectionDate.Name = "dtpProjectCollectionDate";
-            this.dtpProjectCollectionDate.Size = new System.Drawing.Size(273, 38);
-            this.dtpProjectCollectionDate.TabIndex = 15;
-            this.dtpProjectCollectionDate.Value = new System.DateTime(2020, 11, 29, 21, 23, 3, 0);
-            // 
-            // dtpProjectCompleteDate
-            // 
-            this.dtpProjectCompleteDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpProjectCompleteDate.Location = new System.Drawing.Point(201, 438);
-            this.dtpProjectCompleteDate.Name = "dtpProjectCompleteDate";
-            this.dtpProjectCompleteDate.Size = new System.Drawing.Size(273, 38);
-            this.dtpProjectCompleteDate.TabIndex = 16;
             // 
             // AddProject
             // 
