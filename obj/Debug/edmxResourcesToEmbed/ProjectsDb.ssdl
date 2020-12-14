@@ -13,6 +13,14 @@
     <Property Name="IssueCoordinateX" Type="int" />
     <Property Name="IssueCoordinateY" Type="int" />
   </EntityType>
+  <EntityType Name="Pictures">
+    <Key>
+      <PropertyRef Name="PictureId" />
+    </Key>
+    <Property Name="PictureId" Type="int" Nullable="false" />
+    <Property Name="PictureName" Type="nvarchar" MaxLength="150" />
+    <Property Name="PictureContent" Type="image" />
+  </EntityType>
   <EntityType Name="Projects">
     <Key>
       <PropertyRef Name="id" />
@@ -24,8 +32,21 @@
     <Property Name="ProjectState" Type="nchar" MaxLength="100" />
     <Property Name="ProjectDateIn" Type="datetime" />
     <Property Name="ProjectDateOut" Type="datetime" />
+    <Property Name="ImageId" Type="int" />
   </EntityType>
   <Association Name="FK_Issues_Issues">
+    <End Role="Pictures" Type="Self.Pictures" Multiplicity="0..1" />
+    <End Role="Issues" Type="Self.Issues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pictures">
+        <PropertyRef Name="PictureId" />
+      </Principal>
+      <Dependent Role="Issues">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Issues_Projects">
     <End Role="Projects" Type="Self.Projects" Multiplicity="0..1" />
     <End Role="Issues" Type="Self.Issues" Multiplicity="*" />
     <ReferentialConstraint>
@@ -38,27 +59,32 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Projects_Projects">
-    <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
-    <End Role="Projects1" Type="Self.Projects" Multiplicity="0..1" />
+    <End Role="Pictures" Type="Self.Pictures" Multiplicity="0..1" />
+    <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Projects">
-        <PropertyRef Name="id" />
+      <Principal Role="Pictures">
+        <PropertyRef Name="PictureId" />
       </Principal>
-      <Dependent Role="Projects1">
-        <PropertyRef Name="id" />
+      <Dependent Role="Projects">
+        <PropertyRef Name="ImageId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="ProjectsKonstruktorModelStoreContainer">
     <EntitySet Name="Issues" EntityType="Self.Issues" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pictures" EntityType="Self.Pictures" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Issues_Issues" Association="Self.FK_Issues_Issues">
+      <End Role="Pictures" EntitySet="Pictures" />
+      <End Role="Issues" EntitySet="Issues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Issues_Projects" Association="Self.FK_Issues_Projects">
       <End Role="Projects" EntitySet="Projects" />
       <End Role="Issues" EntitySet="Issues" />
     </AssociationSet>
     <AssociationSet Name="FK_Projects_Projects" Association="Self.FK_Projects_Projects">
+      <End Role="Pictures" EntitySet="Pictures" />
       <End Role="Projects" EntitySet="Projects" />
-      <End Role="Projects1" EntitySet="Projects" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

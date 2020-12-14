@@ -12,25 +12,22 @@ namespace WindowsFormsApp1
     using System;
     using System.Collections.Generic;
     
-    public partial class Project
+    public partial class Picture
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Project()
+        public Picture()
         {
             this.Issues = new HashSet<Issue>();
+            this.Projects = new HashSet<Project>();
         }
     
-        public int id { get; set; }
-        public string ProjectName { get; set; }
-        public string ProjectAddress { get; set; }
-        public string ProjectCompany { get; set; }
-        public string ProjectState { get; set; }
-        public Nullable<System.DateTime> ProjectDateIn { get; set; }
-        public Nullable<System.DateTime> ProjectDateOut { get; set; }
-        public Nullable<int> ImageId { get; set; }
+        public int PictureId { get; set; }
+        public string PictureName { get; set; }
+        public byte[] PictureContent { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Issue> Issues { get; set; }
-        public virtual Picture Picture { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Project> Projects { get; set; }
     }
 }

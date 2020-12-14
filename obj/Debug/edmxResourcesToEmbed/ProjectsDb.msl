@@ -9,22 +9,32 @@
           <ScalarProperty Name="ImageId" ColumnName="ImageId" />
           <ScalarProperty Name="IssuePlace" ColumnName="IssuePlace" />
           <ScalarProperty Name="IssueDescription" ColumnName="IssueDescription" />
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="IssueName" ColumnName="IssueName" />
           <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="IssueName" ColumnName="IssueName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pictures">
+      <EntityTypeMapping TypeName="ProjectsKonstruktorModel.Picture">
+        <MappingFragment StoreEntitySet="Pictures">
+          <ScalarProperty Name="PictureContent" ColumnName="PictureContent" />
+          <ScalarProperty Name="PictureName" ColumnName="PictureName" />
+          <ScalarProperty Name="PictureId" ColumnName="PictureId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Projects">
       <EntityTypeMapping TypeName="ProjectsKonstruktorModel.Project">
         <MappingFragment StoreEntitySet="Projects">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
-          <ScalarProperty Name="ProjectAddress" ColumnName="ProjectAddress" />
-          <ScalarProperty Name="ProjectCompany" ColumnName="ProjectCompany" />
-          <ScalarProperty Name="ProjectState" ColumnName="ProjectState" />
-          <ScalarProperty Name="ProjectDateIn" ColumnName="ProjectDateIn" />
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
           <ScalarProperty Name="ProjectDateOut" ColumnName="ProjectDateOut" />
+          <ScalarProperty Name="ProjectDateIn" ColumnName="ProjectDateIn" />
+          <ScalarProperty Name="ProjectState" ColumnName="ProjectState" />
+          <ScalarProperty Name="ProjectCompany" ColumnName="ProjectCompany" />
+          <ScalarProperty Name="ProjectAddress" ColumnName="ProjectAddress" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

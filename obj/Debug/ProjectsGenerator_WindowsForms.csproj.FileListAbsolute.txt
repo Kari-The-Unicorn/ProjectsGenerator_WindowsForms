@@ -6,7 +6,6 @@ C:\Users\karol\source\repos\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer
 C:\Users\karol\source\repos\WindowsFormsApp1\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\karol\source\repos\WindowsFormsApp1\bin\Debug\EntityFramework.xml
 C:\Users\karol\source\repos\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\ProjectsGenerator_WindowsForms.csprojAssemblyReference.cache
 C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.g.resources
 C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\ProjectsGenerator_WindowsForms.EditProject.resources
 C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\ProjectsGenerator_WindowsForms.MainWindow.resources

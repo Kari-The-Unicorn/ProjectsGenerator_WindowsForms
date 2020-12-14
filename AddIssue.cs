@@ -33,20 +33,7 @@ namespace WindowsFormsApp1
 
         private void bUploadImage_Click(object sender, EventArgs e)
         {
-            //OpenFileDialog openFile = new OpenFileDialog();
-            //openFile.Title = "Upload file";
-            //openFile.Filter = "PDF|*.pdf";
 
-            //if (openFile.ShowDialog() == DialogResult.OK)
-            //{
-            //    //textBox1.Text = openFile.FileName;
-            //    //textBox1.Text = openFile.SafeFileName;
-            //    DialogResult result = MessageBox.Show("Click OK to confirm: " + openFile.SafeFileName);
-            //    if (result == DialogResult.OK)
-            //    {
-            //        bUploadImage.Text = "Otwórz";
-            //    }
-            //}
         }
     }
 }

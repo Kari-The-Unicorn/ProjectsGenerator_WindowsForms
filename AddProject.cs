@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using WindowsFormsApp1;
 
@@ -6,7 +8,8 @@ namespace ProjectsGenerator_WindowsForms
 {
     public partial class AddProject : Form
     {
-        private readonly OpenFileDialog openFile;
+        private OpenFileDialog openFile;
+        private string fileName;
 
         //private readonly ProjectsKonstruktorEntities projectsKonstruktorEntities;
         public AddProject()
@@ -28,6 +31,29 @@ namespace ProjectsGenerator_WindowsForms
         private void cancelAddingProjectButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void bUploadImage_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Title = "Upload file";
+            openFile.Filter = "PDF|*.pdf";
+
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                //textBox1.Text = openFile.FileName;
+                //textBox1.Text = openFile.SafeFileName;
+                //var x = NewMethod(openFile, out var result);
+                //NewMethod(openFile, out var result);
+                MessageBox.Show("Click OK to confirm: " + openFile.SafeFileName);
+                if (openFile.FileName != null)
+                {
+                    //tbLoadedImageInfo.Clear();
+                    lLoadedImageInfo.Text = "Wybrany plik: " + openFile.SafeFileName;
+                    fileName = openFile.FileName;
+                    //tbLoadedImageInfo.Show();
+                }
+            }
         }
 
         private void bAddProject_Click(object sender, EventArgs e)
@@ -59,13 +85,20 @@ namespace ProjectsGenerator_WindowsForms
                 {
                     var projectsKonstruktorEntities = new ProjectsKonstruktorEntities();
                     var project = new Project();
+                    var picture = new Picture();
                     project.ProjectName = projectName;
                     project.ProjectAddress = projectAddress;
                     project.ProjectCompany = projectCompany;
                     project.ProjectState = projectState;
                     project.ProjectDateIn = projectDateIn;
                     project.ProjectDateOut = projectDateOut;
+                    //image.ImageName = openFile.SafeFileName;
+                    //fileName = openFile.SafeFileName;
+                    Image imageContent = Image.FromFile(fileName);
+                    picture.PictureName = fileName;
+                    picture.PictureContent = ConvertImageToByteArray(imageContent);
                     projectsKonstruktorEntities.Projects.Add(project);
+                    projectsKonstruktorEntities.Pictures.Add(picture);
                     projectsKonstruktorEntities.SaveChanges();
                     MessageBox.Show("Projekt dodano pomyślnie.");
                     Close();
@@ -81,27 +114,17 @@ namespace ProjectsGenerator_WindowsForms
             }
         }
 
-        private void bUploadImage_Click_1(object sender, EventArgs e)
+        public byte[] ConvertImageToByteArray(Image image)
         {
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Title = "Upload file";
-            openFile.Filter = "PDF|*.pdf";
-
-            if (openFile.ShowDialog() == DialogResult.OK)
+            using (var ms = new MemoryStream())
             {
-                //textBox1.Text = openFile.FileName;
-                //textBox1.Text = openFile.SafeFileName;
-                //var x = NewMethod(openFile, out var result);
-                //NewMethod(openFile, out var result);
-                MessageBox.Show("Click OK to confirm: " + openFile.SafeFileName);
-                if (openFile.SafeFileName != null)
-                {
-                    //tbLoadedImageInfo.Clear();
-                    lLoadedImageInfo.Text = "Wybrany plik: " + openFile.SafeFileName;
-                    //tbLoadedImageInfo.Show();
-                }
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                //image.Save(ms, image.RawFormat);
+                return ms.ToArray();
             }
         }
+
+        
 
         //private static string NewMethod(OpenFileDialog openFile, out DialogResult result)
         //{

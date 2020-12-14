@@ -91,6 +91,9 @@
     <Compile Include="OpenProject.Designer.cs">
       <DependentUpon>OpenProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="Picture.cs">
+      <DependentUpon>ProjectsDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Project.cs">
       <DependentUpon>ProjectsDb.tt</DependentUpon>

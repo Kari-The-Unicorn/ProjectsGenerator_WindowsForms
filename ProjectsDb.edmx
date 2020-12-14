@@ -18,6 +18,14 @@
           <Property Name="IssueCoordinateX" Type="int" />
           <Property Name="IssueCoordinateY" Type="int" />
         </EntityType>
+        <EntityType Name="Pictures">
+          <Key>
+            <PropertyRef Name="PictureId" />
+          </Key>
+          <Property Name="PictureId" Type="int" Nullable="false" />
+          <Property Name="PictureName" Type="nvarchar" MaxLength="150" />
+          <Property Name="PictureContent" Type="image" />
+        </EntityType>
         <EntityType Name="Projects">
           <Key>
             <PropertyRef Name="id" />
@@ -29,8 +37,21 @@
           <Property Name="ProjectState" Type="nchar" MaxLength="100" />
           <Property Name="ProjectDateIn" Type="datetime" />
           <Property Name="ProjectDateOut" Type="datetime" />
+          <Property Name="ImageId" Type="int" />
         </EntityType>
         <Association Name="FK_Issues_Issues">
+          <End Role="Pictures" Type="Self.Pictures" Multiplicity="0..1" />
+          <End Role="Issues" Type="Self.Issues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pictures">
+              <PropertyRef Name="PictureId" />
+            </Principal>
+            <Dependent Role="Issues">
+              <PropertyRef Name="ImageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Issues_Projects">
           <End Role="Projects" Type="Self.Projects" Multiplicity="0..1" />
           <End Role="Issues" Type="Self.Issues" Multiplicity="*" />
           <ReferentialConstraint>
@@ -43,33 +64,55 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Projects_Projects">
-          <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
-          <End Role="Projects1" Type="Self.Projects" Multiplicity="0..1" />
+          <End Role="Pictures" Type="Self.Pictures" Multiplicity="0..1" />
+          <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Projects">
-              <PropertyRef Name="id" />
+            <Principal Role="Pictures">
+              <PropertyRef Name="PictureId" />
             </Principal>
-            <Dependent Role="Projects1">
-              <PropertyRef Name="id" />
+            <Dependent Role="Projects">
+              <PropertyRef Name="ImageId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ProjectsKonstruktorModelStoreContainer">
           <EntitySet Name="Issues" EntityType="Self.Issues" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pictures" EntityType="Self.Pictures" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Issues_Issues" Association="Self.FK_Issues_Issues">
+            <End Role="Pictures" EntitySet="Pictures" />
+            <End Role="Issues" EntitySet="Issues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Issues_Projects" Association="Self.FK_Issues_Projects">
             <End Role="Projects" EntitySet="Projects" />
             <End Role="Issues" EntitySet="Issues" />
           </AssociationSet>
           <AssociationSet Name="FK_Projects_Projects" Association="Self.FK_Projects_Projects">
+            <End Role="Pictures" EntitySet="Pictures" />
             <End Role="Projects" EntitySet="Projects" />
-            <End Role="Projects1" EntitySet="Projects" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ProjectsKonstruktorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ProjectsKonstruktorEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Issues" EntityType="ProjectsKonstruktorModel.Issue" />
+          <EntitySet Name="Pictures" EntityType="ProjectsKonstruktorModel.Picture" />
+          <EntitySet Name="Projects" EntityType="ProjectsKonstruktorModel.Project" />
+          <AssociationSet Name="FK_Issues_Issues" Association="ProjectsKonstruktorModel.FK_Issues_Issues">
+            <End Role="Picture" EntitySet="Pictures" />
+            <End Role="Issue" EntitySet="Issues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Issues_Projects" Association="ProjectsKonstruktorModel.FK_Issues_Projects">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="Issue" EntitySet="Issues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projects_Projects" Association="ProjectsKonstruktorModel.FK_Projects_Projects">
+            <End Role="Picture" EntitySet="Pictures" />
+            <End Role="Project" EntitySet="Projects" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="Issue">
           <Key>
             <PropertyRef Name="id" />
@@ -77,12 +120,23 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IssueName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <Property Name="ProjectId" Type="Int32" />
-          <NavigationProperty Name="Project" Relationship="Self.FK_Issues_Issues" FromRole="Issues" ToRole="Projects" />
           <Property Name="IssueDescription" Type="String" MaxLength="300" FixedLength="true" Unicode="true" />
           <Property Name="IssuePlace" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="ImageId" Type="Int32" />
           <Property Name="IssueCoordinateX" Type="Int32" />
           <Property Name="IssueCoordinateY" Type="Int32" />
+          <NavigationProperty Name="Picture" Relationship="ProjectsKonstruktorModel.FK_Issues_Issues" FromRole="Issue" ToRole="Picture" />
+          <NavigationProperty Name="Project" Relationship="ProjectsKonstruktorModel.FK_Issues_Projects" FromRole="Issue" ToRole="Project" />
+        </EntityType>
+        <EntityType Name="Picture">
+          <Key>
+            <PropertyRef Name="PictureId" />
+          </Key>
+          <Property Name="PictureId" Type="Int32" Nullable="false" />
+          <Property Name="PictureName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PictureContent" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Issues" Relationship="ProjectsKonstruktorModel.FK_Issues_Issues" FromRole="Picture" ToRole="Issue" />
+          <NavigationProperty Name="Projects" Relationship="ProjectsKonstruktorModel.FK_Projects_Projects" FromRole="Picture" ToRole="Project" />
         </EntityType>
         <EntityType Name="Project">
           <Key>
@@ -95,45 +149,47 @@
           <Property Name="ProjectState" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <Property Name="ProjectDateIn" Type="DateTime" Precision="3" />
           <Property Name="ProjectDateOut" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Issues" Relationship="Self.FK_Issues_Issues" FromRole="Projects" ToRole="Issues" />
+          <Property Name="ImageId" Type="Int32" />
+          <NavigationProperty Name="Issues" Relationship="ProjectsKonstruktorModel.FK_Issues_Projects" FromRole="Project" ToRole="Issue" />
+          <NavigationProperty Name="Picture" Relationship="ProjectsKonstruktorModel.FK_Projects_Projects" FromRole="Project" ToRole="Picture" />
         </EntityType>
         <Association Name="FK_Issues_Issues">
-          <End Role="Projects" Type="Self.Project" Multiplicity="0..1" />
-          <End Role="Issues" Type="Self.Issue" Multiplicity="*" />
+          <End Type="ProjectsKonstruktorModel.Picture" Role="Picture" Multiplicity="0..1" />
+          <End Type="ProjectsKonstruktorModel.Issue" Role="Issue" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Projects">
+            <Principal Role="Picture">
+              <PropertyRef Name="PictureId" />
+            </Principal>
+            <Dependent Role="Issue">
+              <PropertyRef Name="ImageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Issues_Projects">
+          <End Type="ProjectsKonstruktorModel.Project" Role="Project" Multiplicity="0..1" />
+          <End Type="ProjectsKonstruktorModel.Issue" Role="Issue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="Issues">
+            <Dependent Role="Issue">
               <PropertyRef Name="ProjectId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Projects_Projects">
-          <End Role="Projects" Type="Self.Project" Multiplicity="1" />
-          <End Role="Projects1" Type="Self.Project" Multiplicity="0..1" />
+          <End Type="ProjectsKonstruktorModel.Picture" Role="Picture" Multiplicity="0..1" />
+          <End Type="ProjectsKonstruktorModel.Project" Role="Project" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Projects">
-              <PropertyRef Name="id" />
+            <Principal Role="Picture">
+              <PropertyRef Name="PictureId" />
             </Principal>
-            <Dependent Role="Projects1">
-              <PropertyRef Name="id" />
+            <Dependent Role="Project">
+              <PropertyRef Name="ImageId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ProjectsKonstruktorEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Issues" EntityType="Self.Issue" />
-          <EntitySet Name="Projects" EntityType="Self.Project" />
-          <AssociationSet Name="FK_Issues_Issues" Association="Self.FK_Issues_Issues">
-            <End Role="Projects" EntitySet="Projects" />
-            <End Role="Issues" EntitySet="Issues" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Projects_Projects" Association="Self.FK_Projects_Projects">
-            <End Role="Projects" EntitySet="Projects" />
-            <End Role="Projects1" EntitySet="Projects" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -147,22 +203,32 @@
                 <ScalarProperty Name="ImageId" ColumnName="ImageId" />
                 <ScalarProperty Name="IssuePlace" ColumnName="IssuePlace" />
                 <ScalarProperty Name="IssueDescription" ColumnName="IssueDescription" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="IssueName" ColumnName="IssueName" />
                 <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="IssueName" ColumnName="IssueName" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pictures">
+            <EntityTypeMapping TypeName="ProjectsKonstruktorModel.Picture">
+              <MappingFragment StoreEntitySet="Pictures">
+                <ScalarProperty Name="PictureContent" ColumnName="PictureContent" />
+                <ScalarProperty Name="PictureName" ColumnName="PictureName" />
+                <ScalarProperty Name="PictureId" ColumnName="PictureId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Projects">
             <EntityTypeMapping TypeName="ProjectsKonstruktorModel.Project">
               <MappingFragment StoreEntitySet="Projects">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
-                <ScalarProperty Name="ProjectAddress" ColumnName="ProjectAddress" />
-                <ScalarProperty Name="ProjectCompany" ColumnName="ProjectCompany" />
-                <ScalarProperty Name="ProjectState" ColumnName="ProjectState" />
-                <ScalarProperty Name="ProjectDateIn" ColumnName="ProjectDateIn" />
+                <ScalarProperty Name="ImageId" ColumnName="ImageId" />
                 <ScalarProperty Name="ProjectDateOut" ColumnName="ProjectDateOut" />
+                <ScalarProperty Name="ProjectDateIn" ColumnName="ProjectDateIn" />
+                <ScalarProperty Name="ProjectState" ColumnName="ProjectState" />
+                <ScalarProperty Name="ProjectCompany" ColumnName="ProjectCompany" />
+                <ScalarProperty Name="ProjectAddress" ColumnName="ProjectAddress" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
