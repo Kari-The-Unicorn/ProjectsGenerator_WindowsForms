@@ -37,21 +37,15 @@ namespace ProjectsGenerator_WindowsForms
         {
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.Title = "Upload file";
-            openFile.Filter = "PDF|*.pdf";
+            openFile.Filter = "JPEG|*.jpeg";
 
             if (openFile.ShowDialog() == DialogResult.OK)
             {
-                //textBox1.Text = openFile.FileName;
-                //textBox1.Text = openFile.SafeFileName;
-                //var x = NewMethod(openFile, out var result);
-                //NewMethod(openFile, out var result);
                 MessageBox.Show("Click OK to confirm: " + openFile.SafeFileName);
                 if (openFile.FileName != null)
                 {
-                    //tbLoadedImageInfo.Clear();
                     lLoadedImageInfo.Text = "Wybrany plik: " + openFile.SafeFileName;
                     fileName = openFile.FileName;
-                    //tbLoadedImageInfo.Show();
                 }
             }
         }
@@ -92,8 +86,6 @@ namespace ProjectsGenerator_WindowsForms
                     project.ProjectState = projectState;
                     project.ProjectDateIn = projectDateIn;
                     project.ProjectDateOut = projectDateOut;
-                    //image.ImageName = openFile.SafeFileName;
-                    //fileName = openFile.SafeFileName;
                     Image imageContent = Image.FromFile(fileName);
                     picture.PictureName = fileName;
                     picture.PictureContent = ConvertImageToByteArray(imageContent);
@@ -119,28 +111,8 @@ namespace ProjectsGenerator_WindowsForms
             using (var ms = new MemoryStream())
             {
                 image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                //image.Save(ms, image.RawFormat);
                 return ms.ToArray();
             }
-        }
-
-        
-
-        //private static string NewMethod(OpenFileDialog openFile, out DialogResult result)
-        //{
-        //    result = MessageBox.Show("Click OK to confirm: " + openFile.SafeFileName);
-        //    return openFile.SafeFileName;
-        //}
-
-        private void tbLoadedImageInfo_TextChanged(object sender, EventArgs e)
-        {
-            //NewMethod(openFile, out var result);
-            //if (result != null)
-            //{
-            //    tbLoadedImageInfo.Clear();
-            //    tbLoadedImageInfo.Text = "Otwórz";
-            //    tbLoadedImageInfo.Show();
-            //}
         }
     }
 }
