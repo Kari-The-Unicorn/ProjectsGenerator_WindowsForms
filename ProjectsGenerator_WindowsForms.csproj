@@ -70,6 +70,9 @@
     <Compile Include="EditProject.Designer.cs">
       <DependentUpon>EditProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="Issue.cs">
+      <DependentUpon>ProjectsDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,16 +85,13 @@
     <Compile Include="AddProject.Designer.cs">
       <DependentUpon>AddProject.cs</DependentUpon>
     </Compile>
-    <Compile Include="Issue.cs">
-      <DependentUpon>ProjectsDb.tt</DependentUpon>
-    </Compile>
     <Compile Include="OpenProject.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OpenProject.Designer.cs">
       <DependentUpon>OpenProject.cs</DependentUpon>
     </Compile>
-    <Compile Include="Picture.cs">
+    <Compile Include="Pictures1.cs">
       <DependentUpon>ProjectsDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />

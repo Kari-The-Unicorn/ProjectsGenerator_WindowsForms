@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
         }
     
         public virtual DbSet<Issue> Issues { get; set; }
-        public virtual DbSet<Picture> Pictures { get; set; }
+        public virtual DbSet<Pictures1> Pictures1 { get; set; }
         public virtual DbSet<Project> Projects { get; set; }
     }
 }

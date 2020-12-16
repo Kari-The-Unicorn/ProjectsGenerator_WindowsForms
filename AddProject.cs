@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -37,7 +39,7 @@ namespace ProjectsGenerator_WindowsForms
         {
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.Title = "Upload file";
-            openFile.Filter = "JPEG|*.jpeg";
+            openFile.Filter = "JPG|*.jpg";
 
             if (openFile.ShowDialog() == DialogResult.OK)
             {
@@ -75,11 +77,17 @@ namespace ProjectsGenerator_WindowsForms
                     errorMessage = "Data rozpoczęcia nie może być późniejsza niż data ukończenia.";
                 }
 
+                if (fileName == null)
+                {
+                    isValid = false;
+                    errorMessage = "Proszę załączyć plik PDF.";
+                }
+
                 if (isValid)
                 {
                     var projectsKonstruktorEntities = new ProjectsKonstruktorEntities();
                     var project = new Project();
-                    var picture = new Picture();
+                    var picture = new Pictures1();
                     project.ProjectName = projectName;
                     project.ProjectAddress = projectAddress;
                     project.ProjectCompany = projectCompany;
@@ -88,12 +96,27 @@ namespace ProjectsGenerator_WindowsForms
                     project.ProjectDateOut = projectDateOut;
                     Image imageContent = Image.FromFile(fileName);
                     picture.PictureName = fileName;
+                    project.ImageId = picture.PictureId;
                     picture.PictureContent = ConvertImageToByteArray(imageContent);
-                    projectsKonstruktorEntities.Projects.Add(project);
-                    projectsKonstruktorEntities.Pictures.Add(picture);
-                    projectsKonstruktorEntities.SaveChanges();
-                    MessageBox.Show("Projekt dodano pomyślnie.");
-                    Close();
+
+                    try
+                    {
+                        projectsKonstruktorEntities.Projects.Add(project);
+                        projectsKonstruktorEntities.Pictures1.Add(picture);
+                        //projectsKonstruktorEntities.Entry(picture).State = EntityState.Added;
+                        //projectsKonstruktorEntities.Entry(project).State = EntityState.Added;
+                        //project.ImageId = picture.PictureId;
+                        //projectsKonstruktorEntities.Entry(project).State = EntityState.Modified;
+                        projectsKonstruktorEntities.SaveChanges();
+                        MessageBox.Show("Projekt dodano pomyślnie.");
+                        Close();
+                    }
+
+                    catch (Exception ec)
+                    {
+                        Console.WriteLine(ec.Message);
+                        MessageBox.Show("Projektu nie dodano.");
+                    }
                 }
                 else
                 {

@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
         public Nullable<int> IssueCoordinateX { get; set; }
         public Nullable<int> IssueCoordinateY { get; set; }
     
-        public virtual Picture Picture { get; set; }
+        public virtual Pictures1 Pictures1 { get; set; }
         public virtual Project Project { get; set; }
     }
 }

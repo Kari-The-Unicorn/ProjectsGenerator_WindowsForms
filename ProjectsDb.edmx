@@ -18,11 +18,11 @@
           <Property Name="IssueCoordinateX" Type="int" />
           <Property Name="IssueCoordinateY" Type="int" />
         </EntityType>
-        <EntityType Name="Pictures">
+        <EntityType Name="Pictures1">
           <Key>
             <PropertyRef Name="PictureId" />
           </Key>
-          <Property Name="PictureId" Type="int" Nullable="false" />
+          <Property Name="PictureId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PictureName" Type="nvarchar" MaxLength="150" />
           <Property Name="PictureContent" Type="image" />
         </EntityType>
@@ -39,11 +39,11 @@
           <Property Name="ProjectDateOut" Type="datetime" />
           <Property Name="ImageId" Type="int" />
         </EntityType>
-        <Association Name="FK_Issues_Issues">
-          <End Role="Pictures" Type="Self.Pictures" Multiplicity="0..1" />
+        <Association Name="FK_Issues_Pictures1">
+          <End Role="Pictures1" Type="Self.Pictures1" Multiplicity="0..1" />
           <End Role="Issues" Type="Self.Issues" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Pictures">
+            <Principal Role="Pictures1">
               <PropertyRef Name="PictureId" />
             </Principal>
             <Dependent Role="Issues">
@@ -63,11 +63,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Projects_Projects">
-          <End Role="Pictures" Type="Self.Pictures" Multiplicity="0..1" />
+        <Association Name="FK_Projects_Pictures1">
+          <End Role="Pictures1" Type="Self.Pictures1" Multiplicity="0..1" />
           <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Pictures">
+            <Principal Role="Pictures1">
               <PropertyRef Name="PictureId" />
             </Principal>
             <Dependent Role="Projects">
@@ -77,18 +77,18 @@
         </Association>
         <EntityContainer Name="ProjectsKonstruktorModelStoreContainer">
           <EntitySet Name="Issues" EntityType="Self.Issues" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Pictures" EntityType="Self.Pictures" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pictures1" EntityType="Self.Pictures1" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Issues_Issues" Association="Self.FK_Issues_Issues">
-            <End Role="Pictures" EntitySet="Pictures" />
+          <AssociationSet Name="FK_Issues_Pictures1" Association="Self.FK_Issues_Pictures1">
+            <End Role="Pictures1" EntitySet="Pictures1" />
             <End Role="Issues" EntitySet="Issues" />
           </AssociationSet>
           <AssociationSet Name="FK_Issues_Projects" Association="Self.FK_Issues_Projects">
             <End Role="Projects" EntitySet="Projects" />
             <End Role="Issues" EntitySet="Issues" />
           </AssociationSet>
-          <AssociationSet Name="FK_Projects_Projects" Association="Self.FK_Projects_Projects">
-            <End Role="Pictures" EntitySet="Pictures" />
+          <AssociationSet Name="FK_Projects_Pictures1" Association="Self.FK_Projects_Pictures1">
+            <End Role="Pictures1" EntitySet="Pictures1" />
             <End Role="Projects" EntitySet="Projects" />
           </AssociationSet>
         </EntityContainer>
@@ -98,18 +98,18 @@
       <Schema Namespace="ProjectsKonstruktorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="ProjectsKonstruktorEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Issues" EntityType="ProjectsKonstruktorModel.Issue" />
-          <EntitySet Name="Pictures" EntityType="ProjectsKonstruktorModel.Picture" />
+          <EntitySet Name="Pictures1" EntityType="ProjectsKonstruktorModel.Pictures1" />
           <EntitySet Name="Projects" EntityType="ProjectsKonstruktorModel.Project" />
-          <AssociationSet Name="FK_Issues_Issues" Association="ProjectsKonstruktorModel.FK_Issues_Issues">
-            <End Role="Picture" EntitySet="Pictures" />
+          <AssociationSet Name="FK_Issues_Pictures1" Association="ProjectsKonstruktorModel.FK_Issues_Pictures1">
+            <End Role="Pictures1" EntitySet="Pictures1" />
             <End Role="Issue" EntitySet="Issues" />
           </AssociationSet>
           <AssociationSet Name="FK_Issues_Projects" Association="ProjectsKonstruktorModel.FK_Issues_Projects">
             <End Role="Project" EntitySet="Projects" />
             <End Role="Issue" EntitySet="Issues" />
           </AssociationSet>
-          <AssociationSet Name="FK_Projects_Projects" Association="ProjectsKonstruktorModel.FK_Projects_Projects">
-            <End Role="Picture" EntitySet="Pictures" />
+          <AssociationSet Name="FK_Projects_Pictures1" Association="ProjectsKonstruktorModel.FK_Projects_Pictures1">
+            <End Role="Pictures1" EntitySet="Pictures1" />
             <End Role="Project" EntitySet="Projects" />
           </AssociationSet>
         </EntityContainer>
@@ -125,18 +125,18 @@
           <Property Name="ImageId" Type="Int32" />
           <Property Name="IssueCoordinateX" Type="Int32" />
           <Property Name="IssueCoordinateY" Type="Int32" />
-          <NavigationProperty Name="Picture" Relationship="ProjectsKonstruktorModel.FK_Issues_Issues" FromRole="Issue" ToRole="Picture" />
+          <NavigationProperty Name="Pictures1" Relationship="ProjectsKonstruktorModel.FK_Issues_Pictures1" FromRole="Issue" ToRole="Pictures1" />
           <NavigationProperty Name="Project" Relationship="ProjectsKonstruktorModel.FK_Issues_Projects" FromRole="Issue" ToRole="Project" />
         </EntityType>
-        <EntityType Name="Picture">
+        <EntityType Name="Pictures1">
           <Key>
             <PropertyRef Name="PictureId" />
           </Key>
-          <Property Name="PictureId" Type="Int32" Nullable="false" />
+          <Property Name="PictureId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PictureName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="PictureContent" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="Issues" Relationship="ProjectsKonstruktorModel.FK_Issues_Issues" FromRole="Picture" ToRole="Issue" />
-          <NavigationProperty Name="Projects" Relationship="ProjectsKonstruktorModel.FK_Projects_Projects" FromRole="Picture" ToRole="Project" />
+          <NavigationProperty Name="Issues" Relationship="ProjectsKonstruktorModel.FK_Issues_Pictures1" FromRole="Pictures1" ToRole="Issue" />
+          <NavigationProperty Name="Projects" Relationship="ProjectsKonstruktorModel.FK_Projects_Pictures1" FromRole="Pictures1" ToRole="Project" />
         </EntityType>
         <EntityType Name="Project">
           <Key>
@@ -151,13 +151,13 @@
           <Property Name="ProjectDateOut" Type="DateTime" Precision="3" />
           <Property Name="ImageId" Type="Int32" />
           <NavigationProperty Name="Issues" Relationship="ProjectsKonstruktorModel.FK_Issues_Projects" FromRole="Project" ToRole="Issue" />
-          <NavigationProperty Name="Picture" Relationship="ProjectsKonstruktorModel.FK_Projects_Projects" FromRole="Project" ToRole="Picture" />
+          <NavigationProperty Name="Pictures1" Relationship="ProjectsKonstruktorModel.FK_Projects_Pictures1" FromRole="Project" ToRole="Pictures1" />
         </EntityType>
-        <Association Name="FK_Issues_Issues">
-          <End Type="ProjectsKonstruktorModel.Picture" Role="Picture" Multiplicity="0..1" />
+        <Association Name="FK_Issues_Pictures1">
+          <End Type="ProjectsKonstruktorModel.Pictures1" Role="Pictures1" Multiplicity="0..1" />
           <End Type="ProjectsKonstruktorModel.Issue" Role="Issue" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Picture">
+            <Principal Role="Pictures1">
               <PropertyRef Name="PictureId" />
             </Principal>
             <Dependent Role="Issue">
@@ -177,11 +177,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Projects_Projects">
-          <End Type="ProjectsKonstruktorModel.Picture" Role="Picture" Multiplicity="0..1" />
+        <Association Name="FK_Projects_Pictures1">
+          <End Type="ProjectsKonstruktorModel.Pictures1" Role="Pictures1" Multiplicity="0..1" />
           <End Type="ProjectsKonstruktorModel.Project" Role="Project" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Picture">
+            <Principal Role="Pictures1">
               <PropertyRef Name="PictureId" />
             </Principal>
             <Dependent Role="Project">
@@ -209,9 +209,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Pictures">
-            <EntityTypeMapping TypeName="ProjectsKonstruktorModel.Picture">
-              <MappingFragment StoreEntitySet="Pictures">
+          <EntitySetMapping Name="Pictures1">
+            <EntityTypeMapping TypeName="ProjectsKonstruktorModel.Pictures1">
+              <MappingFragment StoreEntitySet="Pictures1">
                 <ScalarProperty Name="PictureContent" ColumnName="PictureContent" />
                 <ScalarProperty Name="PictureName" ColumnName="PictureName" />
                 <ScalarProperty Name="PictureId" ColumnName="PictureId" />
@@ -246,7 +246,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

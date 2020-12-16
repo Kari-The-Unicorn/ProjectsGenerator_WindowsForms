@@ -15,9 +15,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Pictures">
-      <EntityTypeMapping TypeName="ProjectsKonstruktorModel.Picture">
-        <MappingFragment StoreEntitySet="Pictures">
+    <EntitySetMapping Name="Pictures1">
+      <EntityTypeMapping TypeName="ProjectsKonstruktorModel.Pictures1">
+        <MappingFragment StoreEntitySet="Pictures1">
           <ScalarProperty Name="PictureContent" ColumnName="PictureContent" />
           <ScalarProperty Name="PictureName" ColumnName="PictureName" />
           <ScalarProperty Name="PictureId" ColumnName="PictureId" />

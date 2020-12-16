@@ -6,11 +6,11 @@
     <edmx:Diagrams>
       <Diagram DiagramId="6ee97de8bf0b44efbf134aa5a9f46050" Name="Diagram1">
         <EntityTypeShape EntityType="ProjectsKonstruktorModel.Issue" Width="1.5" PointX="5.25" PointY="5.125" />
-        <EntityTypeShape EntityType="ProjectsKonstruktorModel.Picture" Width="1.5" PointX="0.75" PointY="3.5" />
+        <EntityTypeShape EntityType="ProjectsKonstruktorModel.Pictures1" Width="1.5" PointX="0.75" PointY="3.5" />
         <EntityTypeShape EntityType="ProjectsKonstruktorModel.Project" Width="1.5" PointX="3" PointY="6.75" />
-        <AssociationConnector Association="ProjectsKonstruktorModel.FK_Issues_Issues" />
+        <AssociationConnector Association="ProjectsKonstruktorModel.FK_Issues_Pictures1" />
         <AssociationConnector Association="ProjectsKonstruktorModel.FK_Issues_Projects" />
-        <AssociationConnector Association="ProjectsKonstruktorModel.FK_Projects_Projects" />
+        <AssociationConnector Association="ProjectsKonstruktorModel.FK_Projects_Pictures1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

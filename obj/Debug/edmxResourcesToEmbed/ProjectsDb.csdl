@@ -2,18 +2,18 @@
 <Schema Namespace="ProjectsKonstruktorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="ProjectsKonstruktorEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Issues" EntityType="ProjectsKonstruktorModel.Issue" />
-    <EntitySet Name="Pictures" EntityType="ProjectsKonstruktorModel.Picture" />
+    <EntitySet Name="Pictures1" EntityType="ProjectsKonstruktorModel.Pictures1" />
     <EntitySet Name="Projects" EntityType="ProjectsKonstruktorModel.Project" />
-    <AssociationSet Name="FK_Issues_Issues" Association="ProjectsKonstruktorModel.FK_Issues_Issues">
-      <End Role="Picture" EntitySet="Pictures" />
+    <AssociationSet Name="FK_Issues_Pictures1" Association="ProjectsKonstruktorModel.FK_Issues_Pictures1">
+      <End Role="Pictures1" EntitySet="Pictures1" />
       <End Role="Issue" EntitySet="Issues" />
     </AssociationSet>
     <AssociationSet Name="FK_Issues_Projects" Association="ProjectsKonstruktorModel.FK_Issues_Projects">
       <End Role="Project" EntitySet="Projects" />
       <End Role="Issue" EntitySet="Issues" />
     </AssociationSet>
-    <AssociationSet Name="FK_Projects_Projects" Association="ProjectsKonstruktorModel.FK_Projects_Projects">
-      <End Role="Picture" EntitySet="Pictures" />
+    <AssociationSet Name="FK_Projects_Pictures1" Association="ProjectsKonstruktorModel.FK_Projects_Pictures1">
+      <End Role="Pictures1" EntitySet="Pictures1" />
       <End Role="Project" EntitySet="Projects" />
     </AssociationSet>
   </EntityContainer>
@@ -29,18 +29,18 @@
     <Property Name="ImageId" Type="Int32" />
     <Property Name="IssueCoordinateX" Type="Int32" />
     <Property Name="IssueCoordinateY" Type="Int32" />
-    <NavigationProperty Name="Picture" Relationship="ProjectsKonstruktorModel.FK_Issues_Issues" FromRole="Issue" ToRole="Picture" />
+    <NavigationProperty Name="Pictures1" Relationship="ProjectsKonstruktorModel.FK_Issues_Pictures1" FromRole="Issue" ToRole="Pictures1" />
     <NavigationProperty Name="Project" Relationship="ProjectsKonstruktorModel.FK_Issues_Projects" FromRole="Issue" ToRole="Project" />
   </EntityType>
-  <EntityType Name="Picture">
+  <EntityType Name="Pictures1">
     <Key>
       <PropertyRef Name="PictureId" />
     </Key>
-    <Property Name="PictureId" Type="Int32" Nullable="false" />
+    <Property Name="PictureId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PictureName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="PictureContent" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <NavigationProperty Name="Issues" Relationship="ProjectsKonstruktorModel.FK_Issues_Issues" FromRole="Picture" ToRole="Issue" />
-    <NavigationProperty Name="Projects" Relationship="ProjectsKonstruktorModel.FK_Projects_Projects" FromRole="Picture" ToRole="Project" />
+    <NavigationProperty Name="Issues" Relationship="ProjectsKonstruktorModel.FK_Issues_Pictures1" FromRole="Pictures1" ToRole="Issue" />
+    <NavigationProperty Name="Projects" Relationship="ProjectsKonstruktorModel.FK_Projects_Pictures1" FromRole="Pictures1" ToRole="Project" />
   </EntityType>
   <EntityType Name="Project">
     <Key>
@@ -55,13 +55,13 @@
     <Property Name="ProjectDateOut" Type="DateTime" Precision="3" />
     <Property Name="ImageId" Type="Int32" />
     <NavigationProperty Name="Issues" Relationship="ProjectsKonstruktorModel.FK_Issues_Projects" FromRole="Project" ToRole="Issue" />
-    <NavigationProperty Name="Picture" Relationship="ProjectsKonstruktorModel.FK_Projects_Projects" FromRole="Project" ToRole="Picture" />
+    <NavigationProperty Name="Pictures1" Relationship="ProjectsKonstruktorModel.FK_Projects_Pictures1" FromRole="Project" ToRole="Pictures1" />
   </EntityType>
-  <Association Name="FK_Issues_Issues">
-    <End Type="ProjectsKonstruktorModel.Picture" Role="Picture" Multiplicity="0..1" />
+  <Association Name="FK_Issues_Pictures1">
+    <End Type="ProjectsKonstruktorModel.Pictures1" Role="Pictures1" Multiplicity="0..1" />
     <End Type="ProjectsKonstruktorModel.Issue" Role="Issue" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Picture">
+      <Principal Role="Pictures1">
         <PropertyRef Name="PictureId" />
       </Principal>
       <Dependent Role="Issue">
@@ -81,11 +81,11 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Projects_Projects">
-    <End Type="ProjectsKonstruktorModel.Picture" Role="Picture" Multiplicity="0..1" />
+  <Association Name="FK_Projects_Pictures1">
+    <End Type="ProjectsKonstruktorModel.Pictures1" Role="Pictures1" Multiplicity="0..1" />
     <End Type="ProjectsKonstruktorModel.Project" Role="Project" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Picture">
+      <Principal Role="Pictures1">
         <PropertyRef Name="PictureId" />
       </Principal>
       <Dependent Role="Project">

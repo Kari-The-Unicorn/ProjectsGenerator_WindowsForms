@@ -13,11 +13,11 @@
     <Property Name="IssueCoordinateX" Type="int" />
     <Property Name="IssueCoordinateY" Type="int" />
   </EntityType>
-  <EntityType Name="Pictures">
+  <EntityType Name="Pictures1">
     <Key>
       <PropertyRef Name="PictureId" />
     </Key>
-    <Property Name="PictureId" Type="int" Nullable="false" />
+    <Property Name="PictureId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PictureName" Type="nvarchar" MaxLength="150" />
     <Property Name="PictureContent" Type="image" />
   </EntityType>
@@ -34,11 +34,11 @@
     <Property Name="ProjectDateOut" Type="datetime" />
     <Property Name="ImageId" Type="int" />
   </EntityType>
-  <Association Name="FK_Issues_Issues">
-    <End Role="Pictures" Type="Self.Pictures" Multiplicity="0..1" />
+  <Association Name="FK_Issues_Pictures1">
+    <End Role="Pictures1" Type="Self.Pictures1" Multiplicity="0..1" />
     <End Role="Issues" Type="Self.Issues" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Pictures">
+      <Principal Role="Pictures1">
         <PropertyRef Name="PictureId" />
       </Principal>
       <Dependent Role="Issues">
@@ -58,11 +58,11 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Projects_Projects">
-    <End Role="Pictures" Type="Self.Pictures" Multiplicity="0..1" />
+  <Association Name="FK_Projects_Pictures1">
+    <End Role="Pictures1" Type="Self.Pictures1" Multiplicity="0..1" />
     <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Pictures">
+      <Principal Role="Pictures1">
         <PropertyRef Name="PictureId" />
       </Principal>
       <Dependent Role="Projects">
@@ -72,18 +72,18 @@
   </Association>
   <EntityContainer Name="ProjectsKonstruktorModelStoreContainer">
     <EntitySet Name="Issues" EntityType="Self.Issues" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Pictures" EntityType="Self.Pictures" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pictures1" EntityType="Self.Pictures1" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_Issues_Issues" Association="Self.FK_Issues_Issues">
-      <End Role="Pictures" EntitySet="Pictures" />
+    <AssociationSet Name="FK_Issues_Pictures1" Association="Self.FK_Issues_Pictures1">
+      <End Role="Pictures1" EntitySet="Pictures1" />
       <End Role="Issues" EntitySet="Issues" />
     </AssociationSet>
     <AssociationSet Name="FK_Issues_Projects" Association="Self.FK_Issues_Projects">
       <End Role="Projects" EntitySet="Projects" />
       <End Role="Issues" EntitySet="Issues" />
     </AssociationSet>
-    <AssociationSet Name="FK_Projects_Projects" Association="Self.FK_Projects_Projects">
-      <End Role="Pictures" EntitySet="Pictures" />
+    <AssociationSet Name="FK_Projects_Pictures1" Association="Self.FK_Projects_Pictures1">
+      <End Role="Pictures1" EntitySet="Pictures1" />
       <End Role="Projects" EntitySet="Projects" />
     </AssociationSet>
   </EntityContainer>
