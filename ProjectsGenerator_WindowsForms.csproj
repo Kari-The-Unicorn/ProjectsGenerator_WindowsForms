@@ -85,6 +85,12 @@
     <Compile Include="AddProject.Designer.cs">
       <DependentUpon>AddProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="OpenMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenMap.Designer.cs">
+      <DependentUpon>OpenMap.cs</DependentUpon>
+    </Compile>
     <Compile Include="OpenProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddProject.resx">
       <DependentUpon>AddProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenMap.resx">
+      <DependentUpon>OpenMap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OpenProject.resx">
       <DependentUpon>OpenProject.cs</DependentUpon>

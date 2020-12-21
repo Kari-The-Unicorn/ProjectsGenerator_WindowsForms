@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using WindowsFormsApp1;
@@ -9,6 +10,8 @@ namespace ProjectsGenerator_WindowsForms
     {
         private readonly ProjectsKonstruktorEntities projectsKonstruktorEntities;
         //private bool isEditMode;
+        public static Project project = new Project();
+        public Pictures1 picture = new Pictures1();
         public Projects()
         {
             InitializeComponent();
@@ -75,8 +78,17 @@ namespace ProjectsGenerator_WindowsForms
         public Project GetSelectedProject()
         {
             var Id = int.Parse(dgvProjects.SelectedRows[0].Cells["id"].Value.ToString());
-            var project = projectsKonstruktorEntities.Projects.FirstOrDefault(q => q.id == Id);
+            //var 
+                project = projectsKonstruktorEntities.Projects.FirstOrDefault(q => q.id == Id);
             return project;
+        }
+
+        public Pictures1 GetImageFromSelectedProject()
+        {
+            var Id = int.Parse(dgvProjects.SelectedRows[0].Cells["ImageId"].Value.ToString());
+            //var 
+            picture = projectsKonstruktorEntities.Pictures1.FirstOrDefault(p => p.PictureId == Id);
+            return picture;
         }
 
         private void bEditProject_Click(object sender, EventArgs e)//Project projectToEdit)
@@ -100,10 +112,11 @@ namespace ProjectsGenerator_WindowsForms
 
         protected void MDIChildOpenProject(object sender, System.EventArgs e)
         {
-            OpenProject newMdiChildOpen = new OpenProject();
+            OpenProject newMdiChildOpen = new OpenProject(/*project, picture*/);
             try
             {
-                var project = GetSelectedProject();
+                //var 
+                    project = GetSelectedProject();
 
                 if (project != null)
                 {

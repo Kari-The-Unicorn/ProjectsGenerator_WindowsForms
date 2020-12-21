@@ -43,7 +43,7 @@ namespace ProjectsGenerator_WindowsForms
 
             if (openFile.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Click OK to confirm: " + openFile.SafeFileName);
+                MessageBox.Show("Kliknij OK żeby potwierdzić plik: " + openFile.SafeFileName + ".");
                 if (openFile.FileName != null)
                 {
                     lLoadedImageInfo.Text = "Wybrany plik: " + openFile.SafeFileName;

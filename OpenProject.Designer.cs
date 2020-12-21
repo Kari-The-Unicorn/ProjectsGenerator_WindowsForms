@@ -43,6 +43,8 @@ namespace ProjectsGenerator_WindowsForms
             this.dgvIssues = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.bLoadIssues = new System.Windows.Forms.Button();
+            this.bShowMap = new System.Windows.Forms.Button();
+            this.lId = new System.Windows.Forms.Label();
             this.pProjectInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIssues)).BeginInit();
             this.SuspendLayout();
@@ -111,6 +113,7 @@ namespace ProjectsGenerator_WindowsForms
             this.tbProjectInfoGeneral.ReadOnly = true;
             this.tbProjectInfoGeneral.Size = new System.Drawing.Size(673, 31);
             this.tbProjectInfoGeneral.TabIndex = 2;
+            this.tbProjectInfoGeneral.TextChanged += new System.EventHandler(this.tbProjectInfoGeneral_TextChanged);
             // 
             // lProjectInfo
             // 
@@ -143,7 +146,7 @@ namespace ProjectsGenerator_WindowsForms
             this.dgvIssues.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvIssues.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIssues.Location = new System.Drawing.Point(3, 98);
+            this.dgvIssues.Location = new System.Drawing.Point(4, 123);
             this.dgvIssues.Name = "dgvIssues";
             this.dgvIssues.RowHeadersWidth = 51;
             this.dgvIssues.RowTemplate.Height = 24;
@@ -173,11 +176,32 @@ namespace ProjectsGenerator_WindowsForms
             this.bLoadIssues.UseVisualStyleBackColor = true;
             this.bLoadIssues.Click += new System.EventHandler(this.bLoadIssues_Click);
             // 
+            // bShowMap
+            // 
+            this.bShowMap.Location = new System.Drawing.Point(1221, 65);
+            this.bShowMap.Name = "bShowMap";
+            this.bShowMap.Size = new System.Drawing.Size(161, 43);
+            this.bShowMap.TabIndex = 4;
+            this.bShowMap.Text = "Pokaż mapę";
+            this.bShowMap.UseVisualStyleBackColor = true;
+            this.bShowMap.Click += new System.EventHandler(this.bShowMap_Click);
+            // 
+            // lId
+            // 
+            this.lId.AutoSize = true;
+            this.lId.Location = new System.Drawing.Point(575, 71);
+            this.lId.Name = "lId";
+            this.lId.Size = new System.Drawing.Size(24, 21);
+            this.lId.TabIndex = 5;
+            this.lId.Text = "id";
+            // 
             // OpenProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1383, 450);
+            this.ClientSize = new System.Drawing.Size(1112, 367);
+            this.Controls.Add(this.lId);
+            this.Controls.Add(this.bShowMap);
             this.Controls.Add(this.bLoadIssues);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvIssues);
@@ -209,5 +233,7 @@ namespace ProjectsGenerator_WindowsForms
         private Label label1;
         public DataGridView dgvIssues;
         private Button bLoadIssues;
+        private Button bShowMap;
+        private Label lId;
     }
 }

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProject));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lUploadImage = new System.Windows.Forms.Label();
             this.tbProjectState = new System.Windows.Forms.TextBox();
             this.tbProjectCompany = new System.Windows.Forms.TextBox();
             this.projectStateLabel = new System.Windows.Forms.Label();
@@ -42,11 +43,10 @@
             this.tbProjectName = new System.Windows.Forms.MaskedTextBox();
             this.dtpProjectCollectionDate = new System.Windows.Forms.DateTimePicker();
             this.dtpProjectCompleteDate = new System.Windows.Forms.DateTimePicker();
-            this.bAddProject = new System.Windows.Forms.Button();
-            this.bCancelAddingProject = new System.Windows.Forms.Button();
-            this.lUploadImage = new System.Windows.Forms.Label();
             this.bUploadImage = new System.Windows.Forms.Button();
             this.lLoadedImageInfo = new System.Windows.Forms.Label();
+            this.bAddProject = new System.Windows.Forms.Button();
+            this.bCancelAddingProject = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,6 +86,15 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(951, 527);
             this.tableLayoutPanel1.TabIndex = 2;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // lUploadImage
+            // 
+            this.lUploadImage.Location = new System.Drawing.Point(3, 389);
+            this.lUploadImage.Name = "lUploadImage";
+            this.lUploadImage.Size = new System.Drawing.Size(191, 65);
+            this.lUploadImage.TabIndex = 17;
+            this.lUploadImage.Text = "Załaduj plik";
+            this.lUploadImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tbProjectState
             // 
@@ -191,6 +200,26 @@
             this.dtpProjectCompleteDate.Size = new System.Drawing.Size(273, 38);
             this.dtpProjectCompleteDate.TabIndex = 16;
             // 
+            // bUploadImage
+            // 
+            this.bUploadImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bUploadImage.Location = new System.Drawing.Point(201, 392);
+            this.bUploadImage.Name = "bUploadImage";
+            this.bUploadImage.Size = new System.Drawing.Size(191, 42);
+            this.bUploadImage.TabIndex = 18;
+            this.bUploadImage.Text = "Załaduj obrazek";
+            this.bUploadImage.UseVisualStyleBackColor = true;
+            this.bUploadImage.Click += new System.EventHandler(this.bUploadImage_Click_1);
+            // 
+            // lLoadedImageInfo
+            // 
+            this.lLoadedImageInfo.Location = new System.Drawing.Point(201, 483);
+            this.lLoadedImageInfo.Name = "lLoadedImageInfo";
+            this.lLoadedImageInfo.Size = new System.Drawing.Size(507, 44);
+            this.lLoadedImageInfo.TabIndex = 19;
+            this.lLoadedImageInfo.Text = "Wybierz plik";
+            this.lLoadedImageInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // bAddProject
             // 
             this.bAddProject.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -212,35 +241,6 @@
             this.bCancelAddingProject.Text = "Anuluj";
             this.bCancelAddingProject.UseVisualStyleBackColor = true;
             this.bCancelAddingProject.Click += new System.EventHandler(this.cancelAddingProjectButton_Click);
-            // 
-            // lUploadImage
-            // 
-            this.lUploadImage.Location = new System.Drawing.Point(3, 389);
-            this.lUploadImage.Name = "lUploadImage";
-            this.lUploadImage.Size = new System.Drawing.Size(191, 65);
-            this.lUploadImage.TabIndex = 17;
-            this.lUploadImage.Text = "Załaduj plik";
-            this.lUploadImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bUploadImage
-            // 
-            this.bUploadImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bUploadImage.Location = new System.Drawing.Point(201, 392);
-            this.bUploadImage.Name = "bUploadImage";
-            this.bUploadImage.Size = new System.Drawing.Size(191, 42);
-            this.bUploadImage.TabIndex = 18;
-            this.bUploadImage.Text = "Załaduj PDF";
-            this.bUploadImage.UseVisualStyleBackColor = true;
-            this.bUploadImage.Click += new System.EventHandler(this.bUploadImage_Click_1);
-            // 
-            // lLoadedImageInfo
-            // 
-            this.lLoadedImageInfo.Location = new System.Drawing.Point(201, 483);
-            this.lLoadedImageInfo.Name = "lLoadedImageInfo";
-            this.lLoadedImageInfo.Size = new System.Drawing.Size(507, 44);
-            this.lLoadedImageInfo.TabIndex = 19;
-            this.lLoadedImageInfo.Text = "Wybierz plik";
-            this.lLoadedImageInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // AddProject
             // 
