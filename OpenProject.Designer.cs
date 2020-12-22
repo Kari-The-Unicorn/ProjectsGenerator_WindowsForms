@@ -191,7 +191,7 @@ namespace ProjectsGenerator_WindowsForms
             this.lId.AutoSize = true;
             this.lId.Location = new System.Drawing.Point(575, 71);
             this.lId.Name = "lId";
-            this.lId.Size = new System.Drawing.Size(24, 21);
+            this.lId.Size = new System.Drawing.Size(19, 17);
             this.lId.TabIndex = 5;
             this.lId.Text = "id";
             // 
@@ -199,7 +199,7 @@ namespace ProjectsGenerator_WindowsForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1112, 367);
+            this.ClientSize = new System.Drawing.Size(1458, 547);
             this.Controls.Add(this.lId);
             this.Controls.Add(this.bShowMap);
             this.Controls.Add(this.bLoadIssues);

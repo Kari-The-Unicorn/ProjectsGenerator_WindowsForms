@@ -35,18 +35,21 @@ namespace WindowsFormsApp1
             // 
             // pbMap
             // 
+            this.pbMap.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbMap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbMap.Location = new System.Drawing.Point(0, 0);
             this.pbMap.Name = "pbMap";
             this.pbMap.Size = new System.Drawing.Size(1129, 854);
             this.pbMap.TabIndex = 0;
             this.pbMap.TabStop = false;
+            this.pbMap.Click += new System.EventHandler(this.pbMap_Click);
+            this.pbMap.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbMap_MouseDown);
             // 
             // OpenMap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1129, 854);
+            this.ClientSize = new System.Drawing.Size(903, 683);
             this.Controls.Add(this.pbMap);
             this.Name = "OpenMap";
             this.Text = "OpenMap";

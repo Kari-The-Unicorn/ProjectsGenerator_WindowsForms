@@ -188,6 +188,7 @@
     <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\redcircle.png" />
     <Content Include="ProjectsDb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ProjectsDb.Context.cs</LastGenOutput>

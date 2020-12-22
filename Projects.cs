@@ -36,6 +36,8 @@ namespace ProjectsGenerator_WindowsForms
             this.dgvProjects.Columns["ProjectState"].HeaderText = "Stan";
             this.dgvProjects.Columns["ProjectDateIn"].HeaderText = "Od dnia";
             this.dgvProjects.Columns["ProjectDateOut"].HeaderText = "Do dnia";
+            dgvProjects.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dgvProjects.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void dgvProjects_Click(object sender, EventArgs e)

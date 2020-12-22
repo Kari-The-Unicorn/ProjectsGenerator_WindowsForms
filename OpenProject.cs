@@ -91,7 +91,6 @@ namespace ProjectsGenerator_WindowsForms
             //{
             //    Close();
             //}
-
         }
 
         private void dgvIssues_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -105,7 +104,7 @@ namespace ProjectsGenerator_WindowsForms
             try
             {
                 project1 = Projects.project;
-                pictureId1 = project1.ImageId; //pictures1;
+                pictureId1 = project1.ImageId;
                 
                 if (project1 != null && pictureId1 != null)
                 {
