@@ -12,27 +12,27 @@ namespace WindowsFormsApp1
             InitializeComponent();
             ToolTip tt = new ToolTip();
             tt.SetToolTip(this.pbMap, "Zaznacz poprawkę na mapie");
-            //tt.ShowAlways = true;
+            //widnows forms tt.ShowAlways = true;
             pbMap.MouseDown += pbMap_MouseDown;
         }
         private void pbMap_MouseDown(object sender, MouseEventArgs e)
         {
-            if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
+            Bitmap bmp = new Bitmap(pbMap.Image);
+            using (Graphics g = Graphics.FromImage(bmp))
             {
-                imagePos = e.Location;
+                if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
+                {
+                    imagePos = e.Location;
+                    g.DrawImage(new Bitmap(
+                       @"C:\Users\karol\source\repos\WindowsFormsApp1\images\redcircle.png"),
+                    new Point(imagePos.X -30, imagePos.Y-30));
+                }
+                pbMap.Image = bmp;
             }
         }
 
         private void pbMap_Click(object sender, EventArgs e)
         {
-            Bitmap bmp = new Bitmap(pbMap.Image);
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                g.DrawImage(new Bitmap(
-                        @"C:\Users\karol\source\repos\WindowsFormsApp1\images\redcircle.png"),
-                    new Point(imagePos.X, imagePos.Y));
-            }
-            pbMap.Image = bmp;
         }
     }
 }
