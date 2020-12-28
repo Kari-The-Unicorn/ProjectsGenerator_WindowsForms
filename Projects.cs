@@ -20,13 +20,7 @@ namespace ProjectsGenerator_WindowsForms
 
         private void Projects_Load(object sender, EventArgs e)
         {
-            //// select * from projects table
             var projects = projectsKonstruktorEntities.Projects.ToList();
-            //var projects = projectsKonstruktorEntities.Projects.Select(q => new
-            //{
-            //    //Id = q.id, 
-            //    Name = q.ProjectName
-            //}).ToList();
             dgvProjects.DataSource = projects;
             dgvProjects.Columns["id"].Visible = true;
             dgvProjects.Columns["Issues"].Visible = false;
@@ -42,12 +36,10 @@ namespace ProjectsGenerator_WindowsForms
 
         private void dgvProjects_Click(object sender, EventArgs e)
         {
-
         }
 
         private void dgvProjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         protected void MDIChildEditProject(object sender, System.EventArgs e)
@@ -73,22 +65,18 @@ namespace ProjectsGenerator_WindowsForms
             {
                 Close();
             }
-            //Projects fL = new Projects();
-            //fL.Show();
         }
 
         public Project GetSelectedProject()
         {
             var Id = int.Parse(dgvProjects.SelectedRows[0].Cells["id"].Value.ToString());
-            //var 
-                project = projectsKonstruktorEntities.Projects.FirstOrDefault(q => q.id == Id);
+            project = projectsKonstruktorEntities.Projects.FirstOrDefault(q => q.id == Id);
             return project;
         }
 
         public Pictures1 GetImageFromSelectedProject()
         {
             var Id = int.Parse(dgvProjects.SelectedRows[0].Cells["ImageId"].Value.ToString());
-            //var 
             picture = projectsKonstruktorEntities.Pictures1.FirstOrDefault(p => p.PictureId == Id);
             return picture;
         }
@@ -103,6 +91,7 @@ namespace ProjectsGenerator_WindowsForms
         {
             var name = (string)dgvProjects.SelectedRows[0].Cells["ProjectName"].Value;
             var project = projectsKonstruktorEntities.Projects.FirstOrDefault(q => q.ProjectName == name);
+            
             if (project != null)
             {
                 projectsKonstruktorEntities.Projects.Remove(project);
@@ -114,11 +103,10 @@ namespace ProjectsGenerator_WindowsForms
 
         protected void MDIChildOpenProject(object sender, System.EventArgs e)
         {
-            OpenProject newMdiChildOpen = new OpenProject(/*project, picture*/);
+            OpenProject newMdiChildOpen = new OpenProject();
             try
             {
-                //var 
-                    project = GetSelectedProject();
+                project = GetSelectedProject();
 
                 if (project != null)
                 {
@@ -136,8 +124,6 @@ namespace ProjectsGenerator_WindowsForms
             {
                 Close();
             }
-            //Projects fL = new Projects();
-            //fL.Show();
         }
 
         private void bOpenProject_Click(object sender, EventArgs e)
