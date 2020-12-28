@@ -32,7 +32,6 @@
             this.bCancelAddingIssue = new System.Windows.Forms.Button();
             this.tlpAddIssueForm = new System.Windows.Forms.TableLayoutPanel();
             this.tbIssuePlace = new System.Windows.Forms.TextBox();
-            this.lIssueImage = new System.Windows.Forms.Label();
             this.lIssuePlace = new System.Windows.Forms.Label();
             this.lIssueDescription = new System.Windows.Forms.Label();
             this.lIssueName = new System.Windows.Forms.Label();
@@ -45,14 +44,13 @@
             this.lProjectInfoDateInInIssueForm = new System.Windows.Forms.Label();
             this.tbProjectInfoGeneralInIssueForm = new System.Windows.Forms.TextBox();
             this.lProjectInfoInIssueForm = new System.Windows.Forms.Label();
-            this.bUploadImage = new System.Windows.Forms.Button();
             this.tlpAddIssueForm.SuspendLayout();
             this.pProjectInfoInIssueForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // bAddIssue
             // 
-            this.bAddIssue.Location = new System.Drawing.Point(0, 554);
+            this.bAddIssue.Location = new System.Drawing.Point(6, 538);
             this.bAddIssue.Name = "bAddIssue";
             this.bAddIssue.Size = new System.Drawing.Size(198, 48);
             this.bAddIssue.TabIndex = 1;
@@ -61,7 +59,7 @@
             // 
             // bCancelAddingIssue
             // 
-            this.bCancelAddingIssue.Location = new System.Drawing.Point(204, 554);
+            this.bCancelAddingIssue.Location = new System.Drawing.Point(210, 538);
             this.bCancelAddingIssue.Name = "bCancelAddingIssue";
             this.bCancelAddingIssue.Size = new System.Drawing.Size(198, 48);
             this.bCancelAddingIssue.TabIndex = 2;
@@ -75,45 +73,34 @@
             this.tlpAddIssueForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.54545F));
             this.tlpAddIssueForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.45454F));
             this.tlpAddIssueForm.Controls.Add(this.tbIssuePlace, 1, 2);
-            this.tlpAddIssueForm.Controls.Add(this.lIssueImage, 0, 3);
             this.tlpAddIssueForm.Controls.Add(this.lIssuePlace, 0, 2);
             this.tlpAddIssueForm.Controls.Add(this.lIssueDescription, 0, 1);
             this.tlpAddIssueForm.Controls.Add(this.lIssueName, 0, 0);
             this.tlpAddIssueForm.Controls.Add(this.tbIssueDescription, 1, 1);
             this.tlpAddIssueForm.Controls.Add(this.tbIssueName, 1, 0);
-            this.tlpAddIssueForm.Controls.Add(this.bUploadImage, 1, 3);
             this.tlpAddIssueForm.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tlpAddIssueForm.Location = new System.Drawing.Point(0, 110);
             this.tlpAddIssueForm.Name = "tlpAddIssueForm";
             this.tlpAddIssueForm.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tlpAddIssueForm.RowCount = 4;
+            this.tlpAddIssueForm.RowCount = 3;
             this.tlpAddIssueForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tlpAddIssueForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tlpAddIssueForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlpAddIssueForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlpAddIssueForm.Size = new System.Drawing.Size(1275, 415);
+            this.tlpAddIssueForm.Size = new System.Drawing.Size(1275, 342);
             this.tlpAddIssueForm.TabIndex = 3;
+            this.tlpAddIssueForm.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpAddIssueForm_Paint);
             // 
             // tbIssuePlace
             // 
             this.tbIssuePlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbIssuePlace.Location = new System.Drawing.Point(188, 209);
+            this.tbIssuePlace.Location = new System.Drawing.Point(188, 231);
             this.tbIssuePlace.Name = "tbIssuePlace";
             this.tbIssuePlace.Size = new System.Drawing.Size(1082, 45);
             this.tbIssuePlace.TabIndex = 11;
             // 
-            // lIssueImage
-            // 
-            this.lIssueImage.Location = new System.Drawing.Point(3, 309);
-            this.lIssueImage.Name = "lIssueImage";
-            this.lIssueImage.Size = new System.Drawing.Size(179, 87);
-            this.lIssueImage.TabIndex = 6;
-            this.lIssueImage.Text = "Mapa";
-            this.lIssueImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lIssuePlace
             // 
-            this.lIssuePlace.Location = new System.Drawing.Point(3, 206);
+            this.lIssuePlace.Location = new System.Drawing.Point(3, 228);
             this.lIssuePlace.Name = "lIssuePlace";
             this.lIssuePlace.Size = new System.Drawing.Size(179, 87);
             this.lIssuePlace.TabIndex = 4;
@@ -123,7 +110,7 @@
             // 
             // lIssueDescription
             // 
-            this.lIssueDescription.Location = new System.Drawing.Point(3, 103);
+            this.lIssueDescription.Location = new System.Drawing.Point(3, 114);
             this.lIssueDescription.Name = "lIssueDescription";
             this.lIssueDescription.Size = new System.Drawing.Size(179, 87);
             this.lIssueDescription.TabIndex = 2;
@@ -142,7 +129,7 @@
             // tbIssueDescription
             // 
             this.tbIssueDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbIssueDescription.Location = new System.Drawing.Point(188, 106);
+            this.tbIssueDescription.Location = new System.Drawing.Point(188, 117);
             this.tbIssueDescription.Name = "tbIssueDescription";
             this.tbIssueDescription.Size = new System.Drawing.Size(1082, 45);
             this.tbIssueDescription.TabIndex = 10;
@@ -229,16 +216,6 @@
             this.lProjectInfoInIssueForm.TabIndex = 1;
             this.lProjectInfoInIssueForm.Text = "Projekt:";
             // 
-            // bUploadImage
-            // 
-            this.bUploadImage.Location = new System.Drawing.Point(188, 312);
-            this.bUploadImage.Name = "bUploadImage";
-            this.bUploadImage.Size = new System.Drawing.Size(198, 48);
-            this.bUploadImage.TabIndex = 12;
-            this.bUploadImage.Text = "Pobierz plik (PDF)";
-            this.bUploadImage.UseVisualStyleBackColor = true;
-            this.bUploadImage.Click += new System.EventHandler(this.bUploadImage_Click);
-            // 
             // AddIssue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -262,13 +239,9 @@
         private System.Windows.Forms.Button bAddIssue;
         private System.Windows.Forms.Button bCancelAddingIssue;
         private System.Windows.Forms.TableLayoutPanel tlpAddIssueForm;
-        private System.Windows.Forms.TextBox tbIssuePlace;
-        private System.Windows.Forms.Label lIssueImage;
         private System.Windows.Forms.Label lIssuePlace;
         private System.Windows.Forms.Label lIssueDescription;
         private System.Windows.Forms.Label lIssueName;
-        private System.Windows.Forms.TextBox tbIssueDescription;
-        private System.Windows.Forms.MaskedTextBox tbIssueName;
         private System.Windows.Forms.Panel pProjectInfoInIssueForm;
         public System.Windows.Forms.TextBox tbProjectInfoDateOutInIssueForm;
         public System.Windows.Forms.TextBox tbProjectInfoDateInInIssueForm;
@@ -276,6 +249,8 @@
         private System.Windows.Forms.Label lProjectInfoDateInInIssueForm;
         public System.Windows.Forms.TextBox tbProjectInfoGeneralInIssueForm;
         private System.Windows.Forms.Label lProjectInfoInIssueForm;
-        private System.Windows.Forms.Button bUploadImage;
+        private System.Windows.Forms.TextBox tbIssuePlace;
+        private System.Windows.Forms.TextBox tbIssueDescription;
+        private System.Windows.Forms.MaskedTextBox tbIssueName;
     }
 }
