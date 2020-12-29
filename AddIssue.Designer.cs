@@ -56,6 +56,7 @@
             this.bAddIssue.TabIndex = 1;
             this.bAddIssue.Text = "Dodaj poprawkę";
             this.bAddIssue.UseVisualStyleBackColor = true;
+            this.bAddIssue.Click += new System.EventHandler(this.bAddIssue_Click);
             // 
             // bCancelAddingIssue
             // 

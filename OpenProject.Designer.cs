@@ -133,7 +133,6 @@ namespace ProjectsGenerator_WindowsForms
             this.bAddIssue.TabIndex = 0;
             this.bAddIssue.Text = "Utwórz poprawkę";
             this.bAddIssue.UseVisualStyleBackColor = true;
-            this.bAddIssue.Click += new System.EventHandler(this.bAddIssue_Click);
             // 
             // imageList1
             // 
@@ -146,7 +145,7 @@ namespace ProjectsGenerator_WindowsForms
             this.dgvIssues.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvIssues.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvIssues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIssues.Location = new System.Drawing.Point(4, 123);
+            this.dgvIssues.Location = new System.Drawing.Point(5, 154);
             this.dgvIssues.Name = "dgvIssues";
             this.dgvIssues.RowHeadersWidth = 51;
             this.dgvIssues.RowTemplate.Height = 24;

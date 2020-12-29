@@ -86,7 +86,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2117, 1331);
+            this.ClientSize = new System.Drawing.Size(1908, 1924);
             this.Controls.Add(this.bEditProject);
             this.Controls.Add(this.bDeleteProject);
             this.Controls.Add(this.bOpenProject);
@@ -95,6 +95,7 @@
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
+            this.MinimumSize = new System.Drawing.Size(1918, 47);
             this.Name = "Projects";
             this.Text = "Projects";
             this.Load += new System.EventHandler(this.Projects_Load);

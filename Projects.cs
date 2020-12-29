@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using WindowsFormsApp1;
@@ -91,7 +90,7 @@ namespace ProjectsGenerator_WindowsForms
         {
             var name = (string)dgvProjects.SelectedRows[0].Cells["ProjectName"].Value;
             var project = projectsKonstruktorEntities.Projects.FirstOrDefault(q => q.ProjectName == name);
-            
+
             if (project != null)
             {
                 projectsKonstruktorEntities.Projects.Remove(project);

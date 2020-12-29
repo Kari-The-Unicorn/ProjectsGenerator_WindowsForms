@@ -8,7 +8,7 @@ namespace WindowsFormsApp1
 {
     public partial class OpenMap : Form
     {
-        private Point imagePos = new Point();
+        public static Point imagePos = new Point();
         private readonly ProjectsKonstruktorEntities projectsKonstruktorEntities;
         private readonly Label lblId;
         public OpenMap()
@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
             //widnows forms tt.ShowAlways = true;
             pbMap.MouseDown += pbMap_MouseDown;
         }
-        private void pbMap_MouseDown(object sender, MouseEventArgs e)
+        public void pbMap_MouseDown(object sender, MouseEventArgs e)
         {
             Bitmap bmp = new Bitmap(pbMap.Image);
             using (Graphics g = Graphics.FromImage(bmp))
