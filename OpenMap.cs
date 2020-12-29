@@ -1,6 +1,8 @@
 ﻿using ProjectsGenerator_WindowsForms;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -11,6 +13,7 @@ namespace WindowsFormsApp1
         public static Point imagePos = new Point();
         private readonly ProjectsKonstruktorEntities projectsKonstruktorEntities;
         private readonly Label lblId;
+        private List<Issue> issuesOnMap = new List<Issue>();
         public OpenMap()
         {
             InitializeComponent();
@@ -18,9 +21,11 @@ namespace WindowsFormsApp1
             lblId = new Label();
             ToolTip tt = new ToolTip();
             tt.SetToolTip(this.pbMap, "Zaznacz poprawkę na mapie");
-            //widnows forms tt.ShowAlways = true;
+            tt.ShowAlways = true;
             pbMap.MouseDown += pbMap_MouseDown;
+            issuesOnMap = projectsKonstruktorEntities.Issues.ToList();
         }
+
         public void pbMap_MouseDown(object sender, MouseEventArgs e)
         {
             Bitmap bmp = new Bitmap(pbMap.Image);
@@ -54,13 +59,27 @@ namespace WindowsFormsApp1
                     ((AddIssue)newMdiChildEdit).tbProjectInfoGeneralInIssueForm.Text += " ( " + project2.ProjectState.ToString().Trim() + " )";
                     ((AddIssue)newMdiChildEdit).tbProjectInfoDateInInIssueForm.Text += project2.ProjectDateIn.ToString();
                     ((AddIssue)newMdiChildEdit).tbProjectInfoDateOutInIssueForm.Text += project2.ProjectDateOut.ToString();
-
                     newMdiChildEdit.Show();
                 }
             }
             catch
             {
                 Close();
+            }
+        }
+
+        private void OpenMap_Load(object sender, EventArgs e)
+        {
+            foreach (var issueOnMap in issuesOnMap)
+            {
+                Bitmap bmp1 = new Bitmap(pbMap.Image);
+                using (Graphics g = Graphics.FromImage(bmp1))
+                {
+                    g.DrawImage(new Bitmap(
+                       @"C:\Users\karol\source\repos\WindowsFormsApp1\images\redcircle.png"),
+                    new Point((int)issueOnMap.IssueCoordinateX, (int)issueOnMap.IssueCoordinateY));
+                    pbMap.Image = bmp1;
+                }
             }
         }
     }

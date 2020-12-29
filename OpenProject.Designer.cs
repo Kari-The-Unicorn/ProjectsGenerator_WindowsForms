@@ -38,7 +38,6 @@ namespace ProjectsGenerator_WindowsForms
             this.lProjectInfoDateIn = new System.Windows.Forms.Label();
             this.tbProjectInfoGeneral = new System.Windows.Forms.TextBox();
             this.lProjectInfo = new System.Windows.Forms.Label();
-            this.bAddIssue = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dgvIssues = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -125,15 +124,6 @@ namespace ProjectsGenerator_WindowsForms
             this.lProjectInfo.TabIndex = 1;
             this.lProjectInfo.Text = "Projekt:";
             // 
-            // bAddIssue
-            // 
-            this.bAddIssue.Location = new System.Drawing.Point(1221, 1);
-            this.bAddIssue.Name = "bAddIssue";
-            this.bAddIssue.Size = new System.Drawing.Size(161, 42);
-            this.bAddIssue.TabIndex = 0;
-            this.bAddIssue.Text = "Utwórz poprawkę";
-            this.bAddIssue.UseVisualStyleBackColor = true;
-            // 
             // imageList1
             // 
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
@@ -177,7 +167,7 @@ namespace ProjectsGenerator_WindowsForms
             // 
             // bShowMap
             // 
-            this.bShowMap.Location = new System.Drawing.Point(1221, 65);
+            this.bShowMap.Location = new System.Drawing.Point(1212, 1);
             this.bShowMap.Name = "bShowMap";
             this.bShowMap.Size = new System.Drawing.Size(161, 43);
             this.bShowMap.TabIndex = 4;
@@ -205,7 +195,6 @@ namespace ProjectsGenerator_WindowsForms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvIssues);
             this.Controls.Add(this.pProjectInfo);
-            this.Controls.Add(this.bAddIssue);
             this.Name = "OpenProject";
             this.Text = "Mój projekt";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -221,7 +210,6 @@ namespace ProjectsGenerator_WindowsForms
         #endregion
 
         private System.Windows.Forms.Panel pProjectInfo;
-        private System.Windows.Forms.Button bAddIssue;
         private Label lProjectInfo;
         private ImageList imageList1;
         private Label lProjectInfoDateOut;

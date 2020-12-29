@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
             this.pbMap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbMap.Location = new System.Drawing.Point(0, 0);
             this.pbMap.Name = "pbMap";
-            this.pbMap.Size = new System.Drawing.Size(1129, 854);
+            this.pbMap.Size = new System.Drawing.Size(903, 683);
             this.pbMap.TabIndex = 0;
             this.pbMap.TabStop = false;
             this.pbMap.Click += new System.EventHandler(this.pbMap_Click);
@@ -53,6 +53,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.pbMap);
             this.Name = "OpenMap";
             this.Text = "OpenMap";
+            this.Load += new System.EventHandler(this.OpenMap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbMap)).EndInit();
             this.ResumeLayout(false);
 

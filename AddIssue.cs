@@ -19,12 +19,10 @@ namespace WindowsFormsApp1
 
         private void projectCompanyLabel_Click(object sender, EventArgs e)
         {
-
         }
 
         private void tbProjectInfoDateIn_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void pProjectInfoInIssueForm_Paint(object sender, PaintEventArgs e)
@@ -34,12 +32,10 @@ namespace WindowsFormsApp1
 
         private void bUploadImage_Click(object sender, EventArgs e)
         {
-
         }
 
         private void tlpAddIssueForm_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void bAddIssue_Click(object sender, EventArgs e)
