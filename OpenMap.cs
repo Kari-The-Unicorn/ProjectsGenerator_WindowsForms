@@ -14,6 +14,8 @@ namespace WindowsFormsApp1
         private readonly ProjectsKonstruktorEntities projectsKonstruktorEntities;
         private readonly Label lblId;
         private List<Issue> issuesOnMap = new List<Issue>();
+        private bool isEditMode;
+        //private Issue issueOnTheMap = new Issue();
         public OpenMap()
         {
             InitializeComponent();
@@ -22,23 +24,41 @@ namespace WindowsFormsApp1
             ToolTip tt = new ToolTip();
             tt.SetToolTip(this.pbMap, "Zaznacz poprawkę na mapie");
             tt.ShowAlways = true;
-            pbMap.MouseDown += pbMap_MouseDown;
+            //pbMap.MouseDown += pbMap_MouseDown;
             issuesOnMap = projectsKonstruktorEntities.Issues.ToList();
         }
 
         public void pbMap_MouseDown(object sender, MouseEventArgs e)
         {
+            isEditMode = false;
+            issuesOnMap = projectsKonstruktorEntities.Issues.ToList();
             Bitmap bmp = new Bitmap(pbMap.Image);
             using (Graphics g = Graphics.FromImage(bmp))
             {
                 if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
                 {
-                    imagePos = e.Location;
-                    g.DrawImage(new Bitmap(
-                       @"C:\Users\karol\source\repos\WindowsFormsApp1\images\redcircle.png"),
-                    new Point(imagePos.X - 30, imagePos.Y - 30));
+                    foreach (var issueOnTheMap in issuesOnMap)
+                    {
+                        if (issueOnTheMap.IssueCoordinateX < e.Location.X &&
+                            issueOnTheMap.IssueCoordinateX > e.Location.X - 60 &&
+                            issueOnTheMap.IssueCoordinateY < e.Location.Y &&
+                            issueOnTheMap.IssueCoordinateY > e.Location.Y - 60)
+                        {
+                            isEditMode = true;
+                            MessageBox.Show("Edit project");
+                            //AddIssue newMdiChildEdit = new AddIssue();
+                            //newMdiChildEdit.Show();
+                        }
+                    }
+                    if (!isEditMode)
+                    {
+                        imagePos = e.Location;
+                        g.DrawImage(new Bitmap(
+                           @"C:\Users\karol\source\repos\WindowsFormsApp1\images\redcircle.png"),
+                        new Point(imagePos.X - 30, imagePos.Y - 30));
+                    }
+                    pbMap.Image = bmp;
                 }
-                pbMap.Image = bmp;
             }
         }
 
@@ -72,6 +92,7 @@ namespace WindowsFormsApp1
         {
             foreach (var issueOnMap in issuesOnMap)
             {
+                //issueOnTheMap = issueOnMap;
                 Bitmap bmp1 = new Bitmap(pbMap.Image);
                 using (Graphics g = Graphics.FromImage(bmp1))
                 {
