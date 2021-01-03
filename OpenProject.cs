@@ -44,6 +44,7 @@ namespace ProjectsGenerator_WindowsForms
         {
             var issues = projectsKonstruktorEntities.Issues.ToList();
             dgvIssues.DataSource = issues;
+            dgvIssues.Refresh();
         }
 
         private void dgvIssues_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -67,17 +68,11 @@ namespace ProjectsGenerator_WindowsForms
             dgvIssues.Columns["Project"].Visible = false;
         }
 
-        //private void bAddIssue_Click(object sender, EventArgs e)
-        //{
-        //    AddIssue newMdiChildEdit = new AddIssue();
-        //    newMdiChildEdit.Show();
-        //}
-
         private void dgvIssues_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
 
-        private void bShowMap_Click(object sender, EventArgs e)
+        public void bShowMap_Click(object sender, EventArgs e)
         {
             OpenMap newMdiChildMap = new OpenMap();
             try
@@ -95,7 +90,7 @@ namespace ProjectsGenerator_WindowsForms
                     ms.Write(byteBLOBData, 0, byteBLOBData.Length);
                     ms.Position = 0;
                     ((OpenMap)newMdiChildMap).pbMap.Image = Image.FromStream(ms);
-                    newMdiChildMap.Show();
+                    newMdiChildMap.ShowDialog();
                 }
             }
             catch

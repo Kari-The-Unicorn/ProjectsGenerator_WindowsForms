@@ -7,6 +7,10 @@ namespace WindowsFormsApp1
 {
     public partial class AddIssue : Form
     {
+        public bool isCancelled = false;
+        public static OpenProject openProject = new OpenProject();
+        public static OpenMap newMdiChildMap = new OpenMap();
+        Projects project = new Projects();
         public AddIssue()
         {
             InitializeComponent();
@@ -14,7 +18,20 @@ namespace WindowsFormsApp1
 
         private void bCancelAddingIssue_Click(object sender, EventArgs e)
         {
+            isCancelled = true;
+            //OpenProject proj = new OpenProject();
+            //proj.bShowMap_Click(sender, e); 
             Close();
+            //OpenMap.ActiveForm.Refresh();
+            //openProject.ActiveMdiChild.Refresh();
+            openProject.bShowMap_Click(sender, e);
+            newMdiChildMap.Close();
+            //openProject.Controls.Clear();
+            //openProject.Refresh();
+            //openProject.Close();
+            //project.GetSelectedProject();
+            //((OpenMap)newMdiChildMap).Refresh();
+            //Application.DoEvents();
         }
 
         private void projectCompanyLabel_Click(object sender, EventArgs e)
@@ -47,10 +64,10 @@ namespace WindowsFormsApp1
 
                 if (project3 != null)
                 {
-                    string issueName = tbIssueName.Text;
+                    string issueName = tbIssueName.Text.Trim();
                     int projectId = project3.id;
-                    string issueDescription = tbIssueDescription.Text;
-                    string issuePlace = tbIssuePlace.Text;
+                    string issueDescription = tbIssueDescription.Text.Trim();
+                    string issuePlace = tbIssuePlace.Text.Trim();
                     var imageId = project3.ImageId;
                     var issueCoordinateX = imagePos1.X - 30;
                     var issueCoordinateY = imagePos1.Y - 30;
@@ -89,6 +106,7 @@ namespace WindowsFormsApp1
 
                         try
                         {
+                            isCancelled = false;
                             projectsKonstruktorEntities.Issues.Add(issue);
                             projectsKonstruktorEntities.SaveChanges();
                             MessageBox.Show("Poprawkę dodano pomyślnie.");

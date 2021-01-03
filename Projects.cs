@@ -57,7 +57,7 @@ namespace ProjectsGenerator_WindowsForms
                     ((EditProject)newMdiChildEdit).tbProjectState.Text = project.ProjectState.ToString();
                     ((EditProject)newMdiChildEdit).dtpProjectCollectionDate.Value = project.ProjectDateIn.Value;
                     ((EditProject)newMdiChildEdit).dtpProjectCompleteDate.Value = project.ProjectDateOut.Value;
-                    newMdiChildEdit.Show();
+                    newMdiChildEdit.ShowDialog();
                 }
             }
             catch
@@ -116,7 +116,7 @@ namespace ProjectsGenerator_WindowsForms
                     ((OpenProject)newMdiChildOpen).tbProjectInfoGeneral.Text += " ( " + project.ProjectState.ToString().Trim() + " )";
                     ((OpenProject)newMdiChildOpen).tbProjectInfoDateIn.Text += project.ProjectDateIn.ToString();
                     ((OpenProject)newMdiChildOpen).tbProjectInfoDateOut.Text += project.ProjectDateOut.ToString();
-                    newMdiChildOpen.Show();
+                    newMdiChildOpen.ShowDialog();
                 }
             }
             catch

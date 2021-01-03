@@ -45,9 +45,87 @@ namespace WindowsFormsApp1
                             issueOnTheMap.IssueCoordinateY > e.Location.Y - 60)
                         {
                             isEditMode = true;
-                            MessageBox.Show("Edit project");
-                            //AddIssue newMdiChildEdit = new AddIssue();
-                            //newMdiChildEdit.Show();
+                            //MessageBox.Show("Edit project");
+                            EditIssue newMdiChildEdit = new EditIssue();
+
+                            try
+                            {
+                                var project4 = Projects.project;
+                                //var pictures1 = Pictures1.;
+                                var imagePos2 = OpenMap.imagePos;
+
+                                if (project4 != null)
+                                {
+                                    ((EditIssue)newMdiChildEdit).tbProjectInfoGeneralInIssueForm.Text = project4.id.ToString() + "; ";
+                                    ((EditIssue)newMdiChildEdit).tbProjectInfoGeneralInIssueForm.Text += project4.ProjectName.ToString().Trim() + "; ";
+                                    ((EditIssue)newMdiChildEdit).tbProjectInfoGeneralInIssueForm.Text += project4.ProjectAddress.ToString().Trim() + "; ";
+                                    ((EditIssue)newMdiChildEdit).tbProjectInfoGeneralInIssueForm.Text += project4.ProjectCompany.ToString().Trim();
+                                    ((EditIssue)newMdiChildEdit).tbProjectInfoGeneralInIssueForm.Text += " ( " + project4.ProjectState.ToString().Trim() + " )";
+                                    ((EditIssue)newMdiChildEdit).tbProjectInfoDateInInIssueForm.Text += project4.ProjectDateIn.ToString();
+                                    ((EditIssue)newMdiChildEdit).tbProjectInfoDateOutInIssueForm.Text += project4.ProjectDateOut.ToString();
+                                    ((EditIssue)newMdiChildEdit).lId.Text = issueOnTheMap.id.ToString();
+                                    //foreach (var issueOnTheMap in issuesOnMap)
+                                    //{
+                                    //    if (issueOnTheMap.IssueCoordinateX < e.Location.X &&
+                                    //        issueOnTheMap.IssueCoordinateX > e.Location.X - 60 &&
+                                    //        issueOnTheMap.IssueCoordinateY < e.Location.Y &&
+                                    //        issueOnTheMap.IssueCoordinateY > e.Location.Y - 60)
+                                    //    {
+                                    //        //isEditMode = true;
+                                    //        //MessageBox.Show("Edit project");
+                                    //        EditIssue newMdiChildEdit = new EditIssue();
+                                    //        newMdiChildEdit.Show();
+                                    //    }
+                                    //}
+                                    ((EditIssue)newMdiChildEdit).tbIssueName.Text = issueOnTheMap.IssueName;
+                                    ((EditIssue)newMdiChildEdit).tbIssueDescription.Text = issueOnTheMap.IssueDescription;
+                                    ((EditIssue)newMdiChildEdit).tbIssuePlace.Text = issueOnTheMap.IssuePlace;
+
+                                    
+
+                                    //if (string.IsNullOrWhiteSpace(issueName))
+                                    //{
+                                    //    isValid = false;
+                                    //    errorMessage = "Proszę wpisać nazwę projektu.";
+                                    //}
+
+                                    //if (isValid)
+                                    //{
+                                    //    var projectsKonstruktorEntities = new ProjectsKonstruktorEntities();
+                                    //    var issue = new Issue();
+                                    //    issue.IssueName = issueName;
+                                    //    issue.ProjectId = projectId;
+                                    //    issue.IssueDescription = issueDescription;
+                                    //    issue.IssuePlace = issuePlace;
+                                    //    issue.ImageId = imageId;
+                                    //    issue.IssueCoordinateX = issueCoordinateX;
+                                    //    issue.IssueCoordinateY = issueCoordinateY;
+
+                                    //    try
+                                    //    {
+                                    //        isCancelled = false;
+                                    //        projectsKonstruktorEntities.Issues.Add(issue);
+                                    //        projectsKonstruktorEntities.SaveChanges();
+                                    //        MessageBox.Show("Poprawkę dodano pomyślnie.");
+                                    //        Close();
+                                    //    }
+                                    //    catch (Exception ec)
+                                    //    {
+                                    //        Console.WriteLine(ec.Message);
+                                    //        MessageBox.Show("Poprawki nie dodano.");
+                                    //    }
+                                }
+                                //else
+                                //{
+                                //    MessageBox.Show(errorMessage);
+                                //}
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
+
+                            newMdiChildEdit.ShowDialog();
                         }
                     }
                     if (!isEditMode)
@@ -79,7 +157,7 @@ namespace WindowsFormsApp1
                     ((AddIssue)newMdiChildEdit).tbProjectInfoGeneralInIssueForm.Text += " ( " + project2.ProjectState.ToString().Trim() + " )";
                     ((AddIssue)newMdiChildEdit).tbProjectInfoDateInInIssueForm.Text += project2.ProjectDateIn.ToString();
                     ((AddIssue)newMdiChildEdit).tbProjectInfoDateOutInIssueForm.Text += project2.ProjectDateOut.ToString();
-                    newMdiChildEdit.Show();
+                    newMdiChildEdit.ShowDialog();
                 }
             }
             catch
@@ -88,20 +166,34 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void OpenMap_Load(object sender, EventArgs e)
+        public void OpenMap_Load(object sender, EventArgs e)
         {
             foreach (var issueOnMap in issuesOnMap)
             {
                 //issueOnTheMap = issueOnMap;
-                Bitmap bmp1 = new Bitmap(pbMap.Image);
-                using (Graphics g = Graphics.FromImage(bmp1))
-                {
-                    g.DrawImage(new Bitmap(
-                       @"C:\Users\karol\source\repos\WindowsFormsApp1\images\redcircle.png"),
-                    new Point((int)issueOnMap.IssueCoordinateX, (int)issueOnMap.IssueCoordinateY));
-                    pbMap.Image = bmp1;
-                }
+                    Bitmap bmp1 = new Bitmap(pbMap.Image);
+                    using (Graphics g = Graphics.FromImage(bmp1))
+                    {
+                        g.DrawImage(new Bitmap(
+                           @"C:\Users\karol\source\repos\WindowsFormsApp1\images\redcircle.png"),
+                        new Point((int)issueOnMap.IssueCoordinateX, (int)issueOnMap.IssueCoordinateY));
+                        pbMap.Image = bmp1;
+                    }
             }
+        }
+
+        private void bCancelAddingIssue_Click(object sender, EventArgs e)
+        {
+            AddIssue addissueform = new AddIssue();
+            addissueform.FormClosing += new FormClosingEventHandler(this.AddIssue_FormClosing);
+            addissueform.ShowDialog();
+        }
+
+        private void AddIssue_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            OpenMap.ActiveForm.Invalidate(); 
+            OpenMap.ActiveForm.Refresh();
+            this.Close();
         }
     }
 }

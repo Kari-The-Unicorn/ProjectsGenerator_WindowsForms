@@ -161,7 +161,7 @@ namespace ProjectsGenerator_WindowsForms
             this.bLoadIssues.Name = "bLoadIssues";
             this.bLoadIssues.Size = new System.Drawing.Size(161, 29);
             this.bLoadIssues.TabIndex = 3;
-            this.bLoadIssues.Text = "Załaduj listę";
+            this.bLoadIssues.Text = "Odśwież listę";
             this.bLoadIssues.UseVisualStyleBackColor = true;
             this.bLoadIssues.Click += new System.EventHandler(this.bLoadIssues_Click);
             // 
@@ -180,9 +180,8 @@ namespace ProjectsGenerator_WindowsForms
             this.lId.AutoSize = true;
             this.lId.Location = new System.Drawing.Point(575, 71);
             this.lId.Name = "lId";
-            this.lId.Size = new System.Drawing.Size(19, 17);
+            this.lId.Size = new System.Drawing.Size(0, 21);
             this.lId.TabIndex = 5;
-            this.lId.Text = "id";
             // 
             // OpenProject
             // 

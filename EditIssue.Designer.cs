@@ -1,6 +1,7 @@
-﻿namespace WindowsFormsApp1
+﻿
+namespace WindowsFormsApp1
 {
-    partial class AddIssue
+    partial class EditIssue
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +29,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.bAddIssue = new System.Windows.Forms.Button();
-            this.bCancelAddingIssue = new System.Windows.Forms.Button();
             this.tlpAddIssueForm = new System.Windows.Forms.TableLayoutPanel();
             this.tbIssuePlace = new System.Windows.Forms.TextBox();
             this.lIssuePlace = new System.Windows.Forms.Label();
@@ -37,6 +36,8 @@
             this.lIssueName = new System.Windows.Forms.Label();
             this.tbIssueDescription = new System.Windows.Forms.TextBox();
             this.tbIssueName = new System.Windows.Forms.MaskedTextBox();
+            this.bCancelAddingIssue = new System.Windows.Forms.Button();
+            this.bSaveEditingIssue = new System.Windows.Forms.Button();
             this.pProjectInfoInIssueForm = new System.Windows.Forms.Panel();
             this.tbProjectInfoDateOutInIssueForm = new System.Windows.Forms.TextBox();
             this.tbProjectInfoDateInInIssueForm = new System.Windows.Forms.TextBox();
@@ -44,33 +45,14 @@
             this.lProjectInfoDateInInIssueForm = new System.Windows.Forms.Label();
             this.tbProjectInfoGeneralInIssueForm = new System.Windows.Forms.TextBox();
             this.lProjectInfoInIssueForm = new System.Windows.Forms.Label();
+            this.lId = new System.Windows.Forms.Label();
+            this.bDeleteIssue = new System.Windows.Forms.Button();
             this.tlpAddIssueForm.SuspendLayout();
             this.pProjectInfoInIssueForm.SuspendLayout();
             this.SuspendLayout();
             // 
-            // bAddIssue
-            // 
-            this.bAddIssue.Location = new System.Drawing.Point(6, 487);
-            this.bAddIssue.Name = "bAddIssue";
-            this.bAddIssue.Size = new System.Drawing.Size(198, 48);
-            this.bAddIssue.TabIndex = 1;
-            this.bAddIssue.Text = "Dodaj poprawkę";
-            this.bAddIssue.UseVisualStyleBackColor = true;
-            this.bAddIssue.Click += new System.EventHandler(this.bAddIssue_Click);
-            // 
-            // bCancelAddingIssue
-            // 
-            this.bCancelAddingIssue.Location = new System.Drawing.Point(210, 487);
-            this.bCancelAddingIssue.Name = "bCancelAddingIssue";
-            this.bCancelAddingIssue.Size = new System.Drawing.Size(198, 48);
-            this.bCancelAddingIssue.TabIndex = 2;
-            this.bCancelAddingIssue.Text = "Anuluj";
-            this.bCancelAddingIssue.UseVisualStyleBackColor = true;
-            this.bCancelAddingIssue.Click += new System.EventHandler(this.bCancelAddingIssue_Click);
-            // 
             // tlpAddIssueForm
             // 
-            this.tlpAddIssueForm.AutoSize = true;
             this.tlpAddIssueForm.ColumnCount = 2;
             this.tlpAddIssueForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.54545F));
             this.tlpAddIssueForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.45454F));
@@ -81,7 +63,7 @@
             this.tlpAddIssueForm.Controls.Add(this.tbIssueDescription, 1, 1);
             this.tlpAddIssueForm.Controls.Add(this.tbIssueName, 1, 0);
             this.tlpAddIssueForm.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tlpAddIssueForm.Location = new System.Drawing.Point(0, 110);
+            this.tlpAddIssueForm.Location = new System.Drawing.Point(4, 107);
             this.tlpAddIssueForm.Name = "tlpAddIssueForm";
             this.tlpAddIssueForm.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tlpAddIssueForm.RowCount = 3;
@@ -89,8 +71,7 @@
             this.tlpAddIssueForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tlpAddIssueForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tlpAddIssueForm.Size = new System.Drawing.Size(1275, 342);
-            this.tlpAddIssueForm.TabIndex = 3;
-            this.tlpAddIssueForm.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpAddIssueForm_Paint);
+            this.tlpAddIssueForm.TabIndex = 7;
             // 
             // tbIssuePlace
             // 
@@ -108,7 +89,6 @@
             this.lIssuePlace.TabIndex = 4;
             this.lIssuePlace.Text = "Lokalizacja";
             this.lIssuePlace.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lIssuePlace.Click += new System.EventHandler(this.projectCompanyLabel_Click);
             // 
             // lIssueDescription
             // 
@@ -144,6 +124,26 @@
             this.tbIssueName.Size = new System.Drawing.Size(1082, 45);
             this.tbIssueName.TabIndex = 9;
             // 
+            // bCancelAddingIssue
+            // 
+            this.bCancelAddingIssue.Location = new System.Drawing.Point(420, 544);
+            this.bCancelAddingIssue.Name = "bCancelAddingIssue";
+            this.bCancelAddingIssue.Size = new System.Drawing.Size(198, 48);
+            this.bCancelAddingIssue.TabIndex = 6;
+            this.bCancelAddingIssue.Text = "Anuluj";
+            this.bCancelAddingIssue.UseVisualStyleBackColor = true;
+            this.bCancelAddingIssue.Click += new System.EventHandler(this.bCancelAddingIssue_Click);
+            // 
+            // bSaveEditingIssue
+            // 
+            this.bSaveEditingIssue.Location = new System.Drawing.Point(12, 544);
+            this.bSaveEditingIssue.Name = "bSaveEditingIssue";
+            this.bSaveEditingIssue.Size = new System.Drawing.Size(198, 48);
+            this.bSaveEditingIssue.TabIndex = 5;
+            this.bSaveEditingIssue.Text = "Zapisz zmiany";
+            this.bSaveEditingIssue.UseVisualStyleBackColor = true;
+            this.bSaveEditingIssue.Click += new System.EventHandler(this.bSaveEditingIssue_Click);
+            // 
             // pProjectInfoInIssueForm
             // 
             this.pProjectInfoInIssueForm.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -153,10 +153,10 @@
             this.pProjectInfoInIssueForm.Controls.Add(this.lProjectInfoDateInInIssueForm);
             this.pProjectInfoInIssueForm.Controls.Add(this.tbProjectInfoGeneralInIssueForm);
             this.pProjectInfoInIssueForm.Controls.Add(this.lProjectInfoInIssueForm);
-            this.pProjectInfoInIssueForm.Location = new System.Drawing.Point(6, 2);
+            this.pProjectInfoInIssueForm.Location = new System.Drawing.Point(4, 12);
             this.pProjectInfoInIssueForm.Name = "pProjectInfoInIssueForm";
-            this.pProjectInfoInIssueForm.Size = new System.Drawing.Size(1269, 89);
-            this.pProjectInfoInIssueForm.TabIndex = 4;
+            this.pProjectInfoInIssueForm.Size = new System.Drawing.Size(1275, 89);
+            this.pProjectInfoInIssueForm.TabIndex = 8;
             this.pProjectInfoInIssueForm.Paint += new System.Windows.Forms.PaintEventHandler(this.pProjectInfoInIssueForm_Paint);
             // 
             // tbProjectInfoDateOutInIssueForm
@@ -176,7 +176,6 @@
             this.tbProjectInfoDateInInIssueForm.ReadOnly = true;
             this.tbProjectInfoDateInInIssueForm.Size = new System.Drawing.Size(120, 34);
             this.tbProjectInfoDateInInIssueForm.TabIndex = 5;
-            this.tbProjectInfoDateInInIssueForm.TextChanged += new System.EventHandler(this.tbProjectInfoDateIn_TextChanged);
             // 
             // lProjectInfoDateOutInIssueForm
             // 
@@ -218,17 +217,39 @@
             this.lProjectInfoInIssueForm.TabIndex = 1;
             this.lProjectInfoInIssueForm.Text = "Projekt:";
             // 
-            // AddIssue
+            // lId
+            // 
+            this.lId.AutoSize = true;
+            this.lId.Location = new System.Drawing.Point(641, 544);
+            this.lId.Name = "lId";
+            this.lId.Size = new System.Drawing.Size(19, 17);
+            this.lId.TabIndex = 9;
+            this.lId.Text = "id";
+            // 
+            // bDeleteIssue
+            // 
+            this.bDeleteIssue.Location = new System.Drawing.Point(216, 544);
+            this.bDeleteIssue.Name = "bDeleteIssue";
+            this.bDeleteIssue.Size = new System.Drawing.Size(198, 48);
+            this.bDeleteIssue.TabIndex = 10;
+            this.bDeleteIssue.Text = "Usuń poprawkę";
+            this.bDeleteIssue.UseVisualStyleBackColor = true;
+            this.bDeleteIssue.Click += new System.EventHandler(this.bDeleteIssue_Click);
+            // 
+            // EditIssue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1287, 614);
-            this.Controls.Add(this.bAddIssue);
-            this.Controls.Add(this.bCancelAddingIssue);
-            this.Controls.Add(this.pProjectInfoInIssueForm);
+            this.ClientSize = new System.Drawing.Size(1296, 635);
+            this.Controls.Add(this.bDeleteIssue);
+            this.Controls.Add(this.lId);
             this.Controls.Add(this.tlpAddIssueForm);
-            this.Name = "AddIssue";
-            this.Text = "Dodaj poprawkę";
+            this.Controls.Add(this.bCancelAddingIssue);
+            this.Controls.Add(this.bSaveEditingIssue);
+            this.Controls.Add(this.pProjectInfoInIssueForm);
+            this.Name = "EditIssue";
+            this.Text = "Edytuj poprawkę";
+            this.Load += new System.EventHandler(this.EditIssue_Load);
             this.tlpAddIssueForm.ResumeLayout(false);
             this.tlpAddIssueForm.PerformLayout();
             this.pProjectInfoInIssueForm.ResumeLayout(false);
@@ -239,12 +260,13 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button bAddIssue;
-        private System.Windows.Forms.Button bCancelAddingIssue;
+
         private System.Windows.Forms.TableLayoutPanel tlpAddIssueForm;
         private System.Windows.Forms.Label lIssuePlace;
         private System.Windows.Forms.Label lIssueDescription;
         private System.Windows.Forms.Label lIssueName;
+        private System.Windows.Forms.Button bCancelAddingIssue;
+        private System.Windows.Forms.Button bSaveEditingIssue;
         private System.Windows.Forms.Panel pProjectInfoInIssueForm;
         public System.Windows.Forms.TextBox tbProjectInfoDateOutInIssueForm;
         public System.Windows.Forms.TextBox tbProjectInfoDateInInIssueForm;
@@ -252,8 +274,10 @@
         private System.Windows.Forms.Label lProjectInfoDateInInIssueForm;
         public System.Windows.Forms.TextBox tbProjectInfoGeneralInIssueForm;
         private System.Windows.Forms.Label lProjectInfoInIssueForm;
-        private System.Windows.Forms.TextBox tbIssuePlace;
-        private System.Windows.Forms.TextBox tbIssueDescription;
-        private System.Windows.Forms.MaskedTextBox tbIssueName;
+        public System.Windows.Forms.TextBox tbIssuePlace;
+        public System.Windows.Forms.TextBox tbIssueDescription;
+        public System.Windows.Forms.MaskedTextBox tbIssueName;
+        public System.Windows.Forms.Label lId;
+        private System.Windows.Forms.Button bDeleteIssue;
     }
 }
