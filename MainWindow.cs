@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ProjectsGenerator_WindowsForms
@@ -8,6 +9,7 @@ namespace ProjectsGenerator_WindowsForms
         public MainWindow()
         {
             InitializeComponent();
+            this.MinimumSize = new Size(1900, 1000);
         }
 
         //private void button1_Click(object sender, EventArgs e)

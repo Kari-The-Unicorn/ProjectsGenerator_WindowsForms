@@ -31,6 +31,7 @@ namespace ProjectsGenerator_WindowsForms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pProjectInfo = new System.Windows.Forms.Panel();
             this.tbProjectInfoDateOut = new System.Windows.Forms.TextBox();
             this.tbProjectInfoDateIn = new System.Windows.Forms.TextBox();
@@ -138,6 +139,8 @@ namespace ProjectsGenerator_WindowsForms
             this.dgvIssues.Location = new System.Drawing.Point(5, 154);
             this.dgvIssues.Name = "dgvIssues";
             this.dgvIssues.RowHeadersWidth = 51;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvIssues.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvIssues.RowTemplate.Height = 24;
             this.dgvIssues.Size = new System.Drawing.Size(1368, 312);
             this.dgvIssues.TabIndex = 1;
@@ -180,7 +183,7 @@ namespace ProjectsGenerator_WindowsForms
             this.lId.AutoSize = true;
             this.lId.Location = new System.Drawing.Point(575, 71);
             this.lId.Name = "lId";
-            this.lId.Size = new System.Drawing.Size(0, 21);
+            this.lId.Size = new System.Drawing.Size(0, 17);
             this.lId.TabIndex = 5;
             // 
             // OpenProject

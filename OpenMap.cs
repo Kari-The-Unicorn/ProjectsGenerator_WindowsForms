@@ -45,7 +45,6 @@ namespace WindowsFormsApp1
                             issueOnTheMap.IssueCoordinateY > e.Location.Y - 60)
                         {
                             isEditMode = true;
-                            //MessageBox.Show("Edit project");
                             EditIssue newMdiChildEdit = new EditIssue();
 
                             try

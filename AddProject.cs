@@ -56,10 +56,10 @@ namespace ProjectsGenerator_WindowsForms
         {
             try
             {
-                string projectName = tbProjectName.Text;
-                string projectAddress = tbProjectAddress.Text;
-                string projectCompany = tbProjectCompany.Text;
-                string projectState = tbProjectState.Text;
+                string projectName = tbProjectName.Text.Trim();
+                string projectAddress = tbProjectAddress.Text.Trim();
+                string projectCompany = tbProjectCompany.Text.Trim();
+                string projectState = tbProjectState.Text.Trim();
                 var projectDateIn = dtpProjectCollectionDate.Value;
                 var projectDateOut = dtpProjectCompleteDate.Value;
                 var isValid = true;
@@ -88,14 +88,14 @@ namespace ProjectsGenerator_WindowsForms
                     var projectsKonstruktorEntities = new ProjectsKonstruktorEntities();
                     var project = new Project();
                     var picture = new Pictures1();
-                    project.ProjectName = projectName;
-                    project.ProjectAddress = projectAddress;
-                    project.ProjectCompany = projectCompany;
-                    project.ProjectState = projectState;
+                    project.ProjectName = projectName.Trim();
+                    project.ProjectAddress = projectAddress.Trim();
+                    project.ProjectCompany = projectCompany.Trim();
+                    project.ProjectState = projectState.Trim();
                     project.ProjectDateIn = projectDateIn;
                     project.ProjectDateOut = projectDateOut;
                     Image imageContent = Image.FromFile(fileName);
-                    picture.PictureName = fileName;
+                    picture.PictureName = fileName.Trim();
                     project.ImageId = picture.PictureId;
                     picture.PictureContent = ConvertImageToByteArray(imageContent);
 

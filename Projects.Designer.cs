@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Projects));
             this.dgvProjects = new System.Windows.Forms.DataGridView();
             this.bOpenProject = new System.Windows.Forms.Button();
@@ -42,12 +44,22 @@
             this.dgvProjects.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProjects.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProjects.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProjects.Location = new System.Drawing.Point(0, 0);
             this.dgvProjects.Margin = new System.Windows.Forms.Padding(5);
             this.dgvProjects.Name = "dgvProjects";
             this.dgvProjects.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProjects.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProjects.RowTemplate.Height = 24;
-            this.dgvProjects.Size = new System.Drawing.Size(2008, 1163);
+            this.dgvProjects.Size = new System.Drawing.Size(1888, 1818);
             this.dgvProjects.TabIndex = 0;
             this.dgvProjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProjects_CellContentClick);
             this.dgvProjects.Click += new System.EventHandler(this.dgvProjects_Click);
@@ -86,7 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1908, 1924);
+            this.ClientSize = new System.Drawing.Size(2404, 2405);
             this.Controls.Add(this.bEditProject);
             this.Controls.Add(this.bDeleteProject);
             this.Controls.Add(this.bOpenProject);

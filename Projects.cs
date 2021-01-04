@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Drawing;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using WindowsFormsApp1;
 
@@ -21,16 +23,20 @@ namespace ProjectsGenerator_WindowsForms
         {
             var projects = projectsKonstruktorEntities.Projects.ToList();
             dgvProjects.DataSource = projects;
-            dgvProjects.Columns["id"].Visible = true;
+            dgvProjects.Columns["id"].Visible = false;
             dgvProjects.Columns["Issues"].Visible = false;
-            this.dgvProjects.Columns["ProjectName"].HeaderText = "Nazwa";
-            this.dgvProjects.Columns["ProjectAddress"].HeaderText = "Adres";
-            this.dgvProjects.Columns["ProjectCompany"].HeaderText = "Firma";
-            this.dgvProjects.Columns["ProjectState"].HeaderText = "Stan";
-            this.dgvProjects.Columns["ProjectDateIn"].HeaderText = "Od dnia";
-            this.dgvProjects.Columns["ProjectDateOut"].HeaderText = "Do dnia";
+            dgvProjects.Columns["ImageId"].Visible = false;
+            dgvProjects.Columns["Pictures1"].Visible = false;
+            dgvProjects.Columns["ProjectName"].HeaderText = "Nazwa";
+            dgvProjects.Columns["ProjectAddress"].HeaderText = "Adres";
+            dgvProjects.Columns["ProjectCompany"].HeaderText = "Firma";
+            dgvProjects.Columns["ProjectState"].HeaderText = "Stan";
+            dgvProjects.Columns["ProjectDateIn"].HeaderText = "Od dnia";
+            dgvProjects.Columns["ProjectDateOut"].HeaderText = "Do dnia";
+            dgvProjects.Columns["ProjectDateIn"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dgvProjects.Columns["ProjectDateOut"].DefaultCellStyle.Format = "dd/MM/yyyy";
             dgvProjects.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dgvProjects.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvProjects.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void dgvProjects_Click(object sender, EventArgs e)
@@ -90,10 +96,22 @@ namespace ProjectsGenerator_WindowsForms
         {
             var name = (string)dgvProjects.SelectedRows[0].Cells["ProjectName"].Value;
             var project = projectsKonstruktorEntities.Projects.FirstOrDefault(q => q.ProjectName == name);
+            var issues = projectsKonstruktorEntities.Issues.Where(q => q.ProjectId == project.id).ToList();
+            var pictures = projectsKonstruktorEntities.Pictures1.Where(q => q.PictureId == project.ImageId).ToList();
 
             if (project != null)
             {
                 projectsKonstruktorEntities.Projects.Remove(project);
+                foreach (var issue in issues)
+                {
+                    projectsKonstruktorEntities.Issues.Remove(issue);
+                }
+
+                foreach (var picture in pictures)
+                {
+                    projectsKonstruktorEntities.Pictures1.Remove(picture);
+                }
+                
                 projectsKonstruktorEntities.SaveChanges();
                 dgvProjects.Refresh();
                 Projects_Load(sender, e);
@@ -109,13 +127,15 @@ namespace ProjectsGenerator_WindowsForms
 
                 if (project != null)
                 {
-                    ((OpenProject)newMdiChildOpen).tbProjectInfoGeneral.Text = project.id.ToString() + "; ";
+                    //((OpenProject)newMdiChildOpen).tbProjectInfoGeneral.Text = project.id.ToString() + "; ";
                     ((OpenProject)newMdiChildOpen).tbProjectInfoGeneral.Text += project.ProjectName.ToString().Trim() + "; ";
                     ((OpenProject)newMdiChildOpen).tbProjectInfoGeneral.Text += project.ProjectAddress.ToString().Trim() + "; ";
                     ((OpenProject)newMdiChildOpen).tbProjectInfoGeneral.Text += project.ProjectCompany.ToString().Trim();
-                    ((OpenProject)newMdiChildOpen).tbProjectInfoGeneral.Text += " ( " + project.ProjectState.ToString().Trim() + " )";
-                    ((OpenProject)newMdiChildOpen).tbProjectInfoDateIn.Text += project.ProjectDateIn.ToString();
-                    ((OpenProject)newMdiChildOpen).tbProjectInfoDateOut.Text += project.ProjectDateOut.ToString();
+                    ((OpenProject)newMdiChildOpen).tbProjectInfoGeneral.Text += " (" + project.ProjectState.ToString().Trim() + ")";
+                    ((OpenProject)newMdiChildOpen).tbProjectInfoDateIn.Text += Regex.Replace(project.ProjectDateIn.ToString(), 
+                        @"\s(.*)", string.Empty, RegexOptions.IgnoreCase);
+                    ((OpenProject)newMdiChildOpen).tbProjectInfoDateOut.Text += Regex.Replace(project.ProjectDateOut.ToString(), 
+                        @"\s(.*)", string.Empty, RegexOptions.IgnoreCase);
                     newMdiChildOpen.ShowDialog();
                 }
             }

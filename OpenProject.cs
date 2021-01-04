@@ -56,10 +56,11 @@ namespace ProjectsGenerator_WindowsForms
         {
             var issues = projectsKonstruktorEntities.Issues.ToList();
             dgvIssues.DataSource = issues;
-            dgvIssues.Columns["id"].HeaderText = "Numer";
+            //dgvIssues.Columns["id"].HeaderText = "Numer";
             dgvIssues.Columns["IssueName"].HeaderText = "Nazwa poprawki";
             dgvIssues.Columns["IssueDescription"].HeaderText = "Opis";
             dgvIssues.Columns["IssuePlace"].HeaderText = "Lokalizacja";
+            dgvIssues.Columns["id"].Visible = false;
             dgvIssues.Columns["Pictures1"].Visible = false;
             dgvIssues.Columns["ProjectId"].Visible = false;
             dgvIssues.Columns["ImageId"].Visible = false;
