@@ -45,14 +45,14 @@ namespace ProjectsGenerator_WindowsForms
             // panelSideMenu
             // 
             this.panelSideMenu.AutoScroll = true;
-            this.panelSideMenu.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panelSideMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.panelSideMenu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelSideMenu.Controls.Add(this.panel1);
             this.panelSideMenu.Controls.Add(this.panelLogo);
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(163, 661);
+            this.panelSideMenu.Size = new System.Drawing.Size(137, 661);
             this.panelSideMenu.TabIndex = 2;
             this.panelSideMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -64,12 +64,13 @@ namespace ProjectsGenerator_WindowsForms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 100);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(161, 95);
+            this.panel1.Size = new System.Drawing.Size(133, 95);
             this.panel1.TabIndex = 2;
             // 
             // bProjects
             // 
             this.bProjects.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bProjects.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bProjects.IconChar = FontAwesome.Sharp.IconChar.Tasks;
             this.bProjects.IconColor = System.Drawing.Color.Black;
             this.bProjects.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -77,7 +78,7 @@ namespace ProjectsGenerator_WindowsForms
             this.bProjects.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bProjects.Location = new System.Drawing.Point(0, 47);
             this.bProjects.Name = "bProjects";
-            this.bProjects.Size = new System.Drawing.Size(161, 48);
+            this.bProjects.Size = new System.Drawing.Size(133, 48);
             this.bProjects.TabIndex = 3;
             this.bProjects.Text = "Projekty";
             this.bProjects.UseVisualStyleBackColor = true;
@@ -86,6 +87,7 @@ namespace ProjectsGenerator_WindowsForms
             // iconButton1
             // 
             this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -93,9 +95,10 @@ namespace ProjectsGenerator_WindowsForms
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton1.Location = new System.Drawing.Point(0, 0);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(161, 47);
+            this.iconButton1.Size = new System.Drawing.Size(133, 47);
             this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = "Nowy projekt";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
@@ -108,7 +111,7 @@ namespace ProjectsGenerator_WindowsForms
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(161, 100);
+            this.panelLogo.Size = new System.Drawing.Size(133, 100);
             this.panelLogo.TabIndex = 0;
             this.panelLogo.Click += new System.EventHandler(this.panelLogo_Click);
             // 
@@ -116,9 +119,9 @@ namespace ProjectsGenerator_WindowsForms
             // 
             this.panelChildForm.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(163, 0);
+            this.panelChildForm.Location = new System.Drawing.Point(137, 0);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1049, 661);
+            this.panelChildForm.Size = new System.Drawing.Size(1075, 661);
             this.panelChildForm.TabIndex = 3;
             // 
             // MainWindow

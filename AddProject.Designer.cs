@@ -75,8 +75,8 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tableLayoutPanel1.RowCount = 8;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.4916F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.49159F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.14421F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.52372F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.49159F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.49159F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.49159F));
@@ -89,9 +89,10 @@
             // 
             // lUploadImage
             // 
-            this.lUploadImage.Location = new System.Drawing.Point(3, 389);
+            this.lUploadImage.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lUploadImage.Location = new System.Drawing.Point(3, 392);
             this.lUploadImage.Name = "lUploadImage";
-            this.lUploadImage.Size = new System.Drawing.Size(191, 65);
+            this.lUploadImage.Size = new System.Drawing.Size(191, 92);
             this.lUploadImage.TabIndex = 17;
             this.lUploadImage.Text = "Załaduj plik";
             this.lUploadImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -99,7 +100,7 @@
             // tbProjectState
             // 
             this.tbProjectState.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbProjectState.Location = new System.Drawing.Point(201, 198);
+            this.tbProjectState.Location = new System.Drawing.Point(201, 199);
             this.tbProjectState.Name = "tbProjectState";
             this.tbProjectState.Size = new System.Drawing.Size(739, 45);
             this.tbProjectState.TabIndex = 12;
@@ -114,54 +115,60 @@
             // 
             // projectStateLabel
             // 
-            this.projectStateLabel.Location = new System.Drawing.Point(3, 195);
+            this.projectStateLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectStateLabel.Location = new System.Drawing.Point(3, 196);
             this.projectStateLabel.Name = "projectStateLabel";
-            this.projectStateLabel.Size = new System.Drawing.Size(191, 65);
+            this.projectStateLabel.Size = new System.Drawing.Size(191, 48);
             this.projectStateLabel.TabIndex = 6;
             this.projectStateLabel.Text = "Status";
             this.projectStateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // projectCompanyLabel
             // 
+            this.projectCompanyLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectCompanyLabel.Location = new System.Drawing.Point(3, 130);
             this.projectCompanyLabel.Name = "projectCompanyLabel";
-            this.projectCompanyLabel.Size = new System.Drawing.Size(191, 65);
+            this.projectCompanyLabel.Size = new System.Drawing.Size(191, 48);
             this.projectCompanyLabel.TabIndex = 4;
             this.projectCompanyLabel.Text = "Firma";
             this.projectCompanyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // projectAddressLabel
             // 
-            this.projectAddressLabel.Location = new System.Drawing.Point(3, 65);
+            this.projectAddressLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectAddressLabel.Location = new System.Drawing.Point(3, 64);
             this.projectAddressLabel.Name = "projectAddressLabel";
-            this.projectAddressLabel.Size = new System.Drawing.Size(191, 65);
+            this.projectAddressLabel.Size = new System.Drawing.Size(191, 48);
             this.projectAddressLabel.TabIndex = 2;
             this.projectAddressLabel.Text = "Adres";
             this.projectAddressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // projectNameLabel
             // 
+            this.projectNameLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectNameLabel.Location = new System.Drawing.Point(3, 0);
             this.projectNameLabel.Name = "projectNameLabel";
-            this.projectNameLabel.Size = new System.Drawing.Size(191, 65);
+            this.projectNameLabel.Size = new System.Drawing.Size(191, 48);
             this.projectNameLabel.TabIndex = 0;
             this.projectNameLabel.Text = "Nazwa projektu";
             this.projectNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // projectCollectionDateLabel
             // 
-            this.projectCollectionDateLabel.Location = new System.Drawing.Point(3, 260);
+            this.projectCollectionDateLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectCollectionDateLabel.Location = new System.Drawing.Point(3, 262);
             this.projectCollectionDateLabel.Name = "projectCollectionDateLabel";
-            this.projectCollectionDateLabel.Size = new System.Drawing.Size(191, 65);
+            this.projectCollectionDateLabel.Size = new System.Drawing.Size(191, 49);
             this.projectCollectionDateLabel.TabIndex = 7;
             this.projectCollectionDateLabel.Text = "Data oddania";
             this.projectCollectionDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // projectCompleteDateLabel
             // 
-            this.projectCompleteDateLabel.Location = new System.Drawing.Point(3, 325);
+            this.projectCompleteDateLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectCompleteDateLabel.Location = new System.Drawing.Point(3, 328);
             this.projectCompleteDateLabel.Name = "projectCompleteDateLabel";
-            this.projectCompleteDateLabel.Size = new System.Drawing.Size(191, 64);
+            this.projectCompleteDateLabel.Size = new System.Drawing.Size(191, 41);
             this.projectCompleteDateLabel.TabIndex = 8;
             this.projectCompleteDateLabel.Text = "Data ukończenia";
             this.projectCompleteDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -170,7 +177,7 @@
             // tbProjectAddress
             // 
             this.tbProjectAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbProjectAddress.Location = new System.Drawing.Point(201, 68);
+            this.tbProjectAddress.Location = new System.Drawing.Point(201, 67);
             this.tbProjectAddress.Name = "tbProjectAddress";
             this.tbProjectAddress.Size = new System.Drawing.Size(739, 45);
             this.tbProjectAddress.TabIndex = 10;
@@ -186,7 +193,7 @@
             // dtpProjectCollectionDate
             // 
             this.dtpProjectCollectionDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpProjectCollectionDate.Location = new System.Drawing.Point(201, 263);
+            this.dtpProjectCollectionDate.Location = new System.Drawing.Point(201, 265);
             this.dtpProjectCollectionDate.Name = "dtpProjectCollectionDate";
             this.dtpProjectCollectionDate.Size = new System.Drawing.Size(273, 38);
             this.dtpProjectCollectionDate.TabIndex = 15;
@@ -195,7 +202,7 @@
             // dtpProjectCompleteDate
             // 
             this.dtpProjectCompleteDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpProjectCompleteDate.Location = new System.Drawing.Point(201, 328);
+            this.dtpProjectCompleteDate.Location = new System.Drawing.Point(201, 331);
             this.dtpProjectCompleteDate.Name = "dtpProjectCompleteDate";
             this.dtpProjectCompleteDate.Size = new System.Drawing.Size(273, 38);
             this.dtpProjectCompleteDate.TabIndex = 16;
@@ -203,19 +210,21 @@
             // bUploadImage
             // 
             this.bUploadImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bUploadImage.Location = new System.Drawing.Point(201, 392);
+            this.bUploadImage.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bUploadImage.Location = new System.Drawing.Point(201, 395);
             this.bUploadImage.Name = "bUploadImage";
             this.bUploadImage.Size = new System.Drawing.Size(191, 42);
             this.bUploadImage.TabIndex = 18;
-            this.bUploadImage.Text = "Załaduj obrazek";
+            this.bUploadImage.Text = "Załaduj mapę";
             this.bUploadImage.UseVisualStyleBackColor = true;
             this.bUploadImage.Click += new System.EventHandler(this.bUploadImage_Click_1);
             // 
             // lLoadedImageInfo
             // 
-            this.lLoadedImageInfo.Location = new System.Drawing.Point(201, 483);
+            this.lLoadedImageInfo.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lLoadedImageInfo.Location = new System.Drawing.Point(201, 487);
             this.lLoadedImageInfo.Name = "lLoadedImageInfo";
-            this.lLoadedImageInfo.Size = new System.Drawing.Size(507, 44);
+            this.lLoadedImageInfo.Size = new System.Drawing.Size(507, 40);
             this.lLoadedImageInfo.TabIndex = 19;
             this.lLoadedImageInfo.Text = "Wybierz plik";
             this.lLoadedImageInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -223,6 +232,8 @@
             // bAddProject
             // 
             this.bAddProject.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bAddProject.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.bAddProject.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAddProject.Location = new System.Drawing.Point(0, 545);
             this.bAddProject.Name = "bAddProject";
             this.bAddProject.Size = new System.Drawing.Size(198, 48);
@@ -234,6 +245,8 @@
             // bCancelAddingProject
             // 
             this.bCancelAddingProject.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bCancelAddingProject.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.bCancelAddingProject.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCancelAddingProject.Location = new System.Drawing.Point(204, 545);
             this.bCancelAddingProject.Name = "bCancelAddingProject";
             this.bCancelAddingProject.Size = new System.Drawing.Size(202, 48);
