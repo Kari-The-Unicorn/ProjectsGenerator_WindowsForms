@@ -5,10 +5,10 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IssueName" Type="nchar" MaxLength="100" />
+    <Property Name="IssueName" Type="varchar" MaxLength="100" />
     <Property Name="ProjectId" Type="int" />
-    <Property Name="IssueDescription" Type="nchar" MaxLength="300" />
-    <Property Name="IssuePlace" Type="nchar" MaxLength="50" />
+    <Property Name="IssueDescription" Type="varchar" MaxLength="300" />
+    <Property Name="IssuePlace" Type="varchar" MaxLength="100" />
     <Property Name="ImageId" Type="int" />
     <Property Name="IssueCoordinateX" Type="int" />
     <Property Name="IssueCoordinateY" Type="int" />
@@ -18,7 +18,7 @@
       <PropertyRef Name="PictureId" />
     </Key>
     <Property Name="PictureId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PictureName" Type="nvarchar" MaxLength="150" />
+    <Property Name="PictureName" Type="varchar" MaxLength="150" />
     <Property Name="PictureContent" Type="image" />
   </EntityType>
   <EntityType Name="Projects">
@@ -26,10 +26,10 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ProjectName" Type="nchar" MaxLength="100" />
-    <Property Name="ProjectAddress" Type="nchar" MaxLength="100" />
-    <Property Name="ProjectCompany" Type="nchar" MaxLength="100" />
-    <Property Name="ProjectState" Type="nchar" MaxLength="100" />
+    <Property Name="ProjectName" Type="varchar" MaxLength="100" />
+    <Property Name="ProjectAddress" Type="varchar" MaxLength="100" />
+    <Property Name="ProjectCompany" Type="varchar" MaxLength="100" />
+    <Property Name="ProjectState" Type="varchar" MaxLength="100" />
     <Property Name="ProjectDateIn" Type="datetime" />
     <Property Name="ProjectDateOut" Type="datetime" />
     <Property Name="ImageId" Type="int" />

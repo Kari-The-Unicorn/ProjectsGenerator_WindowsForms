@@ -52,7 +52,7 @@ namespace WindowsFormsApp1
             this.ClientSize = new System.Drawing.Size(903, 683);
             this.Controls.Add(this.pbMap);
             this.Name = "OpenMap";
-            this.Text = "OpenMap";
+            this.Text = "Mapa projektu";
             this.Load += new System.EventHandler(this.OpenMap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbMap)).EndInit();
             this.ResumeLayout(false);

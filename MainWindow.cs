@@ -10,6 +10,7 @@ namespace ProjectsGenerator_WindowsForms
         {
             InitializeComponent();
             this.MinimumSize = new Size(1900, 1000);
+            openChildForm(new Projects());
         }
 
         //private void button1_Click(object sender, EventArgs e)

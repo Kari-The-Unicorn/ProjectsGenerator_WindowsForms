@@ -77,6 +77,20 @@ namespace WindowsFormsApp1
                 projectsKonstruktorEntities.Issues.Remove(issue);
                 projectsKonstruktorEntities.SaveChanges();
                 Close();
+
+                for (int index = Application.OpenForms.Count - 1; index >= 0; index--)
+                {
+                    if (Application.OpenForms[index].Name == "OpenMap")
+                    {
+                        Application.OpenForms[index].Hide();
+                    }
+                    else if (Application.OpenForms[index].Name == "EditIssue")
+                    {
+                        Application.OpenForms[index].Hide();
+                    }
+                }
+
+                openProject.bShowMap_Click(sender, e);
             }
             catch
             {

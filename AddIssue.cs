@@ -18,20 +18,50 @@ namespace WindowsFormsApp1
 
         private void bCancelAddingIssue_Click(object sender, EventArgs e)
         {
-            isCancelled = true;
             //OpenProject proj = new OpenProject();
             //proj.bShowMap_Click(sender, e); 
-            Close();
             //OpenMap.ActiveForm.Refresh();
             //openProject.ActiveMdiChild.Refresh();
-            openProject.bShowMap_Click(sender, e);
-            newMdiChildMap.Close();
             //openProject.Controls.Clear();
             //openProject.Refresh();
             //openProject.Close();
             //project.GetSelectedProject();
             //((OpenMap)newMdiChildMap).Refresh();
             //Application.DoEvents();
+
+            //isCancelled = true;
+            //Close();
+            //openProject.bShowMap_Click(sender, e);
+            //newMdiChildMap.Close();
+            //Close();
+            //this.Hide();
+            //var form2 = new OpenMap();
+            //form2.Closed += (s, args) => this.Close();
+            //form2.Show();
+
+            //(newMdiChildMap as OpenMap).Close();
+            //var form2 = new OpenMap();
+            //form2.Show();
+
+            //if (newMdiChildMap != null)
+            //{
+            //    newMdiChildMap.Close();
+            //}
+            for (int index = Application.OpenForms.Count - 1; index >= 0; index--)
+            {
+                if (Application.OpenForms[index].Name == "OpenMap")
+                {
+                    Application.OpenForms[index].Hide();
+                }
+
+                else if (Application.OpenForms[index].Name == "AddIssue")
+                {
+                    Application.OpenForms[index].Hide();
+                }
+            }
+            //var form2 = new OpenMap();
+            //form2.OpenMap_Load(sender, e);
+            openProject.bShowMap_Click(sender, e);
         }
 
         private void projectCompanyLabel_Click(object sender, EventArgs e)

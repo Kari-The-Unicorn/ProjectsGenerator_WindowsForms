@@ -22,10 +22,10 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="IssueName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="IssueName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="ProjectId" Type="Int32" />
-    <Property Name="IssueDescription" Type="String" MaxLength="300" FixedLength="true" Unicode="true" />
-    <Property Name="IssuePlace" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="IssueDescription" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="IssuePlace" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="ImageId" Type="Int32" />
     <Property Name="IssueCoordinateX" Type="Int32" />
     <Property Name="IssueCoordinateY" Type="Int32" />
@@ -37,7 +37,7 @@
       <PropertyRef Name="PictureId" />
     </Key>
     <Property Name="PictureId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="PictureName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="PictureName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
     <Property Name="PictureContent" Type="Binary" MaxLength="Max" FixedLength="false" />
     <NavigationProperty Name="Issues" Relationship="ProjectsKonstruktorModel.FK_Issues_Pictures1" FromRole="Pictures1" ToRole="Issue" />
     <NavigationProperty Name="Projects" Relationship="ProjectsKonstruktorModel.FK_Projects_Pictures1" FromRole="Pictures1" ToRole="Project" />
@@ -47,10 +47,10 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ProjectName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-    <Property Name="ProjectAddress" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-    <Property Name="ProjectCompany" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-    <Property Name="ProjectState" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="ProjectName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ProjectAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ProjectCompany" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ProjectState" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="ProjectDateIn" Type="DateTime" Precision="3" />
     <Property Name="ProjectDateOut" Type="DateTime" Precision="3" />
     <Property Name="ImageId" Type="Int32" />

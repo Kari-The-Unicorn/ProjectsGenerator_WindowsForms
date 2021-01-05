@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -22,7 +23,7 @@ namespace WindowsFormsApp1
             projectsKonstruktorEntities = new ProjectsKonstruktorEntities();
             lblId = new Label();
             ToolTip tt = new ToolTip();
-            tt.SetToolTip(this.pbMap, "Zaznacz poprawkę na mapie");
+            tt.SetToolTip(pbMap, "Zaznacz poprawkę na mapie");
             tt.ShowAlways = true;
             //pbMap.MouseDown += pbMap_MouseDown;
             issuesOnMap = projectsKonstruktorEntities.Issues.ToList();
@@ -55,13 +56,15 @@ namespace WindowsFormsApp1
 
                                 if (project4 != null)
                                 {
-                                    ((EditIssue)newMdiChildEdit).tbProjectInfoGeneralInIssueForm.Text = project4.id.ToString() + "; ";
+                                    //((EditIssue)newMdiChildEdit).tbProjectInfoGeneralInIssueForm.Text = project4.id.ToString() + "; ";
                                     ((EditIssue)newMdiChildEdit).tbProjectInfoGeneralInIssueForm.Text += project4.ProjectName.ToString().Trim() + "; ";
                                     ((EditIssue)newMdiChildEdit).tbProjectInfoGeneralInIssueForm.Text += project4.ProjectAddress.ToString().Trim() + "; ";
                                     ((EditIssue)newMdiChildEdit).tbProjectInfoGeneralInIssueForm.Text += project4.ProjectCompany.ToString().Trim();
-                                    ((EditIssue)newMdiChildEdit).tbProjectInfoGeneralInIssueForm.Text += " ( " + project4.ProjectState.ToString().Trim() + " )";
-                                    ((EditIssue)newMdiChildEdit).tbProjectInfoDateInInIssueForm.Text += project4.ProjectDateIn.ToString();
-                                    ((EditIssue)newMdiChildEdit).tbProjectInfoDateOutInIssueForm.Text += project4.ProjectDateOut.ToString();
+                                    ((EditIssue)newMdiChildEdit).tbProjectInfoGeneralInIssueForm.Text += " (" + project4.ProjectState.ToString().Trim() + ")";
+                                    ((EditIssue)newMdiChildEdit).tbProjectInfoDateInInIssueForm.Text += Regex.Replace(project4.ProjectDateIn.ToString(),
+                                            @"\s(.*)", string.Empty, RegexOptions.IgnoreCase);
+                                    ((EditIssue)newMdiChildEdit).tbProjectInfoDateOutInIssueForm.Text += Regex.Replace(project4.ProjectDateOut.ToString(),
+                                        @"\s(.*)", string.Empty, RegexOptions.IgnoreCase);
                                     ((EditIssue)newMdiChildEdit).lId.Text = issueOnTheMap.id.ToString();
                                     //foreach (var issueOnTheMap in issuesOnMap)
                                     //{
@@ -149,13 +152,15 @@ namespace WindowsFormsApp1
 
                 if (project2 != null)
                 {
-                    ((AddIssue)newMdiChildEdit).tbProjectInfoGeneralInIssueForm.Text = project2.id.ToString() + "; ";
+                    //((AddIssue)newMdiChildEdit).tbProjectInfoGeneralInIssueForm.Text = project2.id.ToString() + "; ";
                     ((AddIssue)newMdiChildEdit).tbProjectInfoGeneralInIssueForm.Text += project2.ProjectName.ToString().Trim() + "; ";
                     ((AddIssue)newMdiChildEdit).tbProjectInfoGeneralInIssueForm.Text += project2.ProjectAddress.ToString().Trim() + "; ";
                     ((AddIssue)newMdiChildEdit).tbProjectInfoGeneralInIssueForm.Text += project2.ProjectCompany.ToString().Trim();
-                    ((AddIssue)newMdiChildEdit).tbProjectInfoGeneralInIssueForm.Text += " ( " + project2.ProjectState.ToString().Trim() + " )";
-                    ((AddIssue)newMdiChildEdit).tbProjectInfoDateInInIssueForm.Text += project2.ProjectDateIn.ToString();
-                    ((AddIssue)newMdiChildEdit).tbProjectInfoDateOutInIssueForm.Text += project2.ProjectDateOut.ToString();
+                    ((AddIssue)newMdiChildEdit).tbProjectInfoGeneralInIssueForm.Text += " (" + project2.ProjectState.ToString().Trim() + ")";
+                    ((AddIssue)newMdiChildEdit).tbProjectInfoDateInInIssueForm.Text += Regex.Replace(project2.ProjectDateIn.ToString(),
+                            @"\s(.*)", string.Empty, RegexOptions.IgnoreCase);
+                    ((AddIssue)newMdiChildEdit).tbProjectInfoDateOutInIssueForm.Text += Regex.Replace(project2.ProjectDateOut.ToString(),
+                        @"\s(.*)", string.Empty, RegexOptions.IgnoreCase);
                     newMdiChildEdit.ShowDialog();
                 }
             }

@@ -222,9 +222,8 @@ namespace WindowsFormsApp1
             this.lId.AutoSize = true;
             this.lId.Location = new System.Drawing.Point(641, 544);
             this.lId.Name = "lId";
-            this.lId.Size = new System.Drawing.Size(19, 17);
+            this.lId.Size = new System.Drawing.Size(0, 21);
             this.lId.TabIndex = 9;
-            this.lId.Text = "id";
             // 
             // bDeleteIssue
             // 

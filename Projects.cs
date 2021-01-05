@@ -56,11 +56,11 @@ namespace ProjectsGenerator_WindowsForms
 
                 if (project != null)
                 {
-                    ((EditProject)newMdiChildEdit).lblId.Text = project.id.ToString();
-                    ((EditProject)newMdiChildEdit).tbProjectName.Text = project.ProjectName;
-                    ((EditProject)newMdiChildEdit).tbProjectAddress.Text = project.ProjectAddress.ToString();
-                    ((EditProject)newMdiChildEdit).tbProjectCompany.Text = project.ProjectCompany.ToString();
-                    ((EditProject)newMdiChildEdit).tbProjectState.Text = project.ProjectState.ToString();
+                    ((EditProject)newMdiChildEdit).lblId.Text = project.id.ToString().Trim();
+                    ((EditProject)newMdiChildEdit).tbProjectName.Text = project.ProjectName.Trim();
+                    ((EditProject)newMdiChildEdit).tbProjectAddress.Text = project.ProjectAddress.ToString().Trim();
+                    ((EditProject)newMdiChildEdit).tbProjectCompany.Text = project.ProjectCompany.ToString().Trim();
+                    ((EditProject)newMdiChildEdit).tbProjectState.Text = project.ProjectState.ToString().Trim();
                     ((EditProject)newMdiChildEdit).dtpProjectCollectionDate.Value = project.ProjectDateIn.Value;
                     ((EditProject)newMdiChildEdit).dtpProjectCompleteDate.Value = project.ProjectDateOut.Value;
                     newMdiChildEdit.ShowDialog();
