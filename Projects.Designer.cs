@@ -32,9 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Projects));
             this.dgvProjects = new System.Windows.Forms.DataGridView();
-            this.bOpenProject = new System.Windows.Forms.Button();
-            this.bDeleteProject = new System.Windows.Forms.Button();
-            this.bEditProject = new System.Windows.Forms.Button();
+            this.lInfoProjects = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,56 +51,34 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvProjects.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvProjects.Location = new System.Drawing.Point(0, 0);
+            this.dgvProjects.Location = new System.Drawing.Point(0, 34);
             this.dgvProjects.Margin = new System.Windows.Forms.Padding(5);
             this.dgvProjects.Name = "dgvProjects";
             this.dgvProjects.RowHeadersWidth = 51;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvProjects.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProjects.RowTemplate.Height = 24;
-            this.dgvProjects.Size = new System.Drawing.Size(1888, 1818);
+            this.dgvProjects.Size = new System.Drawing.Size(1888, 1784);
             this.dgvProjects.TabIndex = 0;
             this.dgvProjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProjects_CellContentClick);
             this.dgvProjects.Click += new System.EventHandler(this.dgvProjects_Click);
             // 
-            // bOpenProject
+            // lInfoProjects
             // 
-            this.bOpenProject.Location = new System.Drawing.Point(2016, 0);
-            this.bOpenProject.Name = "bOpenProject";
-            this.bOpenProject.Size = new System.Drawing.Size(100, 42);
-            this.bOpenProject.TabIndex = 1;
-            this.bOpenProject.Text = "Otwórz";
-            this.bOpenProject.UseVisualStyleBackColor = true;
-            this.bOpenProject.Click += new System.EventHandler(this.bOpenProject_Click);
-            // 
-            // bDeleteProject
-            // 
-            this.bDeleteProject.Location = new System.Drawing.Point(2016, 96);
-            this.bDeleteProject.Name = "bDeleteProject";
-            this.bDeleteProject.Size = new System.Drawing.Size(101, 42);
-            this.bDeleteProject.TabIndex = 2;
-            this.bDeleteProject.Text = "Usuń";
-            this.bDeleteProject.UseVisualStyleBackColor = true;
-            this.bDeleteProject.Click += new System.EventHandler(this.bDeleteProject_Click_1);
-            // 
-            // bEditProject
-            // 
-            this.bEditProject.Location = new System.Drawing.Point(2016, 48);
-            this.bEditProject.Name = "bEditProject";
-            this.bEditProject.Size = new System.Drawing.Size(100, 42);
-            this.bEditProject.TabIndex = 3;
-            this.bEditProject.Text = "Edytuj";
-            this.bEditProject.UseVisualStyleBackColor = true;
-            this.bEditProject.Click += new System.EventHandler(this.bEditProject_Click);
+            this.lInfoProjects.AutoSize = true;
+            this.lInfoProjects.Location = new System.Drawing.Point(12, 0);
+            this.lInfoProjects.Name = "lInfoProjects";
+            this.lInfoProjects.Size = new System.Drawing.Size(885, 29);
+            this.lInfoProjects.TabIndex = 5;
+            this.lInfoProjects.Text = "Wybierz projekt z listy poniżej poprzez zaznaczenie całego wiersza (na niebiesko)" +
+    "";
             // 
             // Projects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2404, 2405);
-            this.Controls.Add(this.bEditProject);
-            this.Controls.Add(this.bDeleteProject);
-            this.Controls.Add(this.bOpenProject);
+            this.ClientSize = new System.Drawing.Size(1900, 2405);
+            this.Controls.Add(this.lInfoProjects);
             this.Controls.Add(this.dgvProjects);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HelpButton = true;
@@ -114,13 +90,12 @@
             this.Load += new System.EventHandler(this.Projects_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button bOpenProject;
-        private System.Windows.Forms.Button bDeleteProject;
-        private System.Windows.Forms.Button bEditProject;
         public System.Windows.Forms.DataGridView dgvProjects;
+        private System.Windows.Forms.Label lInfoProjects;
     }
 }

@@ -189,7 +189,7 @@
             this.bEditProject.Name = "bEditProject";
             this.bEditProject.Size = new System.Drawing.Size(198, 48);
             this.bEditProject.TabIndex = 3;
-            this.bEditProject.Text = "Edytuj projekt";
+            this.bEditProject.Text = "Zapisz";
             this.bEditProject.UseVisualStyleBackColor = true;
             this.bEditProject.Click += new System.EventHandler(this.bEditProject_Click);
             // 

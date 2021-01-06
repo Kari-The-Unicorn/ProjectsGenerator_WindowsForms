@@ -19,7 +19,7 @@ namespace ProjectsGenerator_WindowsForms
             projectsKonstruktorEntities = new ProjectsKonstruktorEntities();
         }
 
-        private void Projects_Load(object sender, EventArgs e)
+        public void Projects_Load(object sender, EventArgs e)
         {
             var projects = projectsKonstruktorEntities.Projects.ToList();
             dgvProjects.DataSource = projects;
@@ -47,30 +47,30 @@ namespace ProjectsGenerator_WindowsForms
         {
         }
 
-        protected void MDIChildEditProject(object sender, System.EventArgs e)
-        {
-            EditProject newMdiChildEdit = new EditProject();
-            try
-            {
-                var project = GetSelectedProject();
+        //protected void MDIChildEditProject(object sender, System.EventArgs e)
+        //{
+        //    EditProject newMdiChildEdit = new EditProject();
+        //    try
+        //    {
+        //        var project = GetSelectedProject();
 
-                if (project != null)
-                {
-                    ((EditProject)newMdiChildEdit).lblId.Text = project.id.ToString().Trim();
-                    ((EditProject)newMdiChildEdit).tbProjectName.Text = project.ProjectName.Trim();
-                    ((EditProject)newMdiChildEdit).tbProjectAddress.Text = project.ProjectAddress.ToString().Trim();
-                    ((EditProject)newMdiChildEdit).tbProjectCompany.Text = project.ProjectCompany.ToString().Trim();
-                    ((EditProject)newMdiChildEdit).tbProjectState.Text = project.ProjectState.ToString().Trim();
-                    ((EditProject)newMdiChildEdit).dtpProjectCollectionDate.Value = project.ProjectDateIn.Value;
-                    ((EditProject)newMdiChildEdit).dtpProjectCompleteDate.Value = project.ProjectDateOut.Value;
-                    newMdiChildEdit.ShowDialog();
-                }
-            }
-            catch
-            {
-                Close();
-            }
-        }
+        //        if (project != null)
+        //        {
+        //            ((EditProject)newMdiChildEdit).lblId.Text = project.id.ToString().Trim();
+        //            ((EditProject)newMdiChildEdit).tbProjectName.Text = project.ProjectName.Trim();
+        //            ((EditProject)newMdiChildEdit).tbProjectAddress.Text = project.ProjectAddress.ToString().Trim();
+        //            ((EditProject)newMdiChildEdit).tbProjectCompany.Text = project.ProjectCompany.ToString().Trim();
+        //            ((EditProject)newMdiChildEdit).tbProjectState.Text = project.ProjectState.ToString().Trim();
+        //            ((EditProject)newMdiChildEdit).dtpProjectCollectionDate.Value = project.ProjectDateIn.Value;
+        //            ((EditProject)newMdiChildEdit).dtpProjectCompleteDate.Value = project.ProjectDateOut.Value;
+        //            newMdiChildEdit.ShowDialog();
+        //        }
+        //    }
+        //    catch
+        //    {
+        //        Close();
+        //    }
+        //}
 
         public Project GetSelectedProject()
         {
@@ -86,11 +86,11 @@ namespace ProjectsGenerator_WindowsForms
             return picture;
         }
 
-        private void bEditProject_Click(object sender, EventArgs e)//Project projectToEdit)
-        {
-            //isEditMode = true;
-            MDIChildEditProject(sender, e);
-        }
+        //private void bEditProject_Click(object sender, EventArgs e)//Project projectToEdit)
+        //{
+        //    //isEditMode = true;
+        //    MDIChildEditProject(sender, e);
+        //}
 
         private void bDeleteProject_Click_1(object sender, EventArgs e)
         {

@@ -48,7 +48,7 @@ namespace ProjectsGenerator_WindowsForms
                     project.ProjectDateIn = dtpProjectCollectionDate.Value;
                     project.ProjectDateOut = dtpProjectCompleteDate.Value;
                     projectsKonstruktorEntities.SaveChanges();
-
+                    Close();
                     //dgvProjects.Refresh();
                     //Projects_Load(sender, e);
                 }
