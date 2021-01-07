@@ -86,6 +86,8 @@ namespace ProjectsGenerator_WindowsForms
                 if (isValid)
                 {
                     var projectsKonstruktorEntities = new ProjectsKonstruktorEntities();
+                    MainWindow window = new MainWindow();
+                    Projects projects = new Projects();
                     var project = new Project();
                     var picture = new Pictures1();
                     project.ProjectName = projectName.Trim();
@@ -110,6 +112,7 @@ namespace ProjectsGenerator_WindowsForms
                         projectsKonstruktorEntities.SaveChanges();
                         MessageBox.Show("Projekt dodano pomyślnie.");
                         Close();
+                        window.openChildForm(projects);
                     }
 
                     catch (Exception ec)

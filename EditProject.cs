@@ -22,6 +22,8 @@ namespace ProjectsGenerator_WindowsForms
             //projectsKonstruktorEntities.SaveChanges();
             //((Projects)Owner).dgvProjects.Refresh();
             //Projects_Load(sender, e);
+            MainWindow mainWindow = new MainWindow();
+            Projects projects = new Projects();
             try
             {
                 var idBase = int.Parse(lblId.Text);
@@ -48,9 +50,33 @@ namespace ProjectsGenerator_WindowsForms
                     project.ProjectDateIn = dtpProjectCollectionDate.Value;
                     project.ProjectDateOut = dtpProjectCompleteDate.Value;
                     projectsKonstruktorEntities.SaveChanges();
-                    Close();
+                    //Close();
+                    //projects.Hide();
                     //dgvProjects.Refresh();
                     //Projects_Load(sender, e);
+                    //mainWindow.openChildForm(projects);
+
+                    //mainWindow.bProjects_Click(sender, e);
+
+                }
+
+                for (int index = Application.OpenForms.Count - 1; index >= 0; index--)
+                {
+                    if (Application.OpenForms[index].Name == "Projects")
+                    {
+                        Application.OpenForms[index].Hide();
+                        Application.OpenForms[index].Show();
+                    }
+
+                    else if (Application.OpenForms[index].Name == "EditProject")
+                    {
+                        Application.OpenForms[index].Hide();
+                    }
+
+                    //}
+                    //MainWindow.projects.Projects_Load(sender, e);
+                    //projects.dgvProjects.Refresh();
+                    //projects.Projects_Load(sender, e);
                 }
             }
             catch

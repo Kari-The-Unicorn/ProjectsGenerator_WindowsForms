@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -66,7 +65,7 @@ namespace ProjectsGenerator_WindowsForms
         }
 
         private Form activeForm = null;
-        private void openChildForm(Form childForm)
+        public void openChildForm(Form childForm)
         {
             if (activeForm != null)
                 activeForm.Close();
@@ -130,6 +129,7 @@ namespace ProjectsGenerator_WindowsForms
                     ((EditProject)newMdiChildEdit).dtpProjectCollectionDate.Value = project.ProjectDateIn.Value;
                     ((EditProject)newMdiChildEdit).dtpProjectCompleteDate.Value = project.ProjectDateOut.Value;
                     newMdiChildEdit.ShowDialog();
+                    openChildForm(projects);
                 }
             }
             catch
@@ -160,7 +160,7 @@ namespace ProjectsGenerator_WindowsForms
             if (project != null)
             {
                 projectsKonstruktorEntities.Projects.Remove(project);
-                
+
                 foreach (var issue in issues)
                 {
                     projectsKonstruktorEntities.Issues.Remove(issue);
@@ -175,6 +175,11 @@ namespace ProjectsGenerator_WindowsForms
                 projects.dgvProjects.Refresh();
                 projects.Projects_Load(sender, e);
             }
+        }
+
+        private void panelChildForm_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

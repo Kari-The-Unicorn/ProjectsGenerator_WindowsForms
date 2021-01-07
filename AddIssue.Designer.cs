@@ -50,22 +50,30 @@
             // 
             // bAddIssue
             // 
+            this.bAddIssue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(125)))), ((int)(((byte)(75)))));
+            this.bAddIssue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bAddIssue.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAddIssue.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.bAddIssue.Location = new System.Drawing.Point(6, 487);
             this.bAddIssue.Name = "bAddIssue";
             this.bAddIssue.Size = new System.Drawing.Size(198, 48);
             this.bAddIssue.TabIndex = 1;
             this.bAddIssue.Text = "Dodaj poprawkę";
-            this.bAddIssue.UseVisualStyleBackColor = true;
+            this.bAddIssue.UseVisualStyleBackColor = false;
             this.bAddIssue.Click += new System.EventHandler(this.bAddIssue_Click);
             // 
             // bCancelAddingIssue
             // 
+            this.bCancelAddingIssue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(9)))), ((int)(((byte)(0)))));
+            this.bCancelAddingIssue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bCancelAddingIssue.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCancelAddingIssue.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.bCancelAddingIssue.Location = new System.Drawing.Point(210, 487);
             this.bCancelAddingIssue.Name = "bCancelAddingIssue";
             this.bCancelAddingIssue.Size = new System.Drawing.Size(198, 48);
             this.bCancelAddingIssue.TabIndex = 2;
             this.bCancelAddingIssue.Text = "Anuluj";
-            this.bCancelAddingIssue.UseVisualStyleBackColor = true;
+            this.bCancelAddingIssue.UseVisualStyleBackColor = false;
             this.bCancelAddingIssue.Click += new System.EventHandler(this.bCancelAddingIssue_Click);
             // 
             // tlpAddIssueForm
@@ -102,9 +110,10 @@
             // 
             // lIssuePlace
             // 
+            this.lIssuePlace.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lIssuePlace.Location = new System.Drawing.Point(3, 228);
             this.lIssuePlace.Name = "lIssuePlace";
-            this.lIssuePlace.Size = new System.Drawing.Size(179, 87);
+            this.lIssuePlace.Size = new System.Drawing.Size(179, 48);
             this.lIssuePlace.TabIndex = 4;
             this.lIssuePlace.Text = "Lokalizacja";
             this.lIssuePlace.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -112,18 +121,20 @@
             // 
             // lIssueDescription
             // 
+            this.lIssueDescription.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lIssueDescription.Location = new System.Drawing.Point(3, 114);
             this.lIssueDescription.Name = "lIssueDescription";
-            this.lIssueDescription.Size = new System.Drawing.Size(179, 87);
+            this.lIssueDescription.Size = new System.Drawing.Size(179, 48);
             this.lIssueDescription.TabIndex = 2;
             this.lIssueDescription.Text = "Opis";
             this.lIssueDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lIssueName
             // 
+            this.lIssueName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lIssueName.Location = new System.Drawing.Point(3, 0);
             this.lIssueName.Name = "lIssueName";
-            this.lIssueName.Size = new System.Drawing.Size(179, 87);
+            this.lIssueName.Size = new System.Drawing.Size(179, 51);
             this.lIssueName.TabIndex = 0;
             this.lIssueName.Text = "Nazwa poprawki";
             this.lIssueName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -181,40 +192,40 @@
             // lProjectInfoDateOutInIssueForm
             // 
             this.lProjectInfoDateOutInIssueForm.AutoSize = true;
-            this.lProjectInfoDateOutInIssueForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lProjectInfoDateOutInIssueForm.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lProjectInfoDateOutInIssueForm.Location = new System.Drawing.Point(1078, 5);
             this.lProjectInfoDateOutInIssueForm.Name = "lProjectInfoDateOutInIssueForm";
-            this.lProjectInfoDateOutInIssueForm.Size = new System.Drawing.Size(50, 29);
+            this.lProjectInfoDateOutInIssueForm.Size = new System.Drawing.Size(68, 38);
             this.lProjectInfoDateOutInIssueForm.TabIndex = 4;
             this.lProjectInfoDateOutInIssueForm.Text = "Do:";
             // 
             // lProjectInfoDateInInIssueForm
             // 
             this.lProjectInfoDateInInIssueForm.AutoSize = true;
-            this.lProjectInfoDateInInIssueForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lProjectInfoDateInInIssueForm.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lProjectInfoDateInInIssueForm.Location = new System.Drawing.Point(894, 5);
             this.lProjectInfoDateInInIssueForm.Name = "lProjectInfoDateInInIssueForm";
-            this.lProjectInfoDateInInIssueForm.Size = new System.Drawing.Size(52, 29);
+            this.lProjectInfoDateInInIssueForm.Size = new System.Drawing.Size(71, 38);
             this.lProjectInfoDateInInIssueForm.TabIndex = 3;
             this.lProjectInfoDateInInIssueForm.Text = "Od:";
             // 
             // tbProjectInfoGeneralInIssueForm
             // 
             this.tbProjectInfoGeneralInIssueForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbProjectInfoGeneralInIssueForm.Location = new System.Drawing.Point(92, 8);
+            this.tbProjectInfoGeneralInIssueForm.Location = new System.Drawing.Point(96, 8);
             this.tbProjectInfoGeneralInIssueForm.Multiline = true;
             this.tbProjectInfoGeneralInIssueForm.Name = "tbProjectInfoGeneralInIssueForm";
             this.tbProjectInfoGeneralInIssueForm.ReadOnly = true;
-            this.tbProjectInfoGeneralInIssueForm.Size = new System.Drawing.Size(796, 31);
+            this.tbProjectInfoGeneralInIssueForm.Size = new System.Drawing.Size(792, 31);
             this.tbProjectInfoGeneralInIssueForm.TabIndex = 2;
             // 
             // lProjectInfoInIssueForm
             // 
             this.lProjectInfoInIssueForm.AutoSize = true;
-            this.lProjectInfoInIssueForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lProjectInfoInIssueForm.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lProjectInfoInIssueForm.Location = new System.Drawing.Point(3, 8);
             this.lProjectInfoInIssueForm.Name = "lProjectInfoInIssueForm";
-            this.lProjectInfoInIssueForm.Size = new System.Drawing.Size(95, 29);
+            this.lProjectInfoInIssueForm.Size = new System.Drawing.Size(123, 38);
             this.lProjectInfoInIssueForm.TabIndex = 1;
             this.lProjectInfoInIssueForm.Text = "Projekt:";
             // 

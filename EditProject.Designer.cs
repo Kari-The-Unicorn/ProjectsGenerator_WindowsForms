@@ -97,54 +97,60 @@
             // 
             // projectStateLabel
             // 
+            this.projectStateLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectStateLabel.Location = new System.Drawing.Point(3, 252);
             this.projectStateLabel.Name = "projectStateLabel";
-            this.projectStateLabel.Size = new System.Drawing.Size(190, 84);
+            this.projectStateLabel.Size = new System.Drawing.Size(190, 48);
             this.projectStateLabel.TabIndex = 6;
             this.projectStateLabel.Text = "Status";
             this.projectStateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // projectCompanyLabel
             // 
+            this.projectCompanyLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectCompanyLabel.Location = new System.Drawing.Point(3, 168);
             this.projectCompanyLabel.Name = "projectCompanyLabel";
-            this.projectCompanyLabel.Size = new System.Drawing.Size(190, 84);
+            this.projectCompanyLabel.Size = new System.Drawing.Size(190, 48);
             this.projectCompanyLabel.TabIndex = 4;
             this.projectCompanyLabel.Text = "Firma";
             this.projectCompanyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // projectAddressLabel
             // 
+            this.projectAddressLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectAddressLabel.Location = new System.Drawing.Point(3, 84);
             this.projectAddressLabel.Name = "projectAddressLabel";
-            this.projectAddressLabel.Size = new System.Drawing.Size(190, 84);
+            this.projectAddressLabel.Size = new System.Drawing.Size(190, 48);
             this.projectAddressLabel.TabIndex = 2;
             this.projectAddressLabel.Text = "Adres";
             this.projectAddressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // projectNameLabel
             // 
+            this.projectNameLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectNameLabel.Location = new System.Drawing.Point(3, 0);
             this.projectNameLabel.Name = "projectNameLabel";
-            this.projectNameLabel.Size = new System.Drawing.Size(190, 84);
+            this.projectNameLabel.Size = new System.Drawing.Size(190, 48);
             this.projectNameLabel.TabIndex = 0;
             this.projectNameLabel.Text = "Nazwa projektu";
             this.projectNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // projectCollectionDateLabel
             // 
+            this.projectCollectionDateLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectCollectionDateLabel.Location = new System.Drawing.Point(3, 336);
             this.projectCollectionDateLabel.Name = "projectCollectionDateLabel";
-            this.projectCollectionDateLabel.Size = new System.Drawing.Size(190, 84);
+            this.projectCollectionDateLabel.Size = new System.Drawing.Size(190, 41);
             this.projectCollectionDateLabel.TabIndex = 7;
-            this.projectCollectionDateLabel.Text = "Data oddania";
+            this.projectCollectionDateLabel.Text = "Data rozpoczęcia";
             this.projectCollectionDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // projectCompleteDateLabel
             // 
+            this.projectCompleteDateLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectCompleteDateLabel.Location = new System.Drawing.Point(3, 420);
             this.projectCompleteDateLabel.Name = "projectCompleteDateLabel";
-            this.projectCompleteDateLabel.Size = new System.Drawing.Size(190, 87);
+            this.projectCompleteDateLabel.Size = new System.Drawing.Size(190, 41);
             this.projectCompleteDateLabel.TabIndex = 8;
             this.projectCompleteDateLabel.Text = "Data ukończenia";
             this.projectCompleteDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -184,24 +190,32 @@
             // 
             // bEditProject
             // 
+            this.bEditProject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(125)))), ((int)(((byte)(75)))));
             this.bEditProject.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bEditProject.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bEditProject.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bEditProject.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.bEditProject.Location = new System.Drawing.Point(0, 545);
             this.bEditProject.Name = "bEditProject";
             this.bEditProject.Size = new System.Drawing.Size(198, 48);
             this.bEditProject.TabIndex = 3;
             this.bEditProject.Text = "Zapisz";
-            this.bEditProject.UseVisualStyleBackColor = true;
+            this.bEditProject.UseVisualStyleBackColor = false;
             this.bEditProject.Click += new System.EventHandler(this.bEditProject_Click);
             // 
             // bCancelEditingProject
             // 
+            this.bCancelEditingProject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(9)))), ((int)(((byte)(0)))));
             this.bCancelEditingProject.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bCancelEditingProject.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bCancelEditingProject.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCancelEditingProject.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.bCancelEditingProject.Location = new System.Drawing.Point(204, 545);
             this.bCancelEditingProject.Name = "bCancelEditingProject";
             this.bCancelEditingProject.Size = new System.Drawing.Size(202, 48);
             this.bCancelEditingProject.TabIndex = 5;
             this.bCancelEditingProject.Text = "Anuluj";
-            this.bCancelEditingProject.UseVisualStyleBackColor = true;
+            this.bCancelEditingProject.UseVisualStyleBackColor = false;
             this.bCancelEditingProject.Click += new System.EventHandler(this.bCancelEditingProject_Click);
             // 
             // lblId

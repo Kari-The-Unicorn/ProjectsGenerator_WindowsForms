@@ -48,7 +48,7 @@ namespace ProjectsGenerator_WindowsForms
             // panelSideMenu
             // 
             this.panelSideMenu.AutoScroll = true;
-            this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(218)))), ((int)(((byte)(220)))));
             this.panelSideMenu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelSideMenu.Controls.Add(this.bDeleteProject);
             this.panelSideMenu.Controls.Add(this.bEditProject);
@@ -58,59 +58,69 @@ namespace ProjectsGenerator_WindowsForms
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(137, 661);
+            this.panelSideMenu.Size = new System.Drawing.Size(145, 661);
             this.panelSideMenu.TabIndex = 2;
             this.panelSideMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // bDeleteProject
             // 
+            this.bDeleteProject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bDeleteProject.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bDeleteProject.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bDeleteProject.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bDeleteProject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bDeleteProject.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bDeleteProject.IconChar = FontAwesome.Sharp.IconChar.Tasks;
+            this.bDeleteProject.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             this.bDeleteProject.IconColor = System.Drawing.Color.Black;
             this.bDeleteProject.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.bDeleteProject.IconSize = 25;
             this.bDeleteProject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bDeleteProject.Location = new System.Drawing.Point(0, 291);
+            this.bDeleteProject.Location = new System.Drawing.Point(0, 295);
             this.bDeleteProject.Name = "bDeleteProject";
-            this.bDeleteProject.Size = new System.Drawing.Size(133, 48);
+            this.bDeleteProject.Size = new System.Drawing.Size(141, 48);
             this.bDeleteProject.TabIndex = 6;
             this.bDeleteProject.Text = "Usuń";
-            this.bDeleteProject.UseVisualStyleBackColor = true;
+            this.bDeleteProject.UseVisualStyleBackColor = false;
             this.bDeleteProject.Click += new System.EventHandler(this.iBDeleteProject_Click);
             // 
             // bEditProject
             // 
+            this.bEditProject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bEditProject.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bEditProject.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bEditProject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bEditProject.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bEditProject.IconChar = FontAwesome.Sharp.IconChar.Tasks;
+            this.bEditProject.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.bEditProject.IconColor = System.Drawing.Color.Black;
             this.bEditProject.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.bEditProject.IconSize = 25;
             this.bEditProject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bEditProject.Location = new System.Drawing.Point(0, 243);
+            this.bEditProject.Location = new System.Drawing.Point(0, 246);
             this.bEditProject.Name = "bEditProject";
-            this.bEditProject.Size = new System.Drawing.Size(133, 48);
+            this.bEditProject.Size = new System.Drawing.Size(141, 49);
             this.bEditProject.TabIndex = 5;
             this.bEditProject.Text = "Edytuj";
-            this.bEditProject.UseVisualStyleBackColor = true;
+            this.bEditProject.UseVisualStyleBackColor = false;
             this.bEditProject.Click += new System.EventHandler(this.iBEditProject_Click);
             // 
             // bOpenProject
             // 
+            this.bOpenProject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bOpenProject.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bOpenProject.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bOpenProject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bOpenProject.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bOpenProject.IconChar = FontAwesome.Sharp.IconChar.Tasks;
+            this.bOpenProject.IconChar = FontAwesome.Sharp.IconChar.FolderOpen;
             this.bOpenProject.IconColor = System.Drawing.Color.Black;
             this.bOpenProject.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.bOpenProject.IconSize = 25;
             this.bOpenProject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bOpenProject.Location = new System.Drawing.Point(0, 195);
+            this.bOpenProject.Location = new System.Drawing.Point(0, 198);
             this.bOpenProject.Name = "bOpenProject";
-            this.bOpenProject.Size = new System.Drawing.Size(133, 48);
+            this.bOpenProject.Size = new System.Drawing.Size(141, 48);
             this.bOpenProject.TabIndex = 4;
             this.bOpenProject.Text = "Otwórz";
-            this.bOpenProject.UseVisualStyleBackColor = true;
+            this.bOpenProject.UseVisualStyleBackColor = false;
             this.bOpenProject.Click += new System.EventHandler(this.iBOpenProject_Click);
             // 
             // panel1
@@ -119,14 +129,17 @@ namespace ProjectsGenerator_WindowsForms
             this.panel1.Controls.Add(this.bProjects);
             this.panel1.Controls.Add(this.iconButton1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 100);
+            this.panel1.Location = new System.Drawing.Point(0, 103);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(133, 95);
+            this.panel1.Size = new System.Drawing.Size(141, 95);
             this.panel1.TabIndex = 2;
             // 
             // bProjects
             // 
+            this.bProjects.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bProjects.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bProjects.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bProjects.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bProjects.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bProjects.IconChar = FontAwesome.Sharp.IconChar.Tasks;
             this.bProjects.IconColor = System.Drawing.Color.Black;
@@ -135,15 +148,18 @@ namespace ProjectsGenerator_WindowsForms
             this.bProjects.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bProjects.Location = new System.Drawing.Point(0, 47);
             this.bProjects.Name = "bProjects";
-            this.bProjects.Size = new System.Drawing.Size(133, 48);
+            this.bProjects.Size = new System.Drawing.Size(141, 48);
             this.bProjects.TabIndex = 3;
             this.bProjects.Text = "Projekty";
-            this.bProjects.UseVisualStyleBackColor = true;
+            this.bProjects.UseVisualStyleBackColor = false;
             this.bProjects.Click += new System.EventHandler(this.bProjects_Click);
             // 
             // iconButton1
             // 
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
@@ -152,11 +168,11 @@ namespace ProjectsGenerator_WindowsForms
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton1.Location = new System.Drawing.Point(0, 0);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(133, 47);
+            this.iconButton1.Size = new System.Drawing.Size(141, 47);
             this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = "Nowy projekt";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // panelLogo
@@ -164,11 +180,12 @@ namespace ProjectsGenerator_WindowsForms
             this.panelLogo.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panelLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelLogo.BackgroundImage")));
             this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelLogo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(133, 100);
+            this.panelLogo.Size = new System.Drawing.Size(141, 103);
             this.panelLogo.TabIndex = 0;
             this.panelLogo.Click += new System.EventHandler(this.panelLogo_Click);
             // 
@@ -176,10 +193,11 @@ namespace ProjectsGenerator_WindowsForms
             // 
             this.panelChildForm.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(137, 0);
+            this.panelChildForm.Location = new System.Drawing.Point(145, 0);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1075, 661);
+            this.panelChildForm.Size = new System.Drawing.Size(1067, 661);
             this.panelChildForm.TabIndex = 3;
+            this.panelChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChildForm_Paint);
             // 
             // MainWindow
             // 

@@ -51,14 +51,14 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvProjects.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvProjects.Location = new System.Drawing.Point(0, 34);
+            this.dgvProjects.Location = new System.Drawing.Point(0, 43);
             this.dgvProjects.Margin = new System.Windows.Forms.Padding(5);
             this.dgvProjects.Name = "dgvProjects";
             this.dgvProjects.RowHeadersWidth = 51;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvProjects.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProjects.RowTemplate.Height = 24;
-            this.dgvProjects.Size = new System.Drawing.Size(1888, 1784);
+            this.dgvProjects.Size = new System.Drawing.Size(1888, 1775);
             this.dgvProjects.TabIndex = 0;
             this.dgvProjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProjects_CellContentClick);
             this.dgvProjects.Click += new System.EventHandler(this.dgvProjects_Click);
@@ -66,12 +66,13 @@
             // lInfoProjects
             // 
             this.lInfoProjects.AutoSize = true;
+            this.lInfoProjects.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lInfoProjects.Location = new System.Drawing.Point(12, 0);
             this.lInfoProjects.Name = "lInfoProjects";
-            this.lInfoProjects.Size = new System.Drawing.Size(885, 29);
+            this.lInfoProjects.Size = new System.Drawing.Size(1413, 38);
             this.lInfoProjects.TabIndex = 5;
-            this.lInfoProjects.Text = "Wybierz projekt z listy poniżej poprzez zaznaczenie całego wiersza (na niebiesko)" +
-    "";
+            this.lInfoProjects.Text = "List projektów (wybierz projekt z listy poniżej poprzez zaznaczenie całego wiersz" +
+    "a na niebiesko):";
             // 
             // Projects
             // 
