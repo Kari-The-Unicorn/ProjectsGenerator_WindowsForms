@@ -104,7 +104,9 @@
             // 
             this.tbIssuePlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIssuePlace.Location = new System.Drawing.Point(188, 231);
+            this.tbIssuePlace.Multiline = true;
             this.tbIssuePlace.Name = "tbIssuePlace";
+            this.tbIssuePlace.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.tbIssuePlace.Size = new System.Drawing.Size(1082, 45);
             this.tbIssuePlace.TabIndex = 11;
             // 
@@ -143,7 +145,9 @@
             // 
             this.tbIssueDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIssueDescription.Location = new System.Drawing.Point(188, 117);
+            this.tbIssueDescription.Multiline = true;
             this.tbIssueDescription.Name = "tbIssueDescription";
+            this.tbIssueDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.tbIssueDescription.Size = new System.Drawing.Size(1082, 45);
             this.tbIssueDescription.TabIndex = 10;
             // 
@@ -152,7 +156,7 @@
             this.tbIssueName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIssueName.Location = new System.Drawing.Point(188, 3);
             this.tbIssueName.Name = "tbIssueName";
-            this.tbIssueName.Size = new System.Drawing.Size(1082, 45);
+            this.tbIssueName.Size = new System.Drawing.Size(1082, 38);
             this.tbIssueName.TabIndex = 9;
             // 
             // pProjectInfoInIssueForm
@@ -176,7 +180,7 @@
             this.tbProjectInfoDateOutInIssueForm.Location = new System.Drawing.Point(1134, 4);
             this.tbProjectInfoDateOutInIssueForm.Name = "tbProjectInfoDateOutInIssueForm";
             this.tbProjectInfoDateOutInIssueForm.ReadOnly = true;
-            this.tbProjectInfoDateOutInIssueForm.Size = new System.Drawing.Size(128, 34);
+            this.tbProjectInfoDateOutInIssueForm.Size = new System.Drawing.Size(128, 29);
             this.tbProjectInfoDateOutInIssueForm.TabIndex = 6;
             // 
             // tbProjectInfoDateInInIssueForm
@@ -185,7 +189,7 @@
             this.tbProjectInfoDateInInIssueForm.Location = new System.Drawing.Point(952, 3);
             this.tbProjectInfoDateInInIssueForm.Name = "tbProjectInfoDateInInIssueForm";
             this.tbProjectInfoDateInInIssueForm.ReadOnly = true;
-            this.tbProjectInfoDateInInIssueForm.Size = new System.Drawing.Size(120, 34);
+            this.tbProjectInfoDateInInIssueForm.Size = new System.Drawing.Size(120, 29);
             this.tbProjectInfoDateInInIssueForm.TabIndex = 5;
             this.tbProjectInfoDateInInIssueForm.TextChanged += new System.EventHandler(this.tbProjectInfoDateIn_TextChanged);
             // 
@@ -195,7 +199,7 @@
             this.lProjectInfoDateOutInIssueForm.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lProjectInfoDateOutInIssueForm.Location = new System.Drawing.Point(1078, 5);
             this.lProjectInfoDateOutInIssueForm.Name = "lProjectInfoDateOutInIssueForm";
-            this.lProjectInfoDateOutInIssueForm.Size = new System.Drawing.Size(68, 38);
+            this.lProjectInfoDateOutInIssueForm.Size = new System.Drawing.Size(41, 22);
             this.lProjectInfoDateOutInIssueForm.TabIndex = 4;
             this.lProjectInfoDateOutInIssueForm.Text = "Do:";
             // 
@@ -205,7 +209,7 @@
             this.lProjectInfoDateInInIssueForm.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lProjectInfoDateInInIssueForm.Location = new System.Drawing.Point(894, 5);
             this.lProjectInfoDateInInIssueForm.Name = "lProjectInfoDateInInIssueForm";
-            this.lProjectInfoDateInInIssueForm.Size = new System.Drawing.Size(71, 38);
+            this.lProjectInfoDateInInIssueForm.Size = new System.Drawing.Size(45, 22);
             this.lProjectInfoDateInInIssueForm.TabIndex = 3;
             this.lProjectInfoDateInInIssueForm.Text = "Od:";
             // 
@@ -216,6 +220,7 @@
             this.tbProjectInfoGeneralInIssueForm.Multiline = true;
             this.tbProjectInfoGeneralInIssueForm.Name = "tbProjectInfoGeneralInIssueForm";
             this.tbProjectInfoGeneralInIssueForm.ReadOnly = true;
+            this.tbProjectInfoGeneralInIssueForm.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.tbProjectInfoGeneralInIssueForm.Size = new System.Drawing.Size(792, 31);
             this.tbProjectInfoGeneralInIssueForm.TabIndex = 2;
             // 
@@ -225,7 +230,7 @@
             this.lProjectInfoInIssueForm.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lProjectInfoInIssueForm.Location = new System.Drawing.Point(3, 8);
             this.lProjectInfoInIssueForm.Name = "lProjectInfoInIssueForm";
-            this.lProjectInfoInIssueForm.Size = new System.Drawing.Size(123, 38);
+            this.lProjectInfoInIssueForm.Size = new System.Drawing.Size(76, 22);
             this.lProjectInfoInIssueForm.TabIndex = 1;
             this.lProjectInfoInIssueForm.Text = "Projekt:";
             // 

@@ -12,12 +12,29 @@ namespace ProjectsGenerator_WindowsForms
     {
         private OpenFileDialog openFile;
         private string fileName;
+        //public static Projects projects;
+        public static bool cancelled;
 
-        //private readonly ProjectsKonstruktorEntities projectsKonstruktorEntities;
+        private readonly ProjectsKonstruktorEntities projectsKonstruktorEntities;
         public AddProject()
         {
+            int ind = Application.OpenForms.Count;
             InitializeComponent();
-            //projectsKonstruktorEntities = new ProjectsKonstruktorEntities();
+            //MainWindow mainWindow = new MainWindow();
+            //for (int index = Application.OpenForms.Count - 1; index >= 0; index--)
+            //{
+            //    if (Application.OpenForms[index].Name == "MainWindow")
+            //    {
+            //        Application.OpenForms[index].Hide();
+            //        Application.OpenForms[index].Show();
+            //    }
+
+            //    else if (Application.OpenForms[index].Name == "Projects")
+            //    {
+            //        Application.OpenForms[index].Hide();
+            //    }
+            //}
+            projectsKonstruktorEntities = new ProjectsKonstruktorEntities();
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -32,7 +49,22 @@ namespace ProjectsGenerator_WindowsForms
 
         private void cancelAddingProjectButton_Click(object sender, EventArgs e)
         {
-            Close();
+            //Close();
+            MainWindow mainWindow = new MainWindow();
+            for (int index = Application.OpenForms.Count - 1; index >= 0; index--)
+            {
+                if (Application.OpenForms[index].Name == "Projects")
+                {
+                    Application.OpenForms[index].Hide();
+                    Application.OpenForms[index].Show();
+                }
+
+                else if (Application.OpenForms[index].Name == "AddProject")
+                {
+                    Application.OpenForms[index].Hide();
+                }
+            }
+
         }
 
         private void bUploadImage_Click_1(object sender, EventArgs e)
@@ -111,8 +143,22 @@ namespace ProjectsGenerator_WindowsForms
                         //projectsKonstruktorEntities.Entry(project).State = EntityState.Modified;
                         projectsKonstruktorEntities.SaveChanges();
                         MessageBox.Show("Projekt dodano pomyślnie.");
-                        Close();
-                        window.openChildForm(projects);
+                        //Close();
+                        //window.openChildForm(projects);
+                        MainWindow mainWindow = new MainWindow();
+                        for (int index = Application.OpenForms.Count - 1; index >= 0; index--)
+                        {
+                            if (Application.OpenForms[index].Name == "Projects")
+                            {
+                                Application.OpenForms[index].Hide();
+                                Application.OpenForms[index].Show();
+                            }
+
+                            else if (Application.OpenForms[index].Name == "AddProject")
+                            {
+                                Application.OpenForms[index].Hide();
+                            }
+                        }
                     }
 
                     catch (Exception ec)

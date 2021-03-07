@@ -31,22 +31,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProject));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lUploadImage = new System.Windows.Forms.Label();
+            this.tbProjectState = new System.Windows.Forms.TextBox();
+            this.tbProjectCompany = new System.Windows.Forms.TextBox();
             this.projectStateLabel = new System.Windows.Forms.Label();
             this.projectCompanyLabel = new System.Windows.Forms.Label();
             this.projectAddressLabel = new System.Windows.Forms.Label();
             this.projectNameLabel = new System.Windows.Forms.Label();
-            this.projectCollectionDateLabel = new System.Windows.Forms.Label();
+            this.tbProjectAddress = new System.Windows.Forms.TextBox();
+            this.tbProjectName = new System.Windows.Forms.MaskedTextBox();
+            this.dtpProjectCollectionDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpProjectCompleteDate = new System.Windows.Forms.DateTimePicker();
+            this.bUploadImage = new System.Windows.Forms.Button();
+            this.lLoadedImageInfo = new System.Windows.Forms.Label();
             this.projectCompleteDateLabel = new System.Windows.Forms.Label();
+            this.projectCollectionDateLabel = new System.Windows.Forms.Label();
             this.bAddProject = new System.Windows.Forms.Button();
             this.bCancelAddingProject = new System.Windows.Forms.Button();
-            this.bUploadImage = new System.Windows.Forms.Button();
-            this.dtpProjectCompleteDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpProjectCollectionDate = new System.Windows.Forms.DateTimePicker();
-            this.tbProjectName = new System.Windows.Forms.MaskedTextBox();
-            this.tbProjectAddress = new System.Windows.Forms.TextBox();
-            this.tbProjectCompany = new System.Windows.Forms.TextBox();
-            this.tbProjectState = new System.Windows.Forms.TextBox();
-            this.lLoadedImageInfo = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +72,7 @@
             this.tableLayoutPanel1.Controls.Add(this.projectCollectionDateLabel, 0, 5);
             this.tableLayoutPanel1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tableLayoutPanel1.RowCount = 8;
@@ -96,6 +97,28 @@
             this.lUploadImage.TabIndex = 17;
             this.lUploadImage.Text = "Załącznik";
             this.lUploadImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbProjectState
+            // 
+            this.tbProjectState.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbProjectState.Location = new System.Drawing.Point(201, 201);
+            this.tbProjectState.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbProjectState.Multiline = true;
+            this.tbProjectState.Name = "tbProjectState";
+            this.tbProjectState.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.tbProjectState.Size = new System.Drawing.Size(739, 45);
+            this.tbProjectState.TabIndex = 12;
+            // 
+            // tbProjectCompany
+            // 
+            this.tbProjectCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbProjectCompany.Location = new System.Drawing.Point(201, 134);
+            this.tbProjectCompany.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbProjectCompany.Multiline = true;
+            this.tbProjectCompany.Name = "tbProjectCompany";
+            this.tbProjectCompany.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.tbProjectCompany.Size = new System.Drawing.Size(739, 45);
+            this.tbProjectCompany.TabIndex = 11;
             // 
             // projectStateLabel
             // 
@@ -137,15 +160,72 @@
             this.projectNameLabel.Text = "Nazwa projektu";
             this.projectNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // projectCollectionDateLabel
+            // tbProjectAddress
             // 
-            this.projectCollectionDateLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectCollectionDateLabel.Location = new System.Drawing.Point(3, 333);
-            this.projectCollectionDateLabel.Name = "projectCollectionDateLabel";
-            this.projectCollectionDateLabel.Size = new System.Drawing.Size(191, 49);
-            this.projectCollectionDateLabel.TabIndex = 7;
-            this.projectCollectionDateLabel.Text = "Data oddania";
-            this.projectCollectionDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tbProjectAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbProjectAddress.Location = new System.Drawing.Point(201, 67);
+            this.tbProjectAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbProjectAddress.Multiline = true;
+            this.tbProjectAddress.Name = "tbProjectAddress";
+            this.tbProjectAddress.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.tbProjectAddress.Size = new System.Drawing.Size(739, 45);
+            this.tbProjectAddress.TabIndex = 10;
+            // 
+            // tbProjectName
+            // 
+            this.tbProjectName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbProjectName.Location = new System.Drawing.Point(201, 2);
+            this.tbProjectName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbProjectName.Name = "tbProjectName";
+            this.tbProjectName.Size = new System.Drawing.Size(739, 45);
+            this.tbProjectName.TabIndex = 9;
+            // 
+            // dtpProjectCollectionDate
+            // 
+            this.dtpProjectCollectionDate.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dtpProjectCollectionDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dtpProjectCollectionDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpProjectCollectionDate.Location = new System.Drawing.Point(201, 268);
+            this.dtpProjectCollectionDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpProjectCollectionDate.Name = "dtpProjectCollectionDate";
+            this.dtpProjectCollectionDate.Size = new System.Drawing.Size(273, 30);
+            this.dtpProjectCollectionDate.TabIndex = 15;
+            this.dtpProjectCollectionDate.Value = new System.DateTime(2020, 11, 29, 21, 23, 3, 0);
+            // 
+            // dtpProjectCompleteDate
+            // 
+            this.dtpProjectCompleteDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dtpProjectCompleteDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpProjectCompleteDate.Location = new System.Drawing.Point(201, 335);
+            this.dtpProjectCompleteDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpProjectCompleteDate.Name = "dtpProjectCompleteDate";
+            this.dtpProjectCompleteDate.Size = new System.Drawing.Size(273, 30);
+            this.dtpProjectCompleteDate.TabIndex = 16;
+            // 
+            // bUploadImage
+            // 
+            this.bUploadImage.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.bUploadImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bUploadImage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bUploadImage.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bUploadImage.Location = new System.Drawing.Point(201, 401);
+            this.bUploadImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bUploadImage.Name = "bUploadImage";
+            this.bUploadImage.Size = new System.Drawing.Size(181, 50);
+            this.bUploadImage.TabIndex = 18;
+            this.bUploadImage.Text = "Załaduj mapę";
+            this.bUploadImage.UseVisualStyleBackColor = false;
+            this.bUploadImage.Click += new System.EventHandler(this.bUploadImage_Click_1);
+            // 
+            // lLoadedImageInfo
+            // 
+            this.lLoadedImageInfo.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lLoadedImageInfo.Location = new System.Drawing.Point(201, 495);
+            this.lLoadedImageInfo.Name = "lLoadedImageInfo";
+            this.lLoadedImageInfo.Size = new System.Drawing.Size(507, 39);
+            this.lLoadedImageInfo.TabIndex = 19;
+            this.lLoadedImageInfo.Text = "Wybierz plik .jpg";
+            this.lLoadedImageInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // projectCompleteDateLabel
             // 
@@ -158,6 +238,16 @@
             this.projectCompleteDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.projectCompleteDateLabel.Click += new System.EventHandler(this.label4_Click);
             // 
+            // projectCollectionDateLabel
+            // 
+            this.projectCollectionDateLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectCollectionDateLabel.Location = new System.Drawing.Point(3, 333);
+            this.projectCollectionDateLabel.Name = "projectCollectionDateLabel";
+            this.projectCollectionDateLabel.Size = new System.Drawing.Size(191, 49);
+            this.projectCollectionDateLabel.TabIndex = 7;
+            this.projectCollectionDateLabel.Text = "Data oddania";
+            this.projectCollectionDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // bAddProject
             // 
             this.bAddProject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(125)))), ((int)(((byte)(75)))));
@@ -167,8 +257,9 @@
             this.bAddProject.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAddProject.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.bAddProject.Location = new System.Drawing.Point(0, 545);
+            this.bAddProject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAddProject.Name = "bAddProject";
-            this.bAddProject.Size = new System.Drawing.Size(198, 48);
+            this.bAddProject.Size = new System.Drawing.Size(197, 48);
             this.bAddProject.TabIndex = 3;
             this.bAddProject.Text = "Dodaj projekt";
             this.bAddProject.UseVisualStyleBackColor = false;
@@ -183,85 +274,13 @@
             this.bCancelAddingProject.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCancelAddingProject.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.bCancelAddingProject.Location = new System.Drawing.Point(204, 545);
+            this.bCancelAddingProject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bCancelAddingProject.Name = "bCancelAddingProject";
-            this.bCancelAddingProject.Size = new System.Drawing.Size(202, 48);
+            this.bCancelAddingProject.Size = new System.Drawing.Size(203, 48);
             this.bCancelAddingProject.TabIndex = 5;
             this.bCancelAddingProject.Text = "Anuluj";
             this.bCancelAddingProject.UseVisualStyleBackColor = false;
             this.bCancelAddingProject.Click += new System.EventHandler(this.cancelAddingProjectButton_Click);
-            // 
-            // bUploadImage
-            // 
-            this.bUploadImage.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.bUploadImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bUploadImage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bUploadImage.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bUploadImage.Location = new System.Drawing.Point(201, 402);
-            this.bUploadImage.Name = "bUploadImage";
-            this.bUploadImage.Size = new System.Drawing.Size(182, 50);
-            this.bUploadImage.TabIndex = 18;
-            this.bUploadImage.Text = "Załaduj mapę";
-            this.bUploadImage.UseVisualStyleBackColor = false;
-            this.bUploadImage.Click += new System.EventHandler(this.bUploadImage_Click_1);
-            // 
-            // dtpProjectCompleteDate
-            // 
-            this.dtpProjectCompleteDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpProjectCompleteDate.Location = new System.Drawing.Point(201, 336);
-            this.dtpProjectCompleteDate.Name = "dtpProjectCompleteDate";
-            this.dtpProjectCompleteDate.Size = new System.Drawing.Size(273, 38);
-            this.dtpProjectCompleteDate.TabIndex = 16;
-            // 
-            // dtpProjectCollectionDate
-            // 
-            this.dtpProjectCollectionDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpProjectCollectionDate.Location = new System.Drawing.Point(201, 269);
-            this.dtpProjectCollectionDate.Name = "dtpProjectCollectionDate";
-            this.dtpProjectCollectionDate.Size = new System.Drawing.Size(273, 38);
-            this.dtpProjectCollectionDate.TabIndex = 15;
-            this.dtpProjectCollectionDate.Value = new System.DateTime(2020, 11, 29, 21, 23, 3, 0);
-            // 
-            // tbProjectName
-            // 
-            this.tbProjectName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbProjectName.Location = new System.Drawing.Point(201, 3);
-            this.tbProjectName.Name = "tbProjectName";
-            this.tbProjectName.Size = new System.Drawing.Size(739, 45);
-            this.tbProjectName.TabIndex = 9;
-            // 
-            // tbProjectAddress
-            // 
-            this.tbProjectAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbProjectAddress.Location = new System.Drawing.Point(201, 68);
-            this.tbProjectAddress.Name = "tbProjectAddress";
-            this.tbProjectAddress.Size = new System.Drawing.Size(739, 45);
-            this.tbProjectAddress.TabIndex = 10;
-            // 
-            // tbProjectCompany
-            // 
-            this.tbProjectCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbProjectCompany.Location = new System.Drawing.Point(201, 135);
-            this.tbProjectCompany.Name = "tbProjectCompany";
-            this.tbProjectCompany.Size = new System.Drawing.Size(739, 45);
-            this.tbProjectCompany.TabIndex = 11;
-            // 
-            // tbProjectState
-            // 
-            this.tbProjectState.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbProjectState.Location = new System.Drawing.Point(201, 202);
-            this.tbProjectState.Name = "tbProjectState";
-            this.tbProjectState.Size = new System.Drawing.Size(739, 45);
-            this.tbProjectState.TabIndex = 12;
-            // 
-            // lLoadedImageInfo
-            // 
-            this.lLoadedImageInfo.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lLoadedImageInfo.Location = new System.Drawing.Point(201, 495);
-            this.lLoadedImageInfo.Name = "lLoadedImageInfo";
-            this.lLoadedImageInfo.Size = new System.Drawing.Size(507, 40);
-            this.lLoadedImageInfo.TabIndex = 19;
-            this.lLoadedImageInfo.Text = "Wybierz plik .jpg";
-            this.lLoadedImageInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // AddProject
             // 
@@ -273,6 +292,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddProject";
             this.Text = "Dodaj projekt";
             this.tableLayoutPanel1.ResumeLayout(false);

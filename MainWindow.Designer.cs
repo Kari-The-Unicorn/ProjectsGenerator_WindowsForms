@@ -58,7 +58,7 @@ namespace ProjectsGenerator_WindowsForms
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(145, 661);
+            this.panelSideMenu.Size = new System.Drawing.Size(165, 661);
             this.panelSideMenu.TabIndex = 2;
             this.panelSideMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -75,9 +75,9 @@ namespace ProjectsGenerator_WindowsForms
             this.bDeleteProject.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.bDeleteProject.IconSize = 25;
             this.bDeleteProject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bDeleteProject.Location = new System.Drawing.Point(0, 295);
+            this.bDeleteProject.Location = new System.Drawing.Point(0, 315);
             this.bDeleteProject.Name = "bDeleteProject";
-            this.bDeleteProject.Size = new System.Drawing.Size(141, 48);
+            this.bDeleteProject.Size = new System.Drawing.Size(161, 48);
             this.bDeleteProject.TabIndex = 6;
             this.bDeleteProject.Text = "Usuń";
             this.bDeleteProject.UseVisualStyleBackColor = false;
@@ -95,9 +95,9 @@ namespace ProjectsGenerator_WindowsForms
             this.bEditProject.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.bEditProject.IconSize = 25;
             this.bEditProject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bEditProject.Location = new System.Drawing.Point(0, 246);
+            this.bEditProject.Location = new System.Drawing.Point(0, 266);
             this.bEditProject.Name = "bEditProject";
-            this.bEditProject.Size = new System.Drawing.Size(141, 49);
+            this.bEditProject.Size = new System.Drawing.Size(161, 49);
             this.bEditProject.TabIndex = 5;
             this.bEditProject.Text = "Edytuj";
             this.bEditProject.UseVisualStyleBackColor = false;
@@ -115,9 +115,9 @@ namespace ProjectsGenerator_WindowsForms
             this.bOpenProject.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.bOpenProject.IconSize = 25;
             this.bOpenProject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bOpenProject.Location = new System.Drawing.Point(0, 198);
+            this.bOpenProject.Location = new System.Drawing.Point(0, 218);
             this.bOpenProject.Name = "bOpenProject";
-            this.bOpenProject.Size = new System.Drawing.Size(141, 48);
+            this.bOpenProject.Size = new System.Drawing.Size(161, 48);
             this.bOpenProject.TabIndex = 4;
             this.bOpenProject.Text = "Otwórz";
             this.bOpenProject.UseVisualStyleBackColor = false;
@@ -129,9 +129,9 @@ namespace ProjectsGenerator_WindowsForms
             this.panel1.Controls.Add(this.bProjects);
             this.panel1.Controls.Add(this.iconButton1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 103);
+            this.panel1.Location = new System.Drawing.Point(0, 123);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(141, 95);
+            this.panel1.Size = new System.Drawing.Size(161, 95);
             this.panel1.TabIndex = 2;
             // 
             // bProjects
@@ -148,7 +148,7 @@ namespace ProjectsGenerator_WindowsForms
             this.bProjects.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bProjects.Location = new System.Drawing.Point(0, 47);
             this.bProjects.Name = "bProjects";
-            this.bProjects.Size = new System.Drawing.Size(141, 48);
+            this.bProjects.Size = new System.Drawing.Size(161, 48);
             this.bProjects.TabIndex = 3;
             this.bProjects.Text = "Projekty";
             this.bProjects.UseVisualStyleBackColor = false;
@@ -168,7 +168,7 @@ namespace ProjectsGenerator_WindowsForms
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton1.Location = new System.Drawing.Point(0, 0);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(141, 47);
+            this.iconButton1.Size = new System.Drawing.Size(161, 47);
             this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = "Nowy projekt";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -185,17 +185,18 @@ namespace ProjectsGenerator_WindowsForms
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(141, 103);
+            this.panelLogo.Size = new System.Drawing.Size(161, 123);
             this.panelLogo.TabIndex = 0;
             this.panelLogo.Click += new System.EventHandler(this.panelLogo_Click);
+            this.panelLogo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLogo_Paint);
             // 
             // panelChildForm
             // 
             this.panelChildForm.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(145, 0);
+            this.panelChildForm.Location = new System.Drawing.Point(165, 0);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1067, 661);
+            this.panelChildForm.Size = new System.Drawing.Size(1047, 661);
             this.panelChildForm.TabIndex = 3;
             this.panelChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChildForm_Paint);
             // 
@@ -210,8 +211,9 @@ namespace ProjectsGenerator_WindowsForms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "MainWindow";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Konstruktor";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelSideMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

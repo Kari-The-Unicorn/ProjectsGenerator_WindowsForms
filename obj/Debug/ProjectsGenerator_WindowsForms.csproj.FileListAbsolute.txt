@@ -21,4 +21,17 @@ C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AddIssue.resources
 C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.OpenMap.resources
 C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.EditIssue.resources
+C:\Users\karol\source\repos\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.manifest
+C:\Users\karol\source\repos\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.application
+C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.manifest
+C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.application
+C:\Users\karol\source\repos\WindowsFormsApp1\bin\Debug\ProjectsDb.Context.tt
+C:\Users\karol\source\repos\WindowsFormsApp1\bin\Debug\ProjectsDb.tt
+C:\Users\karol\source\repos\WindowsFormsApp1\bin\Debug\Issue.cs
+C:\Users\karol\source\repos\WindowsFormsApp1\bin\Debug\Pictures1.cs
+C:\Users\karol\source\repos\WindowsFormsApp1\bin\Debug\Project.cs
+C:\Users\karol\source\repos\WindowsFormsApp1\bin\Debug\ProjectsDb.Context.cs
+C:\Users\karol\source\repos\WindowsFormsApp1\bin\Debug\ProjectsDb.cs
+C:\Users\karol\source\repos\WindowsFormsApp1\bin\Debug\ProjectsDb.Designer.cs
+C:\Users\karol\source\repos\WindowsFormsApp1\bin\Debug\ProjectsDb.edmx.diagram
 C:\Users\karol\source\repos\WindowsFormsApp1\obj\Debug\ProjectsGenerator_WindowsForms.csprojAssemblyReference.cache

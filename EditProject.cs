@@ -10,6 +10,7 @@ namespace ProjectsGenerator_WindowsForms
     {
         private readonly ProjectsKonstruktorEntities projectsKonstruktorEntities;
         private bool isEditMode;
+        //private readonly MainWindow mainWindow;
         public EditProject()
         {
             InitializeComponent();
@@ -87,7 +88,54 @@ namespace ProjectsGenerator_WindowsForms
 
         private void bCancelEditingProject_Click(object sender, EventArgs e)
         {
-            Close();
+
+            MainWindow mainWindow = new MainWindow();
+
+            for (int index = Application.OpenForms.Count - 1; index >= 0; index--)
+            {
+                if (Application.OpenForms[index].Name == "Projects")
+                {
+                    Application.OpenForms[index].Hide();
+                    Application.OpenForms[index].Show();
+                }
+
+                else if (Application.OpenForms[index].Name == "EditProject")
+                {
+                    Application.OpenForms[index].Hide();
+                }
+
+                //}
+                //MainWindow.projects.Projects_Load(sender, e);
+                //projects.dgvProjects.Refresh();
+                //projects.Projects_Load(sender, e);
+            }
+
+            //Close();
+
+            //this.Hide();
+            //MainWindow form2 = new MainWindow();
+            //form2.ShowDialog();
+            //this.Close();
+            //Close();
+            //mainWindow.Show();
+
+            //for (int index = Application.OpenForms.Count - 1; index >= 0; index--)
+            //{
+            //    if (Application.OpenForms[index].Name == "EditProject")
+            //    {
+            //        Application.OpenForms[index].Hide();
+            //    }
+            //}
+
+            //EditProject nextForm = new EditProject();
+            //this.Hide();
+            //nextForm.ShowDialog();
+            //this.Close();
+
+            //this.Hide();
+            //EditProject form2 = new EditProject();
+            //form2.Closed += (s, args) => this.Close();
+            //form2.Show();
         }
 
         private void EditProject_Load(object sender, EventArgs e)

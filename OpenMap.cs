@@ -134,7 +134,7 @@ namespace WindowsFormsApp1
                     {
                         imagePos = e.Location;
                         g.DrawImage(new Bitmap(
-                           @"C:\Users\karol\source\repos\WindowsFormsApp1\images\redcircle.png"),
+                            System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $@"images\redcircle.png")),
                         new Point(imagePos.X - 30, imagePos.Y - 30));
                     }
                     pbMap.Image = bmp;
@@ -179,7 +179,7 @@ namespace WindowsFormsApp1
                     using (Graphics g = Graphics.FromImage(bmp1))
                     {
                         g.DrawImage(new Bitmap(
-                           @"C:\Users\karol\source\repos\WindowsFormsApp1\images\redcircle.png"),
+                            System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $@"images\redcircle.png")),
                         new Point((int)issueOnMap.IssueCoordinateX, (int)issueOnMap.IssueCoordinateY));
                         pbMap.Image = bmp1;
                     }

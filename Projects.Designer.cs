@@ -38,6 +38,8 @@
             // 
             // dgvProjects
             // 
+            this.dgvProjects.AllowUserToAddRows = false;
+            this.dgvProjects.AllowUserToDeleteRows = false;
             this.dgvProjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProjects.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProjects.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -58,6 +60,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvProjects.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProjects.RowTemplate.Height = 24;
+            this.dgvProjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProjects.Size = new System.Drawing.Size(1888, 1775);
             this.dgvProjects.TabIndex = 0;
             this.dgvProjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProjects_CellContentClick);
@@ -69,23 +72,22 @@
             this.lInfoProjects.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lInfoProjects.Location = new System.Drawing.Point(12, 0);
             this.lInfoProjects.Name = "lInfoProjects";
-            this.lInfoProjects.Size = new System.Drawing.Size(1413, 38);
+            this.lInfoProjects.Size = new System.Drawing.Size(601, 22);
             this.lInfoProjects.TabIndex = 5;
-            this.lInfoProjects.Text = "List projektów (wybierz projekt z listy poniżej poprzez zaznaczenie całego wiersz" +
-    "a na niebiesko):";
+            this.lInfoProjects.Text = "Lista projektów (wybierz z listy poprzez zaznaczenie na niebiesko):";
             // 
             // Projects
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1900, 2405);
+            this.ClientSize = new System.Drawing.Size(1900, 1829);
             this.Controls.Add(this.lInfoProjects);
             this.Controls.Add(this.dgvProjects);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.MinimumSize = new System.Drawing.Size(1918, 47);
+            this.MinimumSize = new System.Drawing.Size(1364, 47);
             this.Name = "Projects";
             this.Text = "Projects";
             this.Load += new System.EventHandler(this.Projects_Load);

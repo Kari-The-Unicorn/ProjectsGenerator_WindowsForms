@@ -21,6 +21,7 @@ namespace ProjectsGenerator_WindowsForms
             projects = new Projects();
             openChildForm(projects);
             project = new Project();
+            int index = Application.OpenForms.Count;
         }
 
         //private void button1_Click(object sender, EventArgs e)
@@ -56,7 +57,44 @@ namespace ProjectsGenerator_WindowsForms
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            openChildForm(new AddProject());
+            //openChildForm(new AddProject());
+            //    if (AddProject.cancelled == true)
+            //    {
+            //        openChildForm(projects);
+            //    }
+            //AddProject newMdiChildAdd = new AddProject();
+            //newMdiChildAdd.ShowDialog();
+            //openChildForm(projects);
+            MDIChildAddProject(sender, e);
+        }
+
+        private void MDIChildAddProject(object sender, EventArgs e)
+        {
+                AddProject newMdiChildAdd = new AddProject();
+                var ind = Application.OpenForms.Count;
+
+                try
+                {
+                    //project = projects.GetSelectedProject();
+
+                    //if (project != null)
+                    //{
+                    //    ((AddProject)newMdiChildAdd).lblId.Text = project.id.ToString().Trim();
+                    //    ((AddProject)newMdiChildAdd).tbProjectName.Text = project.ProjectName.Trim();
+                    //    ((AddProject)newMdiChildAdd).tbProjectAddress.Text = project.ProjectAddress.ToString().Trim();
+                    //    ((AddProject)newMdiChildAdd).tbProjectCompany.Text = project.ProjectCompany.ToString().Trim();
+                    //    ((AddProject)newMdiChildAdd).tbProjectState.Text = project.ProjectState.ToString().Trim();
+                    //    ((AddProject)newMdiChildAdd).dtpProjectCollectionDate.Value = project.ProjectDateIn.Value;
+                    //    ((AddProject)newMdiChildAdd).dtpProjectCompleteDate.Value = project.ProjectDateOut.Value;
+                        newMdiChildAdd.ShowDialog();
+                        openChildForm(projects);
+                    //}
+                }
+                catch
+                {
+                    Close();
+                }
+            
         }
 
         public void bProjects_Click(object sender, EventArgs e)
@@ -86,6 +124,7 @@ namespace ProjectsGenerator_WindowsForms
         protected void MDIChildOpenProject(object sender, System.EventArgs e)
         {
             OpenProject newMdiChildOpen = new OpenProject();
+
             try
             {
                 //var name = (string)projects.dgvProjects.SelectedRows[0].Cells["ProjectName"].Value;
@@ -115,6 +154,8 @@ namespace ProjectsGenerator_WindowsForms
         protected void MDIChildEditProject(object sender, System.EventArgs e)
         {
             EditProject newMdiChildEdit = new EditProject();
+            var ind = Application.OpenForms.Count;
+
             try
             {
                 project = projects.GetSelectedProject();
@@ -180,6 +221,16 @@ namespace ProjectsGenerator_WindowsForms
         private void panelChildForm_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void panelLogo_Paint(object sender, PaintEventArgs e)
+        {
+            //openChildForm(new Projects());
+
+            //    if (AddProject.cancelled == true)
+            //    {
+            //        openChildForm(projects);
+            //    }
         }
     }
 }
